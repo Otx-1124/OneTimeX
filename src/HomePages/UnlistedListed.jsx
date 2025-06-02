@@ -167,7 +167,7 @@ const UnlistedListed = () => {
 
   return (
     <motion.div
-      className="container mx-auto bg-gradient-to-br from-blue-50 to-green-50 w-full px-10 py-5 flex flex-col"
+      className="container mx-auto bg-gradient-to-br from-blue-50 to-green-50 w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -175,33 +175,28 @@ const UnlistedListed = () => {
     >
       {/* Heading */}
       <motion.div
-        className="flex flex-col justify-center items-center px-10 gap-3"
+        className="flex flex-col justify-center items-center px-4 sm:px-10 gap-3 text-center"
         custom={1}
         variants={fadeInUp}
       >
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
           Buy & Sell Pre-IPO Shares with Ease
         </h1>
-        <p className="text-xl">
+        <p className="text-base sm:text-lg">
           Get early access to India’s top companies—before they go public and
-          Access <strong>Unlisted Stocks</strong> of top Indian companies.{" "}
-          <br />
+          access <strong>Unlisted Stocks</strong> of top Indian companies.
         </p>
-        <h3 className="text-blue-500 text-xl font-bold">
+        <h3 className="text-blue-500 text-lg sm:text-xl font-bold">
           Start investing today with just 1 share!
         </h3>
       </motion.div>
 
       {/* Tabs */}
-      <motion.div
-        className="flex flex-col gap-5 px-10 py-2 mt-5"
-        custom={2}
-        variants={fadeInUp}
-      >
-        <div className="flex gap-5">
+      <motion.div className="flex flex-col gap-5 px-4 sm:px-10 py-4 mt-5" custom={2} variants={fadeInUp}>
+        <div className="flex flex-wrap gap-3">
           <button
-            onClick={changeData}
-            className={`font-bold text-xl px-4 py-2 rounded transition duration-300 transform ${
+            onClick={() => { setCurrData(data); setActiveTab("unlisted"); }}
+            className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
               activeTab === "unlisted"
                 ? "text-white bg-blue-600 scale-105 shadow-md"
                 : "text-blue-600 bg-transparent hover:bg-blue-100"
@@ -210,8 +205,8 @@ const UnlistedListed = () => {
             Unlisted Stock
           </button>
           <button
-            onClick={overData}
-            className={`font-bold text-xl px-4 py-2 rounded transition duration-300 transform ${
+            onClick={() => { setCurrData(data2); setActiveTab("listed"); }}
+            className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
               activeTab === "listed"
                 ? "text-white bg-blue-600 scale-105 shadow-md"
                 : "text-blue-600 bg-transparent hover:bg-blue-100"
@@ -223,10 +218,10 @@ const UnlistedListed = () => {
         <hr />
       </motion.div>
 
-      {/* Company Cards Grid - REMOUNT on tab change */}
+      {/* Cards Grid */}
       <motion.div
-        key={activeTab} // 🔁 this causes re-mount, hence animation retriggers
-        className="grid grid-cols-3 px-10 py-5 gap-5"
+        key={activeTab}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 px-4 sm:px-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -234,23 +229,23 @@ const UnlistedListed = () => {
         {currData.map((company, index) => (
           <motion.div
             key={company.name + index}
-            className="flex border shadow-md items-center justify-around px-2 py-3 rounded-lg hover:shadow-xl cursor-pointer"
+            className="flex flex-col sm:flex-row border shadow-md items-center justify-between px-4 py-3 rounded-lg hover:shadow-xl cursor-pointer"
             custom={index}
             variants={fadeInUp}
           >
-            <div className="w-1/3">
+            <div className="w-full sm:w-1/3 mb-3 sm:mb-0">
               <img
-                className="w-full object-cover"
+                className="w-full h-auto object-contain max-h-20"
                 src={company.logo}
                 alt={company.alt}
               />
             </div>
-            <div className="flex justify-between w-1/2 items-center">
-              <div className="flex flex-col gap-3">
-                <h1 className="font-bold text-blue-800">{company.name}</h1>
-                <p>{company.price}</p>
+            <div className="flex flex-col sm:flex-row justify-between items-center sm:w-2/3 sm:pl-4 gap-2 sm:gap-0">
+              <div className="flex flex-col text-center sm:text-left">
+                <h1 className="font-bold text-blue-800 text-base sm:text-lg">{company.name}</h1>
+                <p className="text-sm sm:text-base">{company.price}</p>
               </div>
-              <ArrowBigRightIcon className="hover:text-yellow-700 text-xl" />
+              <ArrowBigRightIcon className="text-xl hover:text-yellow-700" />
             </div>
           </motion.div>
         ))}

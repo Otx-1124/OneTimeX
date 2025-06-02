@@ -1,136 +1,114 @@
-// import { iframe } from 'framer-motion/client';
-// import React from 'react'
-
-// const shorts = [
-//   {
-//     id: 1,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_1",
-//   },
-//   {
-//     id: 2,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_2",
-//   },
-//   {
-//     id: 3,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_3",
-//   },
-//   {
-//     id: 4,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_4",
-//   },
-//   {
-//     id: 5,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_5",
-//   },
-//   {
-//     id: 6,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_SHORT_VIDEO_ID_6",
-//   },
-// ];
-
-// const longVideos = [
-//   {
-//     id: 1,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_1",
-//     title: "Top Government Stocks for Long-Term Investment",
-//   },
-//   {
-//     id: 2,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_2",
-//     title: "Understanding Stock Market Index | Options Trading",
-//   },
-//   {
-//     id: 3,
-//     embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_3",
-//     title: "Savings Devalue Over Time | Smart Investment Strategies",
-//   },
-// ];
-
-
-// const Videos = () => {
-
-//   return (
-//     <div className='w-full px-20 py-5 flex gap-5 bg-gradient-to-br from-blue-50 to green-50 '>
-//         <div className='grid grid-cols-3 container mx-auto w-3/4 gap-10 border border-red-400'>
-//             {shorts.map((vid)=>{
-//               return(
-//                  <div key={shorts.id} className="aspect-[16/16] bg-black rounded overflow-hidden shadow-md">
-//                   <iframe
-//                     className="w-full h-full"
-//                     src={shorts.embedUrl}
-//                     title={`Short Video ${shorts.id}`}
-//                     frameBorder="0"
-//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//                     allowFullScreen
-//                   ></iframe>
-//                 </div>
-//               )
-             
-//             })}
-//         </div>
-//         <div className='grid grid-cols-1 container mx-auto'>
-
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Videos
-
-
 import React from "react";
+import { motion } from "framer-motion";
 
-const longVideos = [
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const shorts = [
   {
-    id: 1,
-    embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_1",
-    title: "Top Government Stocks for Long-Term Investment",
+    title: "Short: Top Govt Stocks",
+    url: "https://youtube.com/shorts/83ZLuvdVIFs?si=UuY0E8XYtPT54hQg"
   },
   {
-    id: 2,
-    embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_2",
-    title: "Understanding Stock Market Index | Options Trading",
+    title: "Short: Quick Trading Tips",
+    url: "https://www.youtube.com/embed/0zuHYgAMUVo"
   },
   {
-    id: 3,
-    embedUrl: "https://www.youtube.com/embed/YOUR_LONG_VIDEO_ID_3",
-    title: "Savings Devalue Over Time | Smart Investment Strategies",
+    title: "Short: Investment Myths",
+    url: "https://youtube.com/shorts/0zuHYgAMUVo?si=M4lxBgurmNQyDRSb"
   },
+  {
+    title: "Short: Portfolio Basics",
+    url: "https://youtube.com/shorts/0FLTIIcwouE?si=pCXyTuxUFDFOf0B3"
+  }
 ];
 
-const InsightsVideo = () => {
+const longs = [
+  {
+    title: "Understanding Stock Market Index | Options Trading",
+    url: "https://youtu.be/MTV5qv2NUhU?si=6zPVmv1pJkBkoJy0"
+  },
+  {
+    title: "Savings Devalue Over Time | Smart Investment Strategies",
+    url: "https://www.youtube.com/embed/LONG_VIDEO_ID2"
+  },
+  {
+    title: "How to Build a Diversified Portfolio",
+    url: "https://www.youtube.com/embed/LONG_VIDEO_ID3"
+  },
+  {
+    title: "Beginner’s Guide to Mutual Funds",
+    url: "https://youtu.be/QlVACaoYckw?si=r1HA-MZiuEhL2PIZ"
+  }
+];
+
+export default function InsightsVideoSection() {
   return (
-    <section className="bg-green-50 py-16 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-10">
+    <motion.section
+      className="bg-green-50 rounded-3xl px-6 py-16 md:px-20"
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+    >
+      <div className="text-center mb-14 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Insights Video
         </h2>
+        <p className="text-gray-600">
+          Explore short and long-format investment insights curated for Onetimex users.
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 px-10">
-          {longVideos.map((video) => (
-            <div key={video.id} className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="aspect-video">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Shorts */}
+        <div className="grid grid-cols-2 gap-4">
+          {shorts.map((video, idx) => (
+            <div key={idx} className="bg-white rounded-xl shadow p-2">
+              <div className="aspect-w-16 aspect-h-9">
                 <iframe
-                  className="w-full h-full"
-                  src={video.embedUrl}
+                  className="rounded-md w-full"
+                  src={video.url}
                   title={video.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
-              <div className="p-4">
-                <h4 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h4>
-                <button className="mt-2 inline-block bg-green-600 text-white text-sm font-medium px-4 py-2 rounded hover:bg-green-700">
-                  Watch Full video
-                </button>
-              </div>
+              <p className="mt-2 text-sm font-medium text-gray-700 text-center">
+                {video.title}
+              </p>
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default InsightsVideo;
+        {/* Long videos */}
+        <div className="md:col-span-2 grid md:grid-cols-2 gap-6">
+          {longs.map((video, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-white rounded-xl shadow p-4"
+              variants={fadeInUp}
+            >
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe
+                  className="rounded-md w-full"
+                  src={video.url}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <h3 className="mt-4 text-gray-800 font-semibold text-center text-base">
+                {video.title}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </motion.section>
+  );
+}

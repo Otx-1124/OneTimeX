@@ -1,5 +1,6 @@
 import { FaFacebookF, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -23,7 +24,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-2">
               <FiMail className="text-blue-600" />
-              <span>onetimexbusiness@gmail.com</span>
+              <span>connect@onetimex.in</span>
             </div>
             <div className="flex items-start gap-2">
               <FiMapPin className="text-blue-600 mt-1" />
@@ -83,9 +84,9 @@ export default function Footer() {
       {/* Bottom Line */}
       <div className="border-t mt-10 pt-4 text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
         <div className="flex gap-4 mb-2 md:mb-0">
-          <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Security</a>
+          <Link className="text-blue-700 underline" to="/terms&con">T&C</Link>
+          <Link className="text-blue-700 underline" to="/terms&con">Security</Link>
+          
         </div>
         <p>© 2025 Onetimex. All Rights Reserved.</p>
       </div>

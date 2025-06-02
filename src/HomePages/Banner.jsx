@@ -1,30 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Flipcart.css";
-import { X } from "lucide-react";
-import { useState } from "react";
-
-import { motion } from 'framer-motion';
+import { CircleX, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const leftVariant = {
   hidden: { opacity: 0, x: -60 },
-  show: { opacity: 1, x: 0, transition: { type:'spring', duration: 1 } },
+  show: { opacity: 1, x: 0, transition: { type: "spring", duration: 1 } },
 };
 
 const rightVariant = {
   hidden: { opacity: 0, x: 60 },
-  show: { opacity: 1, x: 0, transition: { type: 'spring', duration: 1 } },
+  show: { opacity: 1, x: 0, transition: { type: "spring", duration: 1 } },
 };
 
 const Banner = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="w-full h-screen bg-gradient-to-br from-blue-50 to-white flex items-center container mx-auto justify-center px-6 sm:px-10 py-10 relative">
+    <div className="w-full md:h-screen sm:h-screen bg-gradient-to-br from-blue-50 to-white flex items-center container mx-auto justify-center px-6 sm:px-10 py-10 relative">
       <div className="max-w-7xl w-full flex flex-col md:flex-row px-6 items-center justify-between gap-10 ml-3">
 
         {/* Left Section */}
         <motion.div
-          className="md:w-1.5/2 text-center md:text-left"
+          className="w-full md:w-1.5/2 text-center md:text-left"
           variants={leftVariant}
           initial="hidden"
           whileInView="show"
@@ -47,15 +46,29 @@ const Banner = () => {
             >
               Open Account
             </button>
-            <button className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-green-500 hover:text-white transition duration-300">
+            <Link
+              to="/login"
+              className="px-6 py-3 border border-blue-600 text-blue-600 rounded-full hover:bg-green-500 hover:text-white transition duration-300"
+            >
               Log In
-            </button>
+            </Link>
+          </div>
+          <div className="mt-5 flex flex-col gap-2 sm:1/2">
+            <p className="text-red-500 flex gap-1">
+              <CircleX /> Don't have an account on OnetimeX?
+            </p>
+            <Link
+              className="sm:w-full md:w-1/5 px-4 py-3 rounded-3xl border border-blue-600 text-blue-500 hover:bg-blue-500 text-center hover:text-white"
+              to="/signup"
+            >
+              SignUp
+            </Link>
           </div>
         </motion.div>
 
-        {/* Right Section: Flip Image */}
+        {/* Right Section: Flip Image (Hidden on small screens) */}
         <motion.div
-          className="md:w-1/2 flex justify-end"
+          className="hidden md:flex md:w-1/2 justify-end"
           variants={rightVariant}
           initial="hidden"
           whileInView="show"
