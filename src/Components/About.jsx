@@ -7,19 +7,19 @@ const fadeInUp = {
 };
 
 export default function AboutPage() {
-  const ceo = { name: "Vishal Dubey", role: "Founder & CEO", img: "/team/vishal.jpg" };
+  const ceo = { name: "Vishal Dubey", role: "Founder & CEO", img: "/CeoLogo.jpg" };
 
   const team = [
-    { name: "Parag Yadav", role: "IT Backend Developer", img: "/team/parag.jpg" },
-    { name: "Sandeep", role: "Frontend Developer", img: "/team/sandeep.jpg" },
-    { name: "Ankkit Ghag", role: "Marketing & Sales Lead", img: "/team/ankkit.jpg" },
-    { name: "Shravani", role: "Business Development Executive (BDE)", img: "/team/shravani.jpg" },
-    { name: "Prabhat", role: "Senior Business Development Executive (Sr. BDE)", img: "/team/prabhat.jpg" }
+    { name: "Parag Yadav", role: "IT Backend Developer", img: "/logoOne.jpg" },
+    { name: "Sandeep", role: "Frontend Developer", img: "/sandeep.jpg" },
+    { name: "Ankkit Ghag", role: "Marketing & Sales Lead", img: "/ankit.jpg" },
+    { name: "Shravani", role: "Business Development Executive (BDE)", img: "/logoOne.jpg" },
+    { name: "Prabhat", role: "Senior Business Development Executive (Sr. BDE)", img: "/logoOne.jpg" }
   ];
 
   return (
     <motion.section
-      className="bg-gradient-to-br from-green-100 to-yellow-100 px-6 py-16 md:px-20  md:mt-10"
+      className="bg-gradient-to-br from-green-100 to-blue-100 px-6 py-16 md:px-20  md:mt-10"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}

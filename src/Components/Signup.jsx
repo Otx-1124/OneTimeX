@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
+import { X } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -7,6 +9,30 @@ const fadeInUp = {
 };
 
 export default function SignupPage() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user , setUser] = useState({name:"" , email:"" , password:""});
+  
+  const navigate = useNavigate()
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const currUser = { name, email, password }; // create the object
+
+  setUser(currUser); // set state (optional if you just want to store in localStorage)
+  localStorage.setItem("user", JSON.stringify(currUser)); // store in localStorage
+
+  console.log("User saved:", currUser);
+  navigate("/")
+  window.location.reload()
+};
+
+  useEffect(()=>{
+    console.log(user)
+  },[user])
+
   return (
     <motion.section
       className="min-h-screen bg-green-50 flex items-center justify-center px-4 py-10 w-full mt-10 fixed"
@@ -14,14 +40,20 @@ export default function SignupPage() {
       animate="show"
       variants={fadeInUp}
     >
-      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg w-full max-w-sm">
+      <div className="bg-white p-6 md:p-8 rounded-2xl relative shadow-lg w-full max-w-sm">
         <h2 className="text-xl font-semibold text-gray-800 text-center mb-4">
           Create Your Account
         </h2>
-        <form className="space-y-3">
+        <Link to="/">
+          <X className="absolute top-5 right-5" />
+        </Link>
+        <form className="space-y-3" onSubmit={handleSubmit}>
           <div>
-            <label className="block text-sm text-gray-700 mb-1">Full Name</label>
+            <label className="block text-sm text-gray-700 mb-1">
+              Full Name
+            </label>
             <input
+              onChange={(e)=>{setName(e.target.value)}}
               type="text"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               placeholder="John Doe"
@@ -31,6 +63,7 @@ export default function SignupPage() {
           <div>
             <label className="block text-sm text-gray-700 mb-1">Email</label>
             <input
+              onChange={(e)=>{setEmail(e.target.value)}}
               type="email"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               placeholder="you@example.com"
@@ -38,7 +71,9 @@ export default function SignupPage() {
           </div>
 
           <div>
-            <label className="block text-sm text-gray-700 mb-1">Phone Number</label>
+            <label className="block text-sm text-gray-700 mb-1">
+              Phone Number
+            </label>
             <input
               type="text"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
@@ -49,6 +84,7 @@ export default function SignupPage() {
           <div>
             <label className="block text-sm text-gray-700 mb-1">Password</label>
             <input
+              onChange={(e)=>{setPassword(e.target.value)}}
               type="password"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-orange-500"
               placeholder="••••••••"

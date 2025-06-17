@@ -187,7 +187,7 @@ const UnlistedListed = () => {
           access <strong>Unlisted Stocks</strong> of top Indian companies.
         </p>
         <h3 className="text-blue-500 text-lg sm:text-xl font-bold">
-          Start investing today with just 1 share!
+          Start investing today !
         </h3>
       </motion.div>
 
@@ -233,13 +233,14 @@ const UnlistedListed = () => {
             custom={index}
             variants={fadeInUp}
           >
-            <div className="w-full sm:w-1/3 mb-3 sm:mb-0">
-              <img
-                className="w-full h-auto object-contain max-h-20"
-                src={company.logo}
-                alt={company.alt}
-              />
-            </div>
+            <div className="w-28 h-20 sm:w-32 sm:h-24 mb-3 sm:mb-0 rounded-lg overflow-hidden flex items-center justify-center shadow-inner">
+  <img
+    src={company.logo}
+    alt={company.alt}
+    className="w-full h-full object-contain"
+  />
+</div>
+
             <div className="flex flex-col sm:flex-row justify-between items-center sm:w-2/3 sm:pl-4 gap-2 sm:gap-0">
               <div className="flex flex-col text-center sm:text-left">
                 <h1 className="font-bold text-blue-800 text-base sm:text-lg">{company.name}</h1>

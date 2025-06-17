@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -54,9 +54,12 @@ const policies = [
   },
 ];
 
+
+
 const TermsAndPolicies = () => {
+
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-white min-h-screen px-6 py-10 md:px-20 mt-10">
+    <div className="bg-gradient-to-br from-blue-100 to-green-100 min-h-screen px-6 py-10 md:px-20 mt-10">
       <motion.div
         initial="hidden"
         whileInView="visible"

@@ -14,7 +14,7 @@ const SocialFooter = () => {
       icon: FaFacebookF,
       name: "Facebook",
       company: "OnetimeX",
-      url: "https://www.facebook.com/yourpage", // Replace with actual
+      url: "https://www.facebook.com/share/15g8s2Kec3/", // Replace with actual
     },
     {
       icon: FaYoutube,
@@ -26,24 +26,24 @@ const SocialFooter = () => {
       icon: FaXTwitter,
       name: "X",
       company: "OnetimeX",
-      url: "https://www.youtube.com/@yourchannel", // Replace with actual
+      url: "https://x.com/ONETIMEX_IN?t=-OqRd2S9HeRpbMUCbdwCKw&s=08", // Replace with actual
     },
     {
       icon: FaInstagram,
       name: "Instagram",
       company: "OnetimeX",
-      url: "https://www.instagram.com/yourprofile", // Replace with actual
+      url: "https://www.instagram.com/onetimex.in", // Replace with actual
     },
     {
       icon: FaLinkedinIn,
       name: "LinkedIn",
       company: "OnetimeX",
-      url: "https://www.linkedin.com/company/yourcompany", // Replace with actual
+      url: "https://www.linkedin.com/in/vishal-dubey-53a923219", // Replace with actual
     },
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-green-100 to-yellow-100 text-black py-12 px-6 md:px-16">
+    <footer className="bg-gradient-to-br from-blue-100 to-green-100 text-black py-12 px-6 md:px-16 container mx-auto">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-sm uppercase tracking-wide text-gray-400 mb-2">
           Social

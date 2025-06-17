@@ -54,7 +54,7 @@ const services = [
 const FinancialServices = () => {
   return (
     <motion.section
-      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20"
+      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20 container mx-auto"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}

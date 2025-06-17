@@ -9,38 +9,38 @@ const fadeInUp = {
 const shorts = [
   {
     title: "Short: Top Govt Stocks",
-    url: "https://youtube.com/shorts/83ZLuvdVIFs?si=UuY0E8XYtPT54hQg"
+    url: "https://www.youtube.com/embed/QlVACaoYckw"
   },
   {
     title: "Short: Quick Trading Tips",
-    url: "https://www.youtube.com/embed/0zuHYgAMUVo"
+    url: "https://www.youtube.com/embed/MTV5qv2NUhU"
   },
   {
     title: "Short: Investment Myths",
-    url: "https://youtube.com/shorts/0zuHYgAMUVo?si=M4lxBgurmNQyDRSb"
+    url: "https://www.youtube.com/embed/0FLTIIcwouE"
   },
   {
     title: "Short: Portfolio Basics",
-    url: "https://youtube.com/shorts/0FLTIIcwouE?si=pCXyTuxUFDFOf0B3"
+    url: "https://www.youtube.com/embed/0zuHYgAMUVo"
   }
 ];
 
 const longs = [
   {
-    title: "Understanding Stock Market Index | Options Trading",
-    url: "https://youtu.be/MTV5qv2NUhU?si=6zPVmv1pJkBkoJy0"
+    title: "Understanding Unlisted stock",
+    url: "https://www.youtube.com/embed/Poolyy_JcUo"
   },
   {
-    title: "Savings Devalue Over Time | Smart Investment Strategies",
-    url: "https://www.youtube.com/embed/LONG_VIDEO_ID2"
+    title:"Get Early — Invest Before Companies Go Public.",
+    url: "https://www.youtube.com/embed/83ZLuvdVIFs"
   },
   {
-    title: "How to Build a Diversified Portfolio",
-    url: "https://www.youtube.com/embed/LONG_VIDEO_ID3"
+    title: "How to get profit via investing",
+    url: "https://www.youtube.com/embed/QlVACaoYckw"
   },
   {
-    title: "Beginner’s Guide to Mutual Funds",
-    url: "https://youtu.be/QlVACaoYckw?si=r1HA-MZiuEhL2PIZ"
+    title: "How to invest before IPO",
+    url: "https://www.youtube.com/embed/MTV5qv2NUhU"
   }
 ];
 

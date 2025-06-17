@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Animation variants
 const containerVariants = {
@@ -313,7 +314,7 @@ const BlogPage = () => {
                 <div className="relative bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
                   <div className="grid md:grid-cols-2 gap-8">
                     {[
-                      "Trusted by 10,000+ Indian investors",
+                      "Trusted by Indian investors who value smart investing",
                       "SEBI-compliant partners",
                       "Real-time price discovery",
                       "End-to-end support from inquiry to demat",
@@ -416,7 +417,7 @@ const BlogPage = () => {
                   href="https://www.onetimex.com" 
                   className="inline-flex items-center justify-center bg-white text-blue-700 font-bold px-8 py-4 rounded-lg hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  <span>Start Investing Now</span>
+                  <Link to="/signup">Start Investing Now</Link>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
