@@ -57,7 +57,7 @@ const Banner = () => {
             viewport={{ once: true }}
             className="mt-6 text-lg text-gray-700"
           >
-            OnetimX offers access to both <strong>unlisted</strong> and{" "}
+            OnetimeX offers access to both <strong>unlisted</strong> and{" "}
             <strong>listed</strong> shares, empowering you to make informed
             investment decisions.
           </motion.p>
