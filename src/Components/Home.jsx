@@ -24,7 +24,7 @@ const Home = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <BsWhatsapp className="fixed bottom-5 right-5  text-green-700 md:text-4xl sm:text-3xl z-10 cursor-pointer transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:text-green-600" />
+        <BsWhatsapp className="fixed bottom-5 right-5  text-green-700 text-4xl  z-10 cursor-pointer transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:text-green-600" />
       </a>
       <Banner2/>
       <UnlistedListed />

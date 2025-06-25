@@ -88,7 +88,7 @@ const Procedure = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 mx-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">
           {/* Left: Steps Section */}
           <div className="space-y-6">
             <div className="text-center lg:text-left">
@@ -189,18 +189,18 @@ const Procedure = () => {
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-3 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-center">
               <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-gray-200/50">
-                <div className="text-lg font-bold text-blue-600 mb-1">10K+</div>
-                <div className="text-gray-600 text-xs">Active Users</div>
+                <div className="text-lg font-bold text-blue-600 mb-1">Onboarding</div>
+                <div className="text-gray-600 text-xs">Retails Investors</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-gray-200/50">
-                <div className="text-lg font-bold text-green-600 mb-1">₹500Cr+</div>
-                <div className="text-gray-600 text-xs">AUM</div>
+                <div className="text-lg font-bold text-green-600 mb-1">Infrastructure</div>
+                <div className="text-gray-600 text-xs">For 1 Lakh+ Investors</div>
               </div>
               <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 border border-gray-200/50">
                 <div className="flex items-center justify-center gap-1 mb-1">
-                  <span className="text-lg font-bold text-yellow-500">4.8</span>
+                  <span className="text-lg font-bold text-yellow-500">4.7</span>
                   <span className="text-yellow-400 text-sm">★</span>
                 </div>
                 <div className="text-gray-600 text-xs">Rating</div>

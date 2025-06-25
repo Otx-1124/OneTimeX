@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className="bg-gradient-to-br from-blue-100 to-green-100 border-t border-gray-200">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mx-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 ml-5 mr-2">
           
           {/* Company Info - Takes 2 columns on large screens */}
           <div className="lg:col-span-2 pr-8">
@@ -113,7 +113,7 @@ export default function Footer() {
         </div>
 
         {/* Partners Section */}
-        <div className="mt-12 pt-8 border-t border-gray-200 ml-10 mr-10">
+        <div className="mt-5 border-t border-gray-200 ml-5 mr-2">
           <button 
             onClick={() => toggleSection('partners')}
             className="flex items-center justify-between w-full text-left md:cursor-default"

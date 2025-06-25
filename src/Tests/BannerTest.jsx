@@ -12,6 +12,18 @@ const fadeInUp = {
   },
 };
 
+const leftShrink = {
+  hidden: { opacity: 1, scale: 1, x: 0 },
+  show: {
+    opacity: 1,
+    scale: 0.8,
+    x: "-10%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Banner = () => {
   const [showModal, setShowModal] = useState(false);
 
@@ -53,7 +65,7 @@ const Banner = () => {
             className="text-lg text-gray-600 max-w-2xl mx-auto"
             variants={fadeInUp}
           >
-            <span className="font-semibold">OnetimX</span> makes investing simple. Access high-growth stocks with just one click.
+            <span className="font-semibold">OnetimeX</span> makes investing simple. Access high-growth stocks with just one click.
           </motion.p>
         </motion.div>
 
@@ -62,17 +74,17 @@ const Banner = () => {
           className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
           variants={fadeInUp}
         >
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-blue-600 mb-2">50,000+</div>
-            <div className="text-gray-700 font-medium">Happy Investors</div>
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4  shadow-lg">
+            <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+            <div className="text-gray-700 font-medium">Investors Onboarded</div>
           </div>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-green-600 mb-2">₹1200Cr+</div>
-            <div className="text-gray-700 font-medium">Total Trades</div>
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+            <div className="text-3xl font-bold text-green-600 mb-2">Cr+ Traded</div>
+            <div className="text-gray-700 font-medium">High-Growth Unlisted Details</div>
           </div>
-          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-            <div className="text-3xl font-bold text-purple-600 mb-2">23.5%</div>
-            <div className="text-gray-700 font-medium">Avg Returns</div>
+          <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+            <div className="text-3xl font-bold text-purple-600 mb-2">Returns </div>
+            <div className="text-gray-700 font-medium">Backed by login , Not luck</div>
           </div>
         </motion.div>
 

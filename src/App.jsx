@@ -9,6 +9,10 @@ import TermsAndPolicies from './Components/Terms&Policies'
 import Explore from './Components/Explore'
 import Connect from './Components/Connect'
 import ScrollToTop from './Components/ScrolltoTop'
+import Signup from './Components/Signup'
+
+
+
 
 function App() {
 
@@ -17,7 +21,7 @@ function App() {
    <ScrollToTop/>
     <Routes>
       <Route path='/' element={<Home/>}/>
-      <Route path='/signup' element={<SignupPage/>}/>
+      <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/blog' element={<BlogPage/>}/>

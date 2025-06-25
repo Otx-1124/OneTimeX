@@ -256,7 +256,7 @@ const SimpleTradingCalculator = () => {
           viewport={{ once: true, amount: 0.3 }}
         >
           <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
-            Start Trading with OnetimX
+            Start Trading with OnetimeX
           </button>
           <p className="text-gray-600 mt-2">Calculate before you trade - Trade smart, not hard</p>
         </motion.div>

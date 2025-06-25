@@ -21,7 +21,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/explore", label: "Explore" },
     { path: "/blog", label: "Blog" },
-    { path: "/mutualFunds", label: "Trade & Invest" },
+    { path: "/trade", label: "Trade & Invest" },
     { path: "/about", label: "About" },
     { path: "/connectUs", label: <HeadphonesIcon /> },
   ];
@@ -158,7 +158,7 @@ const Navbar = () => {
             Blog
           </NavLink>
           <NavLink
-            to="/mutualFunds"
+            to="/explore"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
@@ -166,10 +166,10 @@ const Navbar = () => {
                 : "block hover:text-blue-500"
             }
           >
-            Mutual Funds & SIP
+            Explore
           </NavLink>
           <NavLink
-            to="/product"
+            to="/trade"
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               isActive
@@ -177,7 +177,7 @@ const Navbar = () => {
                 : "block hover:text-blue-500"
             }
           >
-            Product
+           Trade & Invest
           </NavLink>
           <NavLink
             to="/about"
