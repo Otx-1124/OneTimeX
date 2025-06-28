@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const [openSections, setOpenSections] = useState({});
@@ -138,12 +139,12 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="md:flex md:items-center md:justify-between">
             <div className="flex space-x-6 md:order-2">
-              <a href="/termsCon" className="text-xs text-gray-500 hover:text-gray-900">
+              <Link to="/termsCon" className="text-xs text-gray-500 hover:text-gray-900">
                 Terms & Conditions
-              </a>
-              <a href="/termsCon" className="text-xs text-gray-500 hover:text-gray-900">
+              </Link>
+              <Link to="/termsCon" className="text-xs text-gray-500 hover:text-gray-900">
                 Privacy Policy
-              </a>
+              </Link>
              
             </div>
             <div className="mt-4 md:mt-0 md:order-1">

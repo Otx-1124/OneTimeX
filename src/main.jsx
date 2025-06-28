@@ -6,9 +6,11 @@ import { BrowserRouter } from 'react-router-dom'
 import Navbar from './Components/Common/Navbar.jsx'
 import Footer from './Components/Common/Footer.jsx'
 import SocialFooter from './Components/Common/Social.jsx'
+import ScrollToTop from './Components/ScrolltoTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+   <ScrollToTop/>
     <Navbar/>
     <App />
     <SocialFooter/>
