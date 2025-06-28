@@ -53,19 +53,15 @@ const Procedure = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-green-200/30 to-blue-200/30 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative px-4 sm:px-6 lg:px-10 py-12 container mx-auto">
+      
+      <div className="relative px-4 sm:px-6 lg:px-10 py-5 container mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200/50 mb-4">
             <Award className="w-4 h-4 text-yellow-500" />
             <span className="text-xs font-medium text-gray-600">Trusted Investment Partner</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 ">
             We Are Associated By...
           </h1>
           <p className="text-gray-600 text-sm max-w-xl mx-auto">
@@ -77,7 +73,7 @@ const Procedure = () => {
         <div className="flex justify-center mb-10">
           <div className="group relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-            <div className="relative bg-white rounded-xl p-4 border border-gray-200/50 backdrop-blur-sm">
+            <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
               <img
                 className="w-40 h-12 object-cover filter hover:brightness-110 transition-all duration-300"
                 src="/logoalice.png"
@@ -90,7 +86,7 @@ const Procedure = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">
           {/* Left: Steps Section */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="text-center lg:text-left">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                 Create your Demat Account in{" "}

@@ -62,7 +62,7 @@ const SimpleTradingCalculator = () => {
 
   return (
     <div className="w-full bg-gradient-to-br from-blue-50 to-green-50 pt-24 pb-12 px-6 min-h-screen">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-3xl mx-auto">
         
         {/* Header */}
         <motion.div 
@@ -82,7 +82,7 @@ const SimpleTradingCalculator = () => {
         </motion.div>
 
         <motion.div 
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-2 gap-8 "
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
@@ -91,7 +91,7 @@ const SimpleTradingCalculator = () => {
           
           {/* Calculator Section */}
           <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-6"
+            className="bg-white rounded-2xl shadow-lg p-3"
             variants={fadeInUpVariants}
           >
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">

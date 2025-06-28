@@ -27,67 +27,65 @@ const fadeInUp = {
 
 const UnlistedListed = () => {
   const data = [
-    {
-      name: "Unlisted Co. A",
-      logo: "https://cdn.freelogovectors.net/wp-content/uploads/2023/11/boat-logo-freelogovectors.net_.png",
-      alt: "boat-logo",
-      price: "₹1,733.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zepto_Logo.svg/2560px-Zepto_Logo.svg.png",
-      alt: "Zepto_Logo",
-      price: "₹2,750.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://brandlogos.net/wp-content/uploads/2023/09/swiggy-logo_brandlogos.net_fplmb-512x150.png",
-      alt: "swiggy-logo",
-      price: "₹361.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/en/8/87/FirstCry_logo.png",
-      alt: "FirstCry_logo",
-      price: "₹410.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/PharmEasy_logo.png/800px-PharmEasy_logo.png",
-      alt: "PharmEasy_logo",
-      price: "₹9.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://cdn.worldvectorlogo.com/logos/digit-insurance.svg",
-      alt: "digit-insurance-logo",
-      price: "₹298.60/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://financesaathi.com/adm/uploads/ipo/_1223_63dbfb73b7ed4f3efdf76a7d_yq4PqPLfwDuMjZJ4fP8AAM3CiffSttXiHlBftRekJiE.png",
-      alt: "ola-electric-logo",
-      price: "₹64.62/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://cdn.worldvectorlogo.com/logos/mobikwik-logo.svg",
-      alt: "mobikwik-logo",
-      price: "₹350.10/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "listed img//Paperboat+Packaging_Packaging_Elephant+Design+13-removebg-preview.png",
-      alt: "Paperboat-logo",
-      price: "₹1,675.00/-",
-    },
-    {
-      name: "Unlisted Co. B",
-      logo: "https://trackings.in/wp-content/uploads/2024/04/Meesho-Orders-Delivery-Tracking.webp",
-      alt: "Meesho_logo",
-      price: "₹2,408.00/-",
-    },
-  ];
+  
+  {
+    name: "NSE",
+    logo: "/nse.jpg",
+    alt: "nse-logo",
+    price: "₹3,500.00/-",
+  },
+  {
+    name: "HDB Financial",
+    logo: "/Hbd.jpg",
+    alt: "hdb-financial-logo",
+    price: "₹1,150.00/-",
+  },
+  {
+    name: "Tata Capital",
+    logo: "/tataCap.jpg",
+    alt: "tata-capital-logo",
+    price: "₹1,875.00/-",
+  },
+  {
+    name: "boAt",
+    logo: "https://cdn.freelogovectors.net/wp-content/uploads/2023/11/boat-logo-freelogovectors.net_.png",
+    alt: "boat-logo",
+    price: "₹1,733.00/-",
+  },
+  {
+    name: "Chennai Super Kings (CSK)",
+    logo: "/csk.svg.png",
+    alt: "csk-logo",
+    price: "₹225.00/-",
+  },
+  {
+    name: "Hero FinCorp",
+    logo: "/Fincorp.jpg",
+    alt: "hero-fincorp-logo",
+    price: "₹1,900.00/-",
+  },
+  {
+    name: "PharmEasy",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/PharmEasy_logo.png/800px-PharmEasy_logo.png",
+    alt: "pharmeasy-logo",
+    price: "₹9.00/-",
+  },
+  {
+    name: "Zepto",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zepto_Logo.svg/2560px-Zepto_Logo.svg.png",
+    alt: "zepto-logo",
+    price: "₹2,750.00/-",
+  },
+  {
+    name: "Hexaware",
+    logo: "/hexa.png",
+    alt: "hexaware-logo",
+    price: "₹475.00/-",
+  },
+];
+
+   
+
 
   let data2 = [
     {
@@ -144,12 +142,7 @@ const UnlistedListed = () => {
       alt: "Coforge-Logo",
       price: "₹5,000.00/-",
     },
-    {
-      name: "Listed Co. B",
-      logo: "https://www.mepmiddleeast.com/cloud/2021/07/07/brand-logo.png",
-      alt: "voltas-logo",
-      price: "₹1,000.00/-",
-    },
+    
   ];
 
   const [currData, setCurrData] = useState(data);
@@ -186,7 +179,7 @@ const UnlistedListed = () => {
           Get early access to India’s top companies—before they go public and
           access <strong>Unlisted Stocks</strong> of top Indian companies.
         </p>
-        <h3 className="text-blue-500 text-lg sm:text-xl font-bold">
+        <h3 className="text-[#009999] text-lg sm:text-xl font-bold">
           Start investing today !
         </h3>
       </motion.div>
@@ -198,8 +191,8 @@ const UnlistedListed = () => {
             onClick={() => { setCurrData(data); setActiveTab("unlisted"); }}
             className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
               activeTab === "unlisted"
-                ? "text-white bg-blue-600 scale-105 shadow-md"
-                : "text-blue-600 bg-transparent hover:bg-blue-100"
+                ? "text-white bg-[#009999] scale-105 shadow-md"
+                : "text-[#009999] hover:text-white bg-transparent hover:bg-[#009999]"
             }`}
           >
             Unlisted Stock
@@ -208,8 +201,8 @@ const UnlistedListed = () => {
             onClick={() => { setCurrData(data2); setActiveTab("listed"); }}
             className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
               activeTab === "listed"
-                ? "text-white bg-blue-600 scale-105 shadow-md"
-                : "text-blue-600 bg-transparent hover:bg-blue-100"
+                ? "text-white bg-[#009999] scale-105 shadow-md"
+                : "text-[#009999] hover:text-white bg-transparent hover:bg-[#009999]"
             }`}
           >
             Listed Stock
@@ -243,7 +236,7 @@ const UnlistedListed = () => {
 
             <div className="flex flex-col sm:flex-row justify-between items-center sm:w-2/3 sm:pl-4 gap-2 sm:gap-0">
               <div className="flex flex-col text-center sm:text-left">
-                <h1 className="font-bold text-blue-800 text-base sm:text-lg">{company.name}</h1>
+                <h1 className="font-bold text-[#009999] text-base sm:text-lg">{company.name}</h1>
                 <p className="text-sm sm:text-base">{company.price}</p>
               </div>
               <ArrowBigRightIcon className="text-xl hover:text-yellow-700" />

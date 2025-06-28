@@ -116,7 +116,7 @@ const Connect = () => {
       </form>
 
       {/* Floating social media icons - only visible on md and above */}
-      <div className="hidden md:flex absolute top-[35%] right-4 flex-col gap-6">
+      <div className=" flex absolute bottom-0 md:top-[35%] right-4 flex-row md:flex-col gap-6">
         {medie.map((icon, index) => (
           <motion.li
             key={index}

@@ -27,11 +27,13 @@ export default function AboutPage() {
   return (
     <div className="bg-white mt-10 md:mt-20">
       {/* Hero */}
-      <motion.section className="bg-gradient-to-r from-slate-900 to-blue-900 px-6 py-20" initial="hidden" whileInView="show" variants={fadeInUp}>
+      <motion.section className="bg-[#009999] px-6 py-10" initial="hidden" whileInView="show" variants={fadeInUp}>
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-5xl font-bold mb-6">About OneTimeX</h1>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-6"></div>
-          <p className="text-xl opacity-90">Next-generation investment platform simplifying wealth creation since January 2024.</p>
+          <p className="text-xl bg-gradient-to-br from-gray-200 to-white bg-clip-text text-transparent opacity-90">Next-generation investment platform simplifying wealth creation since January 2024.India’s Fastest-Growing Platform for Unlisted Shares, Pre-IPO Investments & Wealth Solutions
+
+Launched on January 1st, 2024, OneTimeX is a modern investment platform helping retail and HNI investors grow wealth through unlisted shares, Pre-IPO stocks, listed equities, and custom insurance plans — all via SEBI-compliant intermediaries.</p>
         </div>
       </motion.section>
 
@@ -54,7 +56,7 @@ export default function AboutPage() {
       </section>
 
       {/* Features */}
-      <section className="px-6 py-16 bg-slate-900 text-white">
+      <section className="px-6 py-16 bg-[#009999] text-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Why Choose OneTimeX?</h2>
           <div className="grid md:grid-cols-5 gap-6 text-center">

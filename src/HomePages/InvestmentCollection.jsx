@@ -56,7 +56,7 @@ const investments = [
 export default function InvestmentSection() {
   return (
     <motion.section
-      className="bg-green-50 rounded-3xl px-6 py-16 md:px-20 container mx-auto"
+      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20 container mx-auto"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
@@ -75,7 +75,7 @@ export default function InvestmentSection() {
         {investments.map((item, idx) => (
           <motion.div
             key={idx}
-            className="bg-white shadow-md rounded-xl p-6 text-center hover:shadow-xl transition-all duration-300"
+            className="bg-white shadow-md rounded-xl p-3 text-center hover:shadow-xl transition-all duration-300"
             variants={fadeInUp}
             whileHover={{ scale: 1.03 }}
           >

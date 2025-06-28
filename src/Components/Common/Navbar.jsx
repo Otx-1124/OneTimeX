@@ -114,100 +114,47 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="w-full bg-slate-200  px-4 pb-4 space-y-4 text-gray-700 font-medium lg:hidden">
-          <div className="mt-4 relative">
-            <input
-              onClick={handleSearch}
-              type="text"
-              placeholder="Search Markets..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <Search className="absolute top-2 right-3 text-gray-500" />
-          </div>
-          <NavLink
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/trade"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-            Trade & Invest
-          </NavLink>
-          <NavLink
-            to="/blog"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-            Blog
-          </NavLink>
-          <NavLink
-            to="/explore"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-            Explore
-          </NavLink>
-          <NavLink
-            to="/trade"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-           Trade & Invest
-          </NavLink>
-          <NavLink
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              isActive
-                ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                : "block hover:text-blue-500"
-            }
-          >
-            About
-          </NavLink>
-          {user ? (
-            <Link
-              to="/"
-              className="flex flex-col text-blue-600 mt-5 items-center"
-            >
-              <ProfileSection name={user.name} email={user.email} />
-            </Link>
-          ) : (
-            <Link
-      
-              to="/login"
-              className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700  border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
-            >
-              Login
-            </Link>
-          )}
-        </div>
-      )}
+  <div className="w-full bg-slate-200 px-4 pb-4 space-y-4 text-gray-700 font-medium lg:hidden">
+    <div className="mt-4 relative">
+      <input
+        onClick={handleSearch}
+        type="text"
+        placeholder="Search Markets..."
+        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <Search className="absolute top-2 right-3 text-gray-500" />
+    </div>
+
+    {navItems.map(({ path, label }, idx) => (
+      <NavLink
+        key={idx}
+        to={path}
+        onClick={() => setIsOpen(false)}
+        className={({ isActive }) =>
+          isActive
+            ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
+            : "block hover:text-blue-500"
+        }
+      >
+        {label}
+      </NavLink>
+    ))}
+
+    {user ? (
+      <Link to="/" className="flex flex-col text-blue-600 mt-5 items-center">
+        <ProfileSection name={user.name} email={user.email} />
+      </Link>
+    ) : (
+      <Link
+        to="/login"
+        className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
+      >
+        Login
+      </Link>
+    )}
+  </div>
+)}
+
     </div>
   );
 };

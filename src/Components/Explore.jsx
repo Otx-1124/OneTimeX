@@ -12,6 +12,7 @@ import {
   Star,
   TrendingUpIcon,
 } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const InvestmentCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -203,7 +204,7 @@ const InvestmentCards = () => {
 
   return (
     <motion.div
-     className="min-h-screen bg-gradient-to-br from-green-100 via-blue-100 to-purple-900 px-5 md:px-20 py-10"
+     className="min-h-screen bg-[#009999]  bg-opacity-20 px-5 md:px-20 py-10"
       initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -215,14 +216,14 @@ const InvestmentCards = () => {
         </h1>
 
         {/* Cards Grid */}
-        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cardData.map((card) => {
             const IconComponent = card.icon;
             return (
               <div
                 key={card.id}
                 onClick={() => openPopup(card)}
-                className={`${card.color} p-6 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-3xl`}
+                className={`${card.color} p-2 rounded-2xl shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-3xl`}
               >
                 <div className="flex items-center justify-between mb-4">
                   <IconComponent className="text-white" size={32} />
@@ -278,7 +279,7 @@ const InvestmentCards = () => {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 relative">
                 <section className="mb-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
                     What is {selectedCard.title}?
@@ -310,6 +311,10 @@ const InvestmentCards = () => {
                     ))}
                   </ul>
                 </section>
+                <div className="absolute bottom-[25%] right-5 flex flex-col justify-center gap-3">
+                 <h1 className="text-red-600">Need help..?</h1>
+                 <a className="text-4xl text-green-700 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>
+                </div>
               </div>
             </div>
           </motion.div>

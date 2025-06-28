@@ -28,7 +28,7 @@ const Banner = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="w-full md:h-screen sm:h-screen bg-gradient-to-br from-blue-50 to-white flex items-center container mx-auto justify-center px-6 sm:px-10 py-10 relative">
+    <div className="w-full md:h-screen sm:h-screen bg-[#009999] flex items-center container mx-auto justify-center px-6 sm:px-10 py-10 relative">
       <div className="max-w-7xl w-full flex flex-col md:flex-row px-6 items-center justify-between gap-10 ml-3">
 
         {/* Left Section */}
