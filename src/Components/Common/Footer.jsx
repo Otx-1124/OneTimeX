@@ -114,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Partners Section */}
-        <div className="mt-5 border-t border-gray-200 ml-5 mr-2">
+        <div className="mt-5  ml-5 mr-2">
           <button 
             onClick={() => toggleSection('partners')}
             className="flex items-center justify-between w-full text-left md:cursor-default"

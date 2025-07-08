@@ -28,9 +28,9 @@ const Banner = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-green-100 to-white flex items-center justify-center px-6 py-20">
+    <div className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-green-100 to-white flex items-center justify-center px-6 py-10">
       <motion.div
-        className="max-w-6xl w-full text-center space-y-12"
+        className="max-w-6xl w-full text-center space-y-8"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
@@ -42,7 +42,7 @@ const Banner = () => {
           variants={fadeInUp}
         >
           <Star className="w-5 h-5 text-yellow-500 mr-2" />
-          <span className="text-blue-800 font-semibold">India's Trusted Investment Platform</span>
+          <span className="text-blue-800 text-sm Md:font-semibold">India's Trusted Investment Platform</span>
         </motion.div>
 
         {/* Main Heading */}
@@ -95,9 +95,9 @@ const Banner = () => {
         >
           <button
             onClick={() => setShowModal(true)}
-            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-lg font-semibold rounded-2xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-3"
+            className="px-10 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm md:text-lg font-semibold rounded-2xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-3"
           >
-            <TrendingUp className="w-6 h-6" />
+            <TrendingUp className="w-6  md:h-6" />
             <span>Open Free Demat Account</span>
           </button>
 

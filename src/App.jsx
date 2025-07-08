@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Home from './Components/Home'
 import SignupPage from './Components/Signup'
 import LoginPage from './Components/Login'
@@ -10,6 +10,7 @@ import Explore from './Components/Explore'
 import Connect from './Components/Connect'
 import ScrollToTop from './Components/ScrolltoTop'
 import Signup from './Components/Signup'
+import MainProfile from './Components/MainProfile'
 
 
 
@@ -18,6 +19,7 @@ function App() {
 
   return (
    <>
+   <ScrollToTop>
     <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/signup' element={<Signup/>}/>
@@ -27,7 +29,10 @@ function App() {
       <Route path='/termsCon' element={<TermsAndPolicies/>}/>
       <Route path='/explore' element={<Explore/>}/>
       <Route path='/connectUs' element={<Connect/>}/>
+      <Route path='/profile-section' element={<MainProfile/>}/>
+      <Route path="*" element={<h1>🚫 Page Not Found</h1>} />
     </Routes>
+   </ScrollToTop>
    </>
   )
 }

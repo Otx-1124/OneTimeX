@@ -1,3 +1,4 @@
+
 import { ArrowBigRightIcon } from "lucide-react";
 import React from "react";
 import { useState } from "react";
@@ -236,7 +237,7 @@ const UnlistedListed = () => {
 
             <div className="flex flex-col sm:flex-row justify-between items-center sm:w-2/3 sm:pl-4 gap-2 sm:gap-0">
               <div className="flex flex-col text-center sm:text-left">
-                <h1 className="font-bold text-[#009999] text-base sm:text-lg">{company.name}</h1>
+                <h1 className="font-bold  text-base sm:text-lg">{company.name}</h1>
                 <p className="text-sm sm:text-base">{company.price}</p>
               </div>
               <ArrowBigRightIcon className="text-xl hover:text-yellow-700" />

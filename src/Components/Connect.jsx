@@ -50,7 +50,7 @@ const fallIn = {
 const Connect = () => {
   return (
     <motion.div
-      className="w-full py-10 mt-10 md:mt-20 px-4 sm:px-6 lg:px-10 container relative mx-auto bg-gradient-to-br from-green-100 to-blue-100"
+      className="w-full py-7 mt-10 md:mt-10 px-4 sm:px-6 lg:px-10 container relative mx-auto bg-gradient-to-br from-green-100 to-blue-100"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}

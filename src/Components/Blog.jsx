@@ -26,14 +26,14 @@ const itemVariants = {
 
 const BlogPage = () => {
   return ( 
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-yellow-100 to-blue-50 py-12 px-4 sm:px-6 lg:px-8 font-sans mt-20">
+    <div className="min-h-screen bg-gradient-to-br from-green-100 via-yellow-100 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 font-sans mt-10">
       {/* Floating Decorative Elements */}
-      <div className="fixed top-20 left-10 w-32 h-32 rounded-full bg-blue-200 opacity-20 blur-xl"></div>
+      <div className="fixed top-20 left-10 w-32 h-32 rounded-full bg-blue-200 opacity-20 blur-xl "></div>
       <div className="fixed bottom-40 right-20 w-48 h-48 rounded-full bg-indigo-200 opacity-15 blur-xl"></div>
       
       {/* Main Container */}
       <motion.div 
-        className="max-w-5xl mx-auto relative bg-gradient-to-br from-green-50 to-yellow-50"
+        className="max-w-5xl mx-auto relative bg-gradient-to-br from-green-50 to-yellow-50 "
         initial="hidden"
         animate="visible"
         variants={containerVariants}

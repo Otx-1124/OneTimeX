@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { User2, X } from "lucide-react";
+import {  User2, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProfileSection = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleProfile = () => setIsOpen(!isOpen);
   const savedUser = JSON.parse(localStorage.getItem("user"));
-  console.log(savedUser);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -18,7 +18,7 @@ const ProfileSection = (props) => {
   };
 
   const Details = [
-    { name: "Account Details" },
+   
     { name: "Personal Details" },
     { name: "Demat Details" },
     { name: "KYC Details" },
@@ -49,16 +49,17 @@ const ProfileSection = (props) => {
           </button>
 
           {/* Profile Info */}
-          <div className="mt-12">
+          <div className="mt-5">
+            <h1 className="font-bold text-2xl text-[#009999]">Account Details</h1>
             <h2 className="text-xl font-bold mt-4">{props.name}</h2>
             <p className="text-gray-500">{props.email}</p>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-6 space-y-4 flex flex-col">
               {Details.map((items) => {
                 return (
-                  <button className="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-900">
+                  <Link to="/profile-section" onClick={()=>{setIsOpen(false)}} className="w-full py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-900">
                     {items.name}
-                  </button>
+                  </Link>
                 );
               })}
 

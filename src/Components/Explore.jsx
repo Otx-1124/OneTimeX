@@ -204,7 +204,7 @@ const InvestmentCards = () => {
 
   return (
     <motion.div
-     className="min-h-screen bg-[#009999]  bg-opacity-20 px-5 md:px-20 py-10"
+     className="min-h-screen bg-[#009999]  bg-opacity-20 px-5 md:px-20 py-5"
       initial="hidden"
             whileInView="show"
             viewport={{ once: true }}

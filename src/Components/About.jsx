@@ -25,7 +25,7 @@ export default function AboutPage() {
   const features = ["Transparent & Trusted", "Research & Insights", "Personalized Support", "Digital Experience", "Built for Indians"];
 
   return (
-    <div className="bg-white mt-10 md:mt-20">
+    <div className="bg-white mt-10 md:mt-10">
       {/* Hero */}
       <motion.section className="bg-[#009999] px-6 py-10" initial="hidden" whileInView="show" variants={fadeInUp}>
         <div className="max-w-4xl mx-auto text-center text-white">

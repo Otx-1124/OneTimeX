@@ -10,7 +10,6 @@ import ScrollToTop from './Components/ScrolltoTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-   <ScrollToTop/>
     <Navbar/>
     <App />
     <SocialFooter/>
