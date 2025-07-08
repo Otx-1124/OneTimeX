@@ -23,7 +23,7 @@ const Navbar = () => {
     { path: "/blog", label: "Blog" },
     { path: "/trade", label: "Trade & Invest" },
     { path: "/about", label: "About" },
-    { path: "/connectUs", label: <HeadphonesIcon /> },
+    { path: "/connect-us", label: <HeadphonesIcon /> },
   ];
 
   const suggestions = [

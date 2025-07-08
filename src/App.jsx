@@ -26,11 +26,10 @@ function App() {
       <Route path='/login' element={<LoginPage/>}/>
       <Route path='/about' element={<AboutPage/>}/>
       <Route path='/blog' element={<BlogPage/>}/>
-      <Route path='/termsCon' element={<TermsAndPolicies/>}/>
+      <Route path='/terms-con' element={<TermsAndPolicies/>}/>
       <Route path='/explore' element={<Explore/>}/>
-      <Route path='/connectUs' element={<Connect/>}/>
+      <Route path='/connect-us' element={<Connect/>}/>
       <Route path='/profile-section' element={<MainProfile/>}/>
-      <Route path="*" element={<h1>🚫 Page Not Found</h1>} />
     </Routes>
    </ScrollToTop>
    </>
