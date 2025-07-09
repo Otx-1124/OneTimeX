@@ -7,9 +7,12 @@ import { Link } from "react-router-dom";
 const ProfileSection = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
+
   const toggleProfile = () => setIsOpen(!isOpen);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
+
+
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -19,11 +22,8 @@ const ProfileSection = (props) => {
 
   const Details = [
    
-    { name: "Personal Details" },
-    { name: "Demat Details" },
-    { name: "KYC Details" },
-    { name: "Charges & Fees" },
-    { name: "Close OneTimeX Account" },
+    { name: "Personal Details and more.." },
+
   ];
 
   return (
@@ -34,6 +34,8 @@ const ProfileSection = (props) => {
         {props.name}
       </button>
 
+      
+
       {/* Sidebar */}
       {isOpen && (
         <motion.div
@@ -41,7 +43,7 @@ const ProfileSection = (props) => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 300, damping: 30 }}
-          className="fixed top-0 right-0 w-80 h-full bg-gradient-to-br from-blue-100 to-green-100 shadow-lg z-50 p-6 border-l border-gray-200"
+          className="fixed top-0 right-0 w-80 h-auto bg-white rounded-lg mt-20 mr-10 shadow-lg z-50 p-6 border-l border-gray-200"
         >
           {/* Close Button */}
           <button onClick={toggleProfile} className="absolute top-4 right-4">
@@ -57,7 +59,7 @@ const ProfileSection = (props) => {
             <div className="mt-6 space-y-4 flex flex-col">
               {Details.map((items) => {
                 return (
-                  <Link to="/profile-section" onClick={()=>{setIsOpen(false)}} className="w-full py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-900">
+                  <Link to="/profile-section" onClick={()=>{setIsOpen(false)}} className="w-full py-2 bg-white  text-center rounded-lg hover:bg-gray-200 border border-gray-300">
                     {items.name}
                   </Link>
                 );

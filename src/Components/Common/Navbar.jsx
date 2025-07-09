@@ -39,11 +39,14 @@ const Navbar = () => {
   };
 
   const [user, setUser] = useState(null);
+      
+
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
+      
     }
   }, []);
 
@@ -141,6 +144,7 @@ const Navbar = () => {
 
           {user ? (
             <Link
+            
               to="/"
               className="flex flex-col text-blue-600 mt-5 items-center"
             >
