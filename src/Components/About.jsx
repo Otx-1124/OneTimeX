@@ -13,7 +13,9 @@ export default function AboutPage() {
     { name: "Sandeep Pandit", role: "Frontend Developer", img: "/sandeep.jpg" },
     { name: "Ankkit Ghag", role: "Marketing & Sales Lead", img: "/ankit.jpg" },
     { name: "Shravani", role: "Business Development Executive", img: "/logoOne.jpg" },
-    { name: "Prabhat", role: "Senior Business Development Executive", img: "/logoOne.jpg" }
+    { name: "Prabhat", role: "Senior Business Development Executive", img: "/logoOne.jpg" },
+    { name: "Aashtha Shrivastava", role: "Video Content Creator", img: "/logoOne.jpg" },
+    { name: "Raj Dhani", role: "Senior Relationship Manager", img: "/logoOne.jpg" },
   ];
 
   const verticals = [
@@ -83,27 +85,43 @@ Launched on January 1st, 2024, OneTimeX is a modern investment platform helping 
       </section>
 
       {/* Team */}
-      <section className="px-6 py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
-          
-          <div className="text-center mb-12">
-            <img src={ceo.img} alt={ceo.name} className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-blue-200" />
-            <h3 className="text-xl font-bold">{ceo.name}</h3>
-            <p className="text-gray-600">{ceo.role}</p>
-          </div>
+     <section className="px-6 py-16 bg-gray-50">
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
+    
+    <div className="text-center mb-12">
+      <img src={ceo.img} alt={ceo.name} className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-blue-200" />
+      <h3 className="text-xl font-bold">{ceo.name}</h3>
+      <p className="text-gray-600">{ceo.role}</p>
+    </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {team.map((member, i) => (
-              <div key={i} className="text-center bg-white p-4 rounded-lg shadow">
-                <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
-                <h4 className="font-semibold">{member.name}</h4>
-                <p className="text-sm text-gray-600">{member.role}</p>
-              </div>
-            ))}
+    <div className="space-y-6">
+      {/* First Row - 4 members */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        {team.slice(0, 4).map((member, i) => (
+          <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
+            <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
+            <h4 className="font-semibold">{member.name}</h4>
+            <p className="text-sm text-gray-600">{member.role}</p>
           </div>
+        ))}
+      </div>
+
+      {/* Second Row - 3 members centered */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-2xl">
+          {team.slice(4, 7).map((member, i) => (
+            <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
+              <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
+              <h4 className="font-semibold">{member.name}</h4>
+              <p className="text-sm text-gray-600">{member.role}</p>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }
