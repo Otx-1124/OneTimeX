@@ -312,8 +312,11 @@ const InvestmentCards = () => {
                   </ul>
                 </section>
                 <div className="absolute bottom-[25%] right-5 flex flex-col justify-center gap-3">
-                 <h1 className="text-red-600">Need help..?</h1>
+                 <h1 className="text-red-600 text-center">Need help..?</h1>
                  <a className="text-4xl text-green-700 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>
+                 <div  className={`${selectedCard.color} p-2 rounded-t-2xl text-white`}>
+                    <p>Or Contact : 7045035773</p>
+                 </div>
                 </div>
               </div>
             </div>

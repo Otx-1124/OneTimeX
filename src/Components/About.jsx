@@ -33,9 +33,14 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center text-white">
           <h1 className="text-5xl font-bold mb-6">About OneTimeX</h1>
           <div className="w-20 h-1 bg-blue-400 mx-auto mb-6"></div>
-          <p className="text-xl bg-gradient-to-br from-gray-200 to-white bg-clip-text text-transparent opacity-90">Next-generation investment platform simplifying wealth creation since January 2024.India’s Fastest-Growing Platform for Unlisted Shares, Pre-IPO Investments & Wealth Solutions
+          <p className="text-xl bg-gradient-to-br from-gray-200 to-white bg-clip-text text-transparent opacity-90">About OneTimeX
 
-Launched on January 1st, 2024, OneTimeX is a modern investment platform helping retail and HNI investors grow wealth through unlisted shares, Pre-IPO stocks, listed equities, and custom insurance plans — all via SEBI-compliant intermediaries.</p>
+Founded by Vishal Dubey in January 2024, OneTimeX is a next-generation investment platform helping Indian investors access curated opportunities in unlisted shares, Pre-IPO deals, listed equities, and wealth protection products.
+
+Built with a mission to democratize private equity access for retail and HNI investors, OneTimeX bridges the gap between early-stage wealth-building assets and trusted SEBI-compliant channels.
+
+Today, under the leadership of Vishal Dubey (Founder & CEO), OneTimeX is growing rapidly with support from reputed B2B partners like Alice Blue and top insurance distributors across India.
+</p>
         </div>
       </motion.section>
 
@@ -85,32 +90,58 @@ Launched on January 1st, 2024, OneTimeX is a modern investment platform helping 
       </section>
 
       {/* Team */}
-     <section className="px-6 py-16 bg-gray-50">
-  <div className="max-w-5xl mx-auto">
-    <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
-    
-    <div className="text-center mb-12">
+    <section className="px-6 py-16 bg-gray-50">
+  <div className="max-w-6xl mx-auto">
+    <h2 className="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+
+    {/* CEO */}
+    <div className="text-center mb-16">
       <img src={ceo.img} alt={ceo.name} className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-blue-200" />
       <h3 className="text-xl font-bold">{ceo.name}</h3>
       <p className="text-gray-600">{ceo.role}</p>
     </div>
 
-    <div className="space-y-6">
-      {/* First Row - 4 members */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-        {team.slice(0, 4).map((member, i) => (
-          <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
-            <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
-            <h4 className="font-semibold">{member.name}</h4>
-            <p className="text-sm text-gray-600">{member.role}</p>
-          </div>
-        ))}
+    {/* 3 Teams in a Row */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* IT Team */}
+      <div>
+        <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">IT Team</h4>
+        <div className="space-y-6">
+          {team.filter(member =>
+            ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
+          ).map((member, i) => (
+            <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
+              <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
+              <h4 className="font-semibold">{member.name}</h4>
+              <p className="text-sm text-gray-600">{member.role}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Second Row - 3 members centered */}
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-2xl">
-          {team.slice(4, 7).map((member, i) => (
+      {/* Social Team */}
+      <div>
+        <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">Social Team</h4>
+        <div className="space-y-6">
+          {team.filter(member =>
+            ["Raj Dhani", "Aashtha Shrivastava"].includes(member.name)
+          ).map((member, i) => (
+            <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
+              <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
+              <h4 className="font-semibold">{member.name}</h4>
+              <p className="text-sm text-gray-600">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Sales Team */}
+      <div>
+        <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">Sales Team</h4>
+        <div className="space-y-6">
+          {team.filter(member =>
+            !["Raj Dhani", "Aashtha Shrivastava", "Sandeep Pandit", "Parag Yadav"].includes(member.name)
+          ).map((member, i) => (
             <div key={i} className="text-center bg-white py-4 px-3 rounded-lg shadow">
               <img src={member.img} alt={member.name} className="w-20 h-20 rounded-full mx-auto mb-3" />
               <h4 className="font-semibold">{member.name}</h4>
@@ -122,6 +153,7 @@ Launched on January 1st, 2024, OneTimeX is a modern investment platform helping 
     </div>
   </div>
 </section>
+
     </div>
   );
 }

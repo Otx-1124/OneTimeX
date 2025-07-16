@@ -68,10 +68,10 @@ const Navbar = () => {
             onClick={handleSearch}
             type="text"
             placeholder="Search Markets..."
-            className="w-full max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-11/12 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <div>
-            <Search className="absolute top-2 right-5 text-gray-500" />
+            <Search className="absolute top-2 right-14  text-gray-500" />
           </div>
         </div>
 

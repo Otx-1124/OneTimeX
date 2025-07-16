@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import OnetimexBlog from "../Tests/blogtest";
 
 // Animation variants
 const containerVariants = {
@@ -427,6 +428,7 @@ const BlogPage = () => {
           </div>
         </motion.div>
       </motion.div>
+      <OnetimexBlog/>
     </div>
   );
 };
@@ -455,6 +457,7 @@ const Section = ({ title, children, icon }) => {
         {children}
       </div>
     </motion.section>
+  
   );
 };
 

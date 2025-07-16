@@ -56,12 +56,14 @@ const investments = [
 export default function InvestmentSection() {
   return (
     <motion.section
-      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20 container mx-auto"
+      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20 "
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
+      <div className='container mx-auto'>
+
       <div className="text-center mb-14 max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Explore Our Investment Collections
@@ -87,6 +89,7 @@ export default function InvestmentSection() {
             </a>
           </motion.div>
         ))}
+      </div>
       </div>
     </motion.section>
   );

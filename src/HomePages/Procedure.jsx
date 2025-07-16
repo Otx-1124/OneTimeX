@@ -51,7 +51,7 @@ const Procedure = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <div className=" bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Background Elements */}
       
       <div className="relative px-4 sm:px-6 lg:px-10 py-5 container mx-auto">

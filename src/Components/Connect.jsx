@@ -14,9 +14,9 @@ import { motion } from "framer-motion";
 import { BsWhatsapp } from "react-icons/bs";
 
 const contacts = [
-  { icon: <Phone />, text: "7045035773" },
-  { icon: <Mail />, text: "Connect@onetimex.in" },
-  { icon: <BsWhatsapp />, text: "7045035773" },
+  { icon: <Phone />, text: "7045035773", color:"bg-gradient-to-br from-purple-800 to-blue-400" },
+  { icon: <Mail />, text: "Connect@onetimex.in", color:"bg-gradient-to-br from-purple-800 to-blue-400" },
+  { icon: <BsWhatsapp />, text: "7045035773" , color:"bg-green-500" },
 ];
 
 const medie = [<Facebook />, <Instagram />, <Linkedin />, <FaXTwitter />];
@@ -64,7 +64,7 @@ const Connect = () => {
         {contacts.map((item, index) => (
           <li
             key={index}
-            className="flex items-center gap-2 px-5 py-3 border shadow-xl border-gray-500 bg-gradient-to-br from-purple-800 to-blue-400 text-white rounded-lg min-w-[250px] justify-center"
+              className={`${item.color} flex items-center gap-2 px-5 py-3 border shadow-xl border-gray-500  text-white rounded-lg min-w-[250px] justify-center`}
           >
             {item.icon} {item.text}
           </li>

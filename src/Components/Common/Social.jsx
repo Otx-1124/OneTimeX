@@ -43,7 +43,7 @@ const SocialFooter = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-blue-100 to-green-100 text-black py-12 px-6 md:px-16 container mx-auto">
+    <footer className="bg-gradient-to-br from-blue-100 to-green-100 text-black py-12 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
         <h3 className="text-sm uppercase tracking-wide text-gray-400 mb-2">
           Social

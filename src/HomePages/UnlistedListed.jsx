@@ -161,15 +161,16 @@ const UnlistedListed = () => {
 
   return (
     <motion.div
-      className="container mx-auto bg-gradient-to-br from-blue-50 to-green-50 w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
+      className=" bg-gradient-to-br from-blue-50 to-green-50 w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       variants={fadeInUp}
     >
       {/* Heading */}
-      <motion.div
-        className="flex flex-col justify-center items-center px-4 sm:px-10 gap-3 text-center"
+     <div className="container mx-auto">
+       <motion.div
+        className="flex flex-col justify-center items-center px-4 sm:px-10 gap-3 text-center "
         custom={1}
         variants={fadeInUp}
       >
@@ -245,6 +246,7 @@ const UnlistedListed = () => {
           </motion.div>
         ))}
       </motion.div>
+     </div>
     </motion.div>
   );
 };

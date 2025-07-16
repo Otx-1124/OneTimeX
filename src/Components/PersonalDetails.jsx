@@ -43,6 +43,7 @@ const PersonalDetailsSection = ({ currUser, setCurrUser }) => {
     setCurrUser(formData);
     setAlertVisible(true);
     setTimeout(() => setAlertVisible(false), 5000); // Auto hide after 3s
+    window.location.reload()
   };
 
   return (

@@ -53,6 +53,7 @@ export default function InsightsVideoSection() {
       viewport={{ once: true, amount: 0.2 }}
       variants={fadeInUp}
     >
+      <div className="container mx-auto">
       <div className="text-center mb-14 max-w-3xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
           Insights Video
@@ -108,6 +109,7 @@ export default function InsightsVideoSection() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </motion.section>
   );

@@ -14,14 +14,14 @@ const KYCDetails = () => {
 
       <div className="space-y-2 text-gray-700">
         <p>
-          <span className="font-medium text-gray-600">Aadhar:</span> **** **** 1234
+          <span className="font-medium text-gray-600">Aadhar:</span>N/A
         </p>
         <p>
-          <span className="font-medium text-gray-600">PAN:</span> ABCDE1234F
+          <span className="font-medium text-gray-600">PAN:</span>N/A
         </p>
         <p>
           <span className="font-medium text-gray-600">Status:</span>{" "}
-          <span className="text-green-600 font-medium">Verified</span>
+          <span className="text-green-600 font-medium">N/A</span>
         </p>
       </div>
     </motion.div>

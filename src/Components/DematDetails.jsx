@@ -14,16 +14,16 @@ const DematDetails = () => {
 
       <div className="space-y-2 text-gray-700">
         <p>
-          <span className="font-medium text-gray-600">DP Name:</span> XYZ Securities Pvt. Ltd.
+          <span className="font-medium text-gray-600">DP Name:</span>N/A
         </p>
         <p>
-          <span className="font-medium text-gray-600">DP ID:</span> IN123456
+          <span className="font-medium text-gray-600">DP ID:</span> N/A
         </p>
         <p>
-          <span className="font-medium text-gray-600">Client ID:</span> 987654321
+          <span className="font-medium text-gray-600">Client ID:</span> N/A
         </p>
         <p>
-          <span className="font-medium text-gray-600">Nominee Name:</span> Prakash Pandit
+          <span className="font-medium text-gray-600">Nominee Name:</span> N/A
         </p>
       </div>
     </motion.div>
