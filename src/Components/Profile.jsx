@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {  User2, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -6,16 +6,21 @@ import { Link } from "react-router-dom";
 
 const ProfileSection = (props) => {
   const [isOpen, setIsOpen] = useState(false);
+  
 
+  const riskAvailable = localStorage.getItem("riskDisclosureAccepted")
+  
 
   const toggleProfile = () => setIsOpen(!isOpen);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-
+  
+ 
 
 
   const handleLogout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("riskDisclosureAccepted");
     navigate("/login");
     window.location.reload();
   };
