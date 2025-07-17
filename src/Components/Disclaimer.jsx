@@ -2,18 +2,26 @@ import React, { useEffect, useState } from "react";
 
 const RiskDisclosurePopup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [isChecked, setIsChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 3000);
-    return () => clearTimeout(timer);
+    const alreadyAccepted = localStorage.getItem("riskDisclosureAccepted");
+
+    if (!alreadyAccepted) {
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
- 
+  const handleCheckbox = (e) => {
+    setIsChecked(e.target.checked);
+  };
 
   const handleClose = () => {
+    localStorage.setItem("riskDisclosureAccepted", "true");
     setShowPopup(false);
   };
 
@@ -40,7 +48,7 @@ const RiskDisclosurePopup = () => {
             type="checkbox"
             id="disclosure"
             className="mr-2"
-          
+            onChange={handleCheckbox}
           />
           <label htmlFor="disclosure" className="text-sm">I have read the risk disclosure.</label>
         </div>
@@ -50,7 +58,7 @@ const RiskDisclosurePopup = () => {
             isChecked ? "bg-yellow-500 hover:bg-yellow-600" : "bg-gray-300 cursor-not-allowed"
           }`}
           onClick={handleClose}
-          
+          disabled={!isChecked}
         >
           I Understand
         </button>
