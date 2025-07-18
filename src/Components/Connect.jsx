@@ -14,9 +14,9 @@ import { motion } from "framer-motion";
 import { BsWhatsapp } from "react-icons/bs";
 
 const contacts = [
-  { icon: <Phone />, text: "7045035773", color:"bg-gradient-to-br from-purple-800 to-blue-400" },
+  { icon: <Phone />, text: "7045035773", color:"bg-gradient-to-br from-purple-800 to-blue-400" ,},
   { icon: <Mail />, text: "Connect@onetimex.in", color:"bg-gradient-to-br from-purple-800 to-blue-400" },
-  { icon: <BsWhatsapp />, text: "7045035773" , color:"bg-green-500" },
+  { icon: <BsWhatsapp />, text: "7045035773" , color:"bg-green-500" ,url:"https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services" },
 ];
 
 const medie = [<Facebook />, <Instagram />, <Linkedin />, <FaXTwitter />];
@@ -62,12 +62,12 @@ const Connect = () => {
 
       <ul className="flex flex-wrap justify-center sm:justify-around mt-5 gap-3">
         {contacts.map((item, index) => (
-          <li
+          <a href={item.url}
             key={index}
               className={`${item.color} flex items-center gap-2 px-5 py-3 border shadow-xl border-gray-500  text-white rounded-lg min-w-[250px] justify-center`}
           >
             {item.icon} {item.text}
-          </li>
+          </a>
         ))}
       </ul>
 
@@ -115,21 +115,7 @@ const Connect = () => {
         </div>
       </form>
 
-      {/* Floating social media icons - only visible on md and above */}
-      <div className=" flex absolute bottom-0 md:top-[35%] right-4 flex-row md:flex-col gap-6">
-        {medie.map((icon, index) => (
-          <motion.li
-            key={index}
-            className="list-none text-xl hover:text-blue-500 cursor-pointer"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            variants={fallIn}
-          >
-            {icon}
-          </motion.li>
-        ))}
-      </div>
+      
     </motion.div>
   );
 };

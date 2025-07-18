@@ -35,3 +35,18 @@ const AIFCard = (props) => {
 };
 
 export default AIFCard;
+
+{/* <div className=" flex absolute bottom-0 md:top-[35%] right-4 flex-row md:flex-col gap-6">
+        {medie.map((icon, index) => (
+          <motion.li
+            key={index}
+            className="list-none text-xl hover:text-blue-500 cursor-pointer"
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={fallIn}
+          >
+            <a href="">{icon}</a>
+          </motion.li>
+        ))}
+      </div> */}
