@@ -1,5 +1,6 @@
 import { ArrowBigRightDash, CheckCircle, TrendingUp, Shield, Award } from "lucide-react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Procedure = () => {
   const steps = [
@@ -133,7 +134,7 @@ const Procedure = () => {
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
               <div className="text-center mb-6">
                 <div className="flex items-center justify-center gap-3 mb-3">
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+                  <h2  className="text-xl sm:text-2xl font-bold text-gray-900">
                     Start Investing With{" "}
                     <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                       OnetimeX
@@ -174,10 +175,10 @@ const Procedure = () => {
 
               {/* Additional CTA */}
               <div className="mt-6 text-center">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:from-green-600 hover:to-blue-600 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1">
+                <Link to="/error" className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:from-green-600 hover:to-blue-600 transition-all duration-300 cursor-pointer hover:shadow-lg hover:-translate-y-1">
                   <CheckCircle className="w-4 h-4" />
                   Open Free Demat Account
-                </div>
+                </Link>
                 <p className="text-gray-500 text-xs mt-2">
                   Zero brokerage on equity delivery trades*
                 </p>

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { X, TrendingUp, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+ 
+
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -24,8 +27,12 @@ const leftShrink = {
   },
 };
 
+
+
 const Banner = () => {
   const [showModal, setShowModal] = useState(false);
+
+
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-green-100 to-white flex items-center justify-center px-6 py-10">
@@ -148,7 +155,7 @@ const Banner = () => {
               <X size={24} />
             </button>
 
-            <h2 className="text-2xl font-bold text-center text-blue-900 mb-6">
+            <h2  className="text-2xl font-bold text-center text-blue-900 mb-6">
               Open Free Demat Account with <span className="text-blue-900">AliceBlue</span>
             </h2>
 
@@ -174,7 +181,7 @@ const Banner = () => {
               <input type="checkbox" className="accent-blue-600 mt-1" />
               <span>
                 By proceeding you’re agreeing to our{" "}
-                <Link to="/terms&con" className="text-blue-600 underline">
+                <Link to="/terms-con" className="text-blue-600 underline">
                   T&C
                 </Link>
               </span>

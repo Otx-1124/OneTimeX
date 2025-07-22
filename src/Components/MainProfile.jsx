@@ -76,7 +76,7 @@ const MainProfile = () => {
   };
 
   return (
-    <div className="mt-10 py-10 px-4 md:px-10 flex flex-col lg:flex-row gap-5 ">
+    <div className="mt-10 py-10 px-4 md:px-10 flex flex-col lg:flex-row gap-5 bg-[#009999] bg-opacity-20">
       {/* Sidebar */}
       <div className="px-5 py-6 flex flex-col border border-gray-300 w-full lg:w-2/6 rounded-xl items-center bg-white">
         {/* Profile Picture */}

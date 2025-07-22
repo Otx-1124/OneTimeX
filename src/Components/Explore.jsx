@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import {
@@ -16,6 +16,15 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const InvestmentCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
+
+
+   useEffect(() => {
+    if (selectedCard) {
+      window.lenis?.stop();
+    } else {
+      window.lenis?.start();
+    }
+  }, [selectedCard]);
 
   const cardData = [
   {
@@ -216,7 +225,7 @@ const InvestmentCards = () => {
         </h1>
 
         {/* Cards Grid */}
-        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cardData.map((card) => {
             const IconComponent = card.icon;
             return (
@@ -311,11 +320,11 @@ const InvestmentCards = () => {
                     ))}
                   </ul>
                 </section>
-                <div className="absolute bottom-[25%] right-5 flex flex-col justify-center gap-3">
-                 <h1 className="text-red-600 text-center">Need help..?</h1>
-                 <a className="text-4xl text-green-700 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>
-                 <div  className={`${selectedCard.color} p-2 rounded-t-2xl text-white`}>
-                    <p>Or Contact : 7045035773</p>
+                <div className={`${selectedCard.color} bg-opacity-5 absolute -bottom-30 right-25 right-5 flex flex-col justify-center gap-3 p-5  rounded-lg`}>
+                 <h1 className="text-red-800 text-center">Need help..?</h1>
+                 <a className="text-4xl text-green-900 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>
+                 <div  className={` text-white`}>
+                    <p>Contact : 7045035773</p>
                  </div>
                 </div>
               </div>

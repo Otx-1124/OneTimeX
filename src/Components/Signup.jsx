@@ -29,9 +29,7 @@ export default function Signup() {
   window.location.reload()
 };
 
-  useEffect(()=>{
-    console.log(user)
-  },[user])
+
 
   return (
     <motion.section

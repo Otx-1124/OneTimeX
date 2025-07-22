@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Calculator, TrendingUp, TrendingDown, DollarSign, Percent } from "lucide-react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const SimpleTradingCalculator = () => {
   const [buyPrice, setBuyPrice] = useState('');
@@ -60,7 +61,12 @@ const SimpleTradingCalculator = () => {
     { type: "Long Term", tip: "Hold for months to years", success: "Lower Risk" },
   ];
 
+   
+
   return (
+
+   
+
     <div className="w-full bg-gradient-to-br from-blue-50 to-green-50 pt-24 pb-12 px-6 min-h-screen">
       <div className="max-w-3xl mx-auto">
         
@@ -255,9 +261,9 @@ const SimpleTradingCalculator = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <button className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <Link to="/signup" className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
             Start Trading with OnetimeX
-          </button>
+          </Link>
           <p className="text-gray-600 mt-2">Calculate before you trade - Trade smart, not hard</p>
         </motion.div>
       </div>

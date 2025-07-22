@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Teamcard from "../Tests/Teamcard";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -16,7 +17,7 @@ export default function AboutPage() {
     { name: "Parag Yadav", role: "IT Backend Developer", img: "/logoOne.jpg" },
     { name: "Sandeep Pandit", role: "Frontend Developer", img: "/sandeep.jpg" },
     { name: "Ankkit Ghag", role: "Marketing & Sales Lead", img: "/ankit.jpg" },
-     {
+    {
       name: "Prabhat",
       role: "Senior Business Development Executive",
       img: "/logoOne.jpg",
@@ -31,13 +32,12 @@ export default function AboutPage() {
       role: "Senior Relationship Manager",
       img: "/logoOne.jpg",
     },
-   
+
     {
       name: "Aashtha Shrivastava",
       role: "Video Content Creator",
       img: "/logoOne.jpg",
     },
-    
   ];
 
   const verticals = [
@@ -160,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="px-6 py-16 bg-gray-50">
+      <section className="px-6 py-16 bg-[#009999] bg-opacity-20">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             Meet Our Team
@@ -177,68 +177,14 @@ export default function AboutPage() {
             <p className="text-gray-600">{ceo.role}</p>
           </div>
 
-          {/* 3 Teams in a Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* IT Team */}
-            <div>
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">
-                IT Team
-              </h4>
-              <div className="space-y-6">
-                {team
-                  .filter((member) =>
-                    ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
-                  )
-                  .map((member, i) => (
-                    <div
-                      key={i}
-                      className="text-center bg-white py-4 px-3 rounded-lg shadow"
-                    >
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-3"
-                      />
-                      <h4 className="font-semibold">{member.name}</h4>
-                      <p className="text-sm text-gray-600">{member.role}</p>
-                    </div>
-                  ))}
-              </div>
-            </div>
-
-            {/* Social Team */}
-            <div>
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">
-                Social Team
-              </h4>
-              <div className="space-y-6">
-                {team
-                  .filter((member) =>
-                    ["Raj Duani", "Aashtha Shrivastava"].includes(member.name)
-                  )
-                  .map((member, i) => (
-                    <div
-                      key={i}
-                      className="text-center bg-white py-4 px-3 rounded-lg shadow"
-                    >
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-3"
-                      />
-                      <h4 className="font-semibold">{member.name}</h4>
-                      <p className="text-sm text-gray-600">{member.role}</p>
-                    </div>
-                  ))}
-              </div>
-            </div>
-
+          {/* 4 Teams in a col */}
+          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-20">
             {/* Sales Team */}
-            <div>
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4">
+            <div className="flex flex-col items-center justify-center">
+              <h4 className="text-xl font-semibold text-center text-[#009999]  mb-4  mb-4 pb-3">
                 Sales Team
               </h4>
-              <div className="space-y-6">
+              <div className="space-x-2 flex ml-10">
                 {team
                   .filter(
                     (member) =>
@@ -250,18 +196,72 @@ export default function AboutPage() {
                       ].includes(member.name)
                   )
                   .map((member, i) => (
-                    <div
-                      key={i}
-                      className="text-center bg-white py-4 px-3 rounded-lg shadow"
-                    >
-                      <img
-                        src={member.img}
-                        alt={member.name}
-                        className="w-20 h-20 rounded-full mx-auto mb-3"
-                      />
-                      <h4 className="font-semibold">{member.name}</h4>
-                      <p className="text-sm text-gray-600">{member.role}</p>
-                    </div>
+                    <Teamcard
+                      name={member.name}
+                      img={member.img}
+                      role={member.role}
+                    />
+                  ))}
+              </div>
+            </div>
+
+
+             {/* IT Team */}
+            <div className="flex flex-col">
+              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4  mb-4 pb-3">
+                IT Team
+              </h4>
+              <div className="flex gap-6 items-center justify-center">
+                {team
+                  .filter((member) =>
+                    ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
+                  )
+                  .map((member, i) => (
+                    <Teamcard
+                      name={member.name}
+                      img={member.img}
+                      role={member.role}
+                    />
+                  ))}
+              </div>
+            </div>
+           
+
+            {/* Social Team */}
+            <div>
+              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4 pb-3">
+                Social Team
+              </h4>
+              <div className="flex gap-6 items-center justify-center">
+                {team
+                  .filter((member) =>
+                    ["Aashtha Shrivastava"].includes(member.name)
+                  )
+                  .map((member, i) => (
+                    <Teamcard
+                      name={member.name}
+                      img={member.img}
+                      role={member.role}
+                    />
+                  ))}
+              </div>
+            </div>
+
+            
+
+            <div>
+              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4  mb-4 pb-3 ">
+                Management Team
+              </h4>
+              <div className="flex gap-6 items-center justify-center">
+                {team
+                  .filter((member) => ["Raj Duani"].includes(member.name))
+                  .map((member, i) => (
+                    <Teamcard
+                      name={member.name}
+                      img={member.img}
+                      role={member.role}
+                    />
                   ))}
               </div>
             </div>

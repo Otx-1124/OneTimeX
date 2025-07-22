@@ -15,10 +15,10 @@ const ChargesFees = () => {
       <div className="space-y-2 text-gray-700">
         <p>
           <span className="font-medium text-gray-600">Account Maintenance:</span>{" "}
-          ₹300/year
+        
         </p>
         <p>
-          <span className="font-medium text-gray-600">Brokerage:</span> 0.03%
+          <span className="font-medium text-gray-600">Brokerage:</span> 
         </p>
       </div>
     </motion.div>
