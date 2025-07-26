@@ -1,4 +1,4 @@
-import { ArrowBigRightDash, CheckCircle, TrendingUp, Shield, Award } from "lucide-react";
+import { ArrowBigRightDash, CheckCircle, TrendingUp, Shield, Award, Server } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -41,13 +41,15 @@ const Procedure = () => {
       title: "Listed | Mutual Funds",
       description: "Diversified portfolio options",
       color: "from-blue-600 to-blue-800",
-      hoverColor: "hover:from-blue-700 hover:to-blue-900"
+      hoverColor: "hover:from-blue-700 hover:to-blue-900",
+      paths:"/explore"
     },
     {
       title: "Insurance",
       description: "Protect your financial future",
       color: "from-green-600 to-green-800",
-      hoverColor: "hover:from-green-700 hover:to-green-900"
+      hoverColor: "hover:from-green-700 hover:to-green-900",
+      paths:"/explore"
     }
   ];
 
@@ -155,7 +157,7 @@ const Procedure = () => {
                     key={index}
                     className={`group relative overflow-hidden bg-gradient-to-r ${service.color} ${service.hoverColor} text-white rounded-xl p-4 cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1`}
                   >
-                    <div className="relative z-10 flex justify-between items-center">
+                    <Link to={service.paths} className="relative z-10 flex justify-between items-center">
                       <div>
                         <h3 className="font-semibold text-sm mb-1">
                           {service.title}
@@ -165,7 +167,7 @@ const Procedure = () => {
                         </p>
                       </div>
                       <ArrowBigRightDash className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                    </div>
+                    </Link>
                     
                     {/* Hover Effect Background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -108,9 +108,9 @@ const Banner = () => {
             <span>Open Free Demat Account</span>
           </button>
 
-          <button className="px-10 py-4 bg-white/80 backdrop-blur-sm text-gray-800 text-lg font-semibold rounded-2xl hover:bg-white transition-all duration-300 shadow-lg border border-gray-200">
+          <Link to="/onetimex-intro" className="px-10 py-4 bg-white/80 backdrop-blur-sm text-gray-800 text-lg font-semibold rounded-2xl hover:bg-white transition-all duration-300 shadow-lg border border-gray-200">
             Learn More
-          </button>
+          </Link>
         </motion.div>
 
         {/* Features */}

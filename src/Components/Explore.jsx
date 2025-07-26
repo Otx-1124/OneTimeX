@@ -13,6 +13,7 @@ import {
   TrendingUpIcon,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const InvestmentCards = () => {
   const [selectedCard, setSelectedCard] = useState(null);
@@ -27,42 +28,28 @@ const InvestmentCards = () => {
   }, [selectedCard]);
 
   const cardData = [
-  {
-    id: "aif",
-    title: "AIF",
-    subtitle: "Alternative Investment Fund",
-    icon: TrendingUp,
-    color: "bg-gradient-to-br from-purple-500 to-pink-600",
-    details: {
-      what: "Alternative Investment Funds (AIFs) are investment vehicles that pool money from sophisticated investors to invest in alternative assets like private equity, hedge funds, real estate, commodities, and structured products.",
-      why: "AIFs offer diversification beyond traditional stocks and bonds, potential for higher returns, access to exclusive investment opportunities, and professional management by experienced fund managers.",
-      keyFeatures: [
-        "Higher minimum investment requirements",
-        "Less liquid than traditional investments",
-        "Sophisticated investment strategies",
-        "Potential for higher returns",
-        "Access to alternative asset classes",
-      ],
-    },
+ {
+  id: "aif",
+  title: "AIF",
+  subtitle: "Alternative Investment Fund",
+  icon: TrendingUp,
+  color: "bg-gradient-to-br from-purple-500 to-pink-600",
+  details: {
+    what: "Alternative Investment Funds (AIFs) are investment vehicles that pool money from sophisticated investors to invest in alternative assets like private equity, hedge funds, real estate, commodities, and structured products.",
+    why: "AIFs offer diversification beyond traditional stocks and bonds, potential for higher returns, access to exclusive investment opportunities, and professional management by experienced fund managers.",
+    keyFeatures: [
+      
+      "Professional management – Your money is handled by top fund managers.",
+      "Higher return potential – Compared to traditional stocks and bonds.",
+      "Diversification – Reduce risks by investing beyond regular markets.",
+      "Exclusive opportunities – Invest in private equity, hedge funds, and high-growth assets.",
+      "Access to premium investments – Opportunities not available to regular investors."
+    ]
   },
-  {
-    id: "fo",
-    title: "F&O",
-    subtitle: "Futures & Options",
-    icon: BarChart3,
-    color: "bg-gradient-to-br from-green-500 to-emerald-600",
-    details: {
-      what: "Futures and Options are derivative instruments that derive their value from underlying assets like stocks, indices, or commodities. They allow investors to trade contracts for future delivery or the right to buy/sell assets.",
-      why: "F&O trading offers leverage for potentially higher returns, hedging capabilities to protect existing positions, and opportunities to profit from both rising and falling markets.",
-      keyFeatures: [
-        "High leverage potential",
-        "Hedging against market risks",
-        "Lower capital requirements",
-        "Profit from market volatility",
-        "Short selling opportunities",
-      ],
-    },
-  },
+  tagline: "AIF minimum investment – ₹1 Crore"
+}
+,
+
   {
     id: "pms",
     title: "PMS",
@@ -80,11 +67,12 @@ const InvestmentCards = () => {
         "Diversified asset allocation",
       ],
     },
+    tagline:"PMS min investement - 50L"
   },
   {
     id: "iap",
     title: "IAP",
-    subtitle: "Investor Awareness Program",
+    subtitle: "Intelligent Advisory Portfolio By Motilal Oswal",
     icon: BarChart3,
     color: "bg-gradient-to-br from-yellow-400 to-orange-600",
     details: {
@@ -98,7 +86,29 @@ const InvestmentCards = () => {
         "Investor protection information",
       ],
     },
+    tagline:"IAP min investement - 5L"
   },
+
+  {
+    id: "fo",
+    title: "F&O",
+    subtitle: "Futures & Options",
+    icon: BarChart3,
+    color: "bg-gradient-to-br from-green-500 to-emerald-600",
+    details: {
+      what: "Futures and Options are derivative instruments that derive their value from underlying assets like stocks, indices, or commodities. They allow investors to trade contracts for future delivery or the right to buy/sell assets.",
+      why: "F&O trading offers leverage for potentially higher returns, hedging capabilities to protect existing positions, and opportunities to profit from both rising and falling markets.",
+      keyFeatures: [
+        "High leverage potential",
+        "Hedging against market risks",
+        "Lower capital requirements",
+        "Profit from market volatility",
+        "Short selling opportunities",
+      ],
+    },
+    
+  },
+  
   {
     id: "stocks",
     title: "Stocks",
@@ -152,7 +162,9 @@ const InvestmentCards = () => {
         "Family floater options available",
       ],
     },
+    slogan: "स्वास्थ्य की सुरक्षा, हर कल की गारंटी — OneTimeX के साथ।"
   },
+  
  {
   id: "lifeinsurance",
   title: "Life Insurance",
@@ -251,6 +263,7 @@ const InvestmentCards = () => {
                     Click to learn more →
                   </span>
                 </div>
+                <p className="font-semibold text-white highlight text-center mt-2">{card.tagline}</p>
               </div>
             );
           })}
@@ -265,10 +278,13 @@ const InvestmentCards = () => {
             variants={fadeInUp}
             className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50"
           >
-            <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-2xl max-w-3xl w-full max-h-[99vh] overflow-y-hidden">
               <div className={`${selectedCard.color} p-6 rounded-t-2xl`}>
+                   <p className="text-xl text-center text-green-200  rounded-lg py-1">{selectedCard.slogan}</p>
                 <div className="flex items-center justify-between">
+                  
                   <div className="flex items-center space-x-4">
+                 
                     <selectedCard.icon className="text-white" size={40} />
                     <div>
                       <h2 className="text-3xl font-bold text-white">
@@ -311,7 +327,7 @@ const InvestmentCards = () => {
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">
                     Key Features
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1">
                     {selectedCard.details.keyFeatures.map((feature, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -320,12 +336,11 @@ const InvestmentCards = () => {
                     ))}
                   </ul>
                 </section>
-                <div className={`${selectedCard.color} bg-opacity-5 absolute -bottom-30 right-25 right-5 flex flex-col justify-center gap-3 p-5  rounded-lg`}>
+                <div className={` absolute bottom-8  right-2 flex flex-col justify-center gap-3 p-5  rounded-lg`}>
+                <Link to="" className="rounded-3xl px-3 py-2 bg-green-400 font-semibold">Start Investing</Link>
+
                  <h1 className="text-red-800 text-center">Need help..?</h1>
                  <a className="text-4xl text-green-900 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>
-                 <div  className={` text-white`}>
-                    <p>Contact : 7045035773</p>
-                 </div>
                 </div>
               </div>
             </div>
