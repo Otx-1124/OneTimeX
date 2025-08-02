@@ -5,12 +5,16 @@ import DematDetails from "./DematDetails";
 import KYCDetails from "./KycDetails";
 import ChargesFees from "./ChargesAndFees";
 import CloseAccount from "./CloseAccount";
+import Teamcard from "../Tests/Teamcard";
+import { h1 } from "framer-motion/client";
 
 const sections = [
   "Personal Details",
   "Demat Details",
   "KYC Details",
   "Charges & Fees",
+  "Your Relationship Manager",
+  "Change Your Pass/PIN",
   "Close OneTimeX Account",
 ];
 
@@ -53,23 +57,48 @@ const MainProfile = () => {
   const renderSectionContent = () => {
     switch (active) {
       case "Personal Details":
-        return <PersonalDetailsSection currUser={currUser} setCurrUser={setCurrUser} />;
+        return (
+          <PersonalDetailsSection
+            currUser={currUser}
+            setCurrUser={setCurrUser}
+          />
+        );
       case "Demat Details":
-        return (
-         <DematDetails/>
-        );
+        return <DematDetails />;
       case "KYC Details":
-        return (
-         <KYCDetails/>
-        );
+        return <KYCDetails />;
       case "Charges & Fees":
+        return <ChargesFees />;
+      case "Your Relationship Manager":
         return (
-         <ChargesFees/>
+          <Teamcard
+            name="Raj Duani"
+            img="/logoOne2.png"
+            role="Relationship Manager"
+            cursor="cursor-pointer"
+          />
+        );
+      case "Change Your Pass/PIN":
+        return (
+          <div className="min-h-[80%] flex items-center justify-center bg-gray-100 px-4">
+            <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md text-center">
+              <h1 className="text-3xl font-bold text-red-600 mb-4">
+                We're Sorry!
+              </h1>
+              <p className="text-gray-700 text-lg">
+                The option you're looking for is currently not available.
+              </p>
+              <p className="text-gray-500 mt-2">
+                Please check back later or explore other available features.
+              </p>
+              <button className="mt-6 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                Go Back
+              </button>
+            </div>
+          </div>
         );
       case "Close OneTimeX Account":
-        return (
-          <CloseAccount/>
-        );
+        return <CloseAccount />;
       default:
         return <p>Select a section to view details.</p>;
     }
@@ -84,7 +113,11 @@ const MainProfile = () => {
           <label htmlFor="upload-photo">
             <div className="w-24 h-24 border border-gray-300 rounded-full overflow-hidden cursor-pointer bg-gray-100">
               {profilePic ? (
-                <img src={profilePic} alt="Profile" className="w-full h-full object-cover" />
+                <img
+                  src={profilePic}
+                  alt="Profile"
+                  className="w-full h-full object-cover"
+                />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
                   Upload

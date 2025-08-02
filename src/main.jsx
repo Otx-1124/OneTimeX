@@ -8,12 +8,16 @@ import Footer from "./Components/Common/Footer.jsx";
 import SocialFooter from "./Components/Common/Social.jsx";
 import ScrollToTop from "./Components/ScrolltoTop.jsx";
 import { InvestmentProvider } from "./Context/InvestmentContext.jsx";
+import { UnlistedProvider } from "./Context/UnlistedContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Navbar />
+
     <InvestmentProvider>
-      <App />
+      <UnlistedProvider>
+        <App />
+      </UnlistedProvider>
     </InvestmentProvider>
 
     <SocialFooter />

@@ -2,7 +2,7 @@ import React from "react";
 
 const Teamcard = (props) => {
   return (
-    <div  className="text-center w-[201px] h-[180px]  py-5 px-5 rounded-3xl shadow-lg">
+    <div  className={`${props.cursor} text-center w-[201px] h-[180px]  py-5 px-5 rounded-3xl shadow-lg`}>
       <img
         src={props.img}
         alt={props.name}

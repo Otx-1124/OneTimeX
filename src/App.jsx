@@ -18,6 +18,8 @@ import NotFound from "./Components/PageErr";
 import RiskDisclosurePopup from "./Components/Disclaimer";
 import InvestmentProps from "./PropComponent/InvestmentProps";
 import OnetimexIntro from "./Components/Onetimex-intro";
+import NSEChart from "./Tests/Graph";
+import UnlistedProp from "./PropComponent/UnlistedProp";
 
 function App() {
   useEffect(() => {
@@ -60,6 +62,9 @@ function App() {
           <Route path="/*" element={<NotFound />} />
           <Route path="/investment-props" element={<InvestmentProps />} />
           <Route path="/onetimex-intro" element={<OnetimexIntro />} />
+          <Route path="/graph" element={<NSEChart />} />
+          <Route path="/unlisted-detail" element={<UnlistedProp />} />
+          
         </Routes>
       </ScrollToTop>
     </>

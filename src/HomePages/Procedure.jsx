@@ -35,7 +35,8 @@ const Procedure = () => {
       title: "Unlisted Stock & Pre IPO",
       description: "Access exclusive pre-IPO opportunities",
       color: "from-purple-600 to-purple-800",
-      hoverColor: "hover:from-purple-700 hover:to-purple-900"
+      hoverColor: "hover:from-purple-700 hover:to-purple-900",
+      paths:"/graph"
     },
     {
       title: "Listed | Mutual Funds",
