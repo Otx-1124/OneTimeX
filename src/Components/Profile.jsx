@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {  User2, X } from "lucide-react";
+import { User2, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { fieldset } from "framer-motion/client";
 
 const ProfileSection = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  
 
-  const riskAvailable = localStorage.getItem("riskDisclosureAccepted")
-  
+  const riskAvailable = localStorage.getItem("riskDisclosureAccepted");
 
   const toggleProfile = () => setIsOpen(!isOpen);
   const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-  
- 
-
+  const savedPic = localStorage.getItem("profilePic");
 
   const handleLogout = () => {
     localStorage.removeItem("user");
@@ -25,21 +22,30 @@ const ProfileSection = (props) => {
     window.location.reload();
   };
 
-  const Details = [
-   
-    { name: "Personal Details and more.." },
+  const Details = [{ name: "Personal Details and more.." }];
 
-  ];
+  const firstLetter = props.name.slice(0, 1);
+
+  useEffect(() => {
+    console.log(firstLetter);
+  });
 
   return (
     <div className="relative">
       {/* Profile Icon */}
       <button onClick={toggleProfile} className="flex items-center flex-col">
-        <User2 />
-        {props.name}
+        {savedPic ? (
+          <img
+            className="w-[35px] h-[35px] rounded-[50%] "
+            src={savedPic}
+            alt=""
+          />
+        ) : (
+          <div className="w-[35px] h-[35px] rounded-[50%] border border-blue-400 text-center text-xl font-semibold">
+            <p>{firstLetter}</p>
+          </div>
+        )}
       </button>
-
-      
 
       {/* Sidebar */}
       {isOpen && (
@@ -57,14 +63,22 @@ const ProfileSection = (props) => {
 
           {/* Profile Info */}
           <div className="mt-5">
-            <h1 className="font-bold text-2xl text-[#009999]">Account Details</h1>
+            <h1 className="font-bold text-2xl text-[#009999]">
+              Account Details
+            </h1>
             <h2 className="text-xl font-bold mt-4">{props.name}</h2>
             <p className="text-gray-500">{props.email}</p>
 
             <div className="mt-6 space-y-4 flex flex-col">
               {Details.map((items) => {
                 return (
-                  <Link to="/profile-section" onClick={()=>{setIsOpen(false)}} className="w-full py-2 bg-white  text-center rounded-lg hover:bg-gray-200 border border-gray-300">
+                  <Link
+                    to="/profile-section"
+                    onClick={() => {
+                      setIsOpen(false);
+                    }}
+                    className="w-full py-2 bg-white  text-center rounded-lg hover:bg-gray-200 border border-gray-300"
+                  >
                     {items.name}
                   </Link>
                 );
