@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useUnlisted } from '../Context/UnlistedContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useUnlisted } from "../Context/UnlistedContext";
+import { useNavigate } from "react-router-dom";
 import {
   CartesianGrid,
   ResponsiveContainer,
@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-} from 'recharts';
+} from "recharts";
 
 const UnlistedProp = () => {
   const { selectedDetail } = useUnlisted();
@@ -19,7 +19,22 @@ const UnlistedProp = () => {
     console.log(selectedDetail);
   }, [selectedDetail]);
 
-  if (!selectedDetail) return <p className="text-center mt-20">Loading...</p>;
+  if (!selectedDetail)
+    return (
+      <p className="text-center mt-20">
+        {" "}
+        <div className="fixed inset-0 z-50 flex items-center flex-col gap-2 justify-center bg-green-50 backdrop-blur-sm">
+          
+            {/* Rounded Spinner */}
+            <div className="w-16 h-16 border-[5px] border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+
+            <p className="text-gray-800  text-lg font-semibold tracking-wide animate-pulse">
+              Loading, please wait...
+            </p>
+          </div>
+        
+      </p>
+    );
 
   return (
     <div className="max-w-7xl mx-auto p-8 mt-10 bg-white rounded-3xl shadow-xl">
@@ -34,12 +49,14 @@ const UnlistedProp = () => {
       <div className="flex flex-col lg:flex-row gap-10 ">
         {/* Left Side Graph */}
         <div className="w-full lg:w-[40vw]">
-          <h3 className="text-xl font-semibold mb-4 text-gray-800">Price History (1 Year)</h3>
+          <h3 className="text-xl font-semibold mb-4 text-gray-800">
+            Price History (1 Year)
+          </h3>
           <div className="h-80 rounded-lg border">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={selectedDetail.graphData}>
                 <XAxis dataKey="date" />
-                <YAxis domain={['dataMin - 10', 'dataMax + 10']} />
+                <YAxis domain={["dataMin - 10", "dataMax + 10"]} />
                 <Tooltip />
                 <Line
                   type="monotone"
@@ -55,14 +72,19 @@ const UnlistedProp = () => {
         {/* Right Side Details */}
         <div className="flex-1 space-y-5">
           <div>
-            <div className='flex gap-3 items-center'>
-                <img className='w-20 rounded-lg ' src={selectedDetail.logo}/>
-                <h2 className="text-3xl font-bold text-gray-900">{selectedDetail.name}</h2>
+            <div className="flex gap-3 items-center">
+              <img className="w-20 rounded-lg " src={selectedDetail.logo} />
+              <h2 className="text-3xl font-bold text-gray-900">
+                {selectedDetail.name}
+              </h2>
             </div>
             <p className="text-gray-600 text-sm mt-1">
-              Founded: {selectedDetail.founded} | Sector: {selectedDetail.sector}
+              Founded: {selectedDetail.founded} | Sector:{" "}
+              {selectedDetail.sector}
             </p>
-            <p className="text-2xl font-semibold text-green-600 mt-2">{selectedDetail.price}</p>
+            <p className="text-2xl font-semibold text-green-600 mt-2">
+              {selectedDetail.price}
+            </p>
           </div>
 
           <p className="text-gray-700">{selectedDetail.description}</p>
@@ -86,7 +108,9 @@ const UnlistedProp = () => {
             <ul className="text-sm text-gray-800 grid grid-cols-2 gap-x-4 gap-y-1">
               <li>Assets: ₹{selectedDetail.financialsFY25.assets} Cr</li>
               <li>Net Worth: ₹{selectedDetail.financialsFY25.netWorth} Cr</li>
-              <li>Revenue Growth: {selectedDetail.financialsFY25.revenueGrowth}%</li>
+              <li>
+                Revenue Growth: {selectedDetail.financialsFY25.revenueGrowth}%
+              </li>
               <li>ROE: {selectedDetail.financialsFY25.ROE}%</li>
               <li>Profit YoY: {selectedDetail.financialsFY25.profitYoY}%</li>
             </ul>
