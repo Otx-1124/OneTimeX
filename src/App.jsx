@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
@@ -20,11 +20,14 @@ import InvestmentProps from "./PropComponent/InvestmentProps";
 import OnetimexIntro from "./Components/Onetimex-intro";
 import NSEChart from "./Tests/Graph";
 import UnlistedProp from "./PropComponent/UnlistedProp";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
+    const location = useLocation();
+
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 2.2,
+      duration: 3.2,
       smooth: true,
       smoothTouch: false,
     });
@@ -36,13 +39,22 @@ function App() {
 
     requestAnimationFrame(raf);
 
-    // 👇 Make accessible globally so we can stop/start later
+    // Store globally if needed
     window.lenis = lenis;
 
     return () => {
       lenis.destroy();
     };
   }, []);
+
+  // 🛠 Fix: Scroll to top on route change
+  useEffect(() => {
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0); // fallback
+    }
+  }, [location.pathname]);
 
   return (
     <>
@@ -64,6 +76,7 @@ function App() {
           <Route path="/onetimex-intro" element={<OnetimexIntro />} />
           <Route path="/graph" element={<NSEChart />} />
           <Route path="/unlisted-detail" element={<UnlistedProp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           
         </Routes>
       </ScrollToTop>

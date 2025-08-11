@@ -176,11 +176,12 @@ const UnlistedListed = () => {
       ipoStatus:
         "IPO listed in July 2025, gained ~13% debut pop, valued at $8.2 billion on listing at ₹740/share.",
       website: "https://www.herofincorp.com/",
-      ipoDetails: {
-        openDate: "Jun 25 2025",
-        priceBand: "₹700–740",
-        anchorAllocation: 4.55e6,
-        listingPrice: 833.55,
+      financialsFY25: {
+        assets: 31200, // example value in ₹ Crores
+        netWorth: 7800,
+        revenueGrowth: 18.4,
+        ROE: 14.2,
+        profitYoY: 19.7,
       },
       graphData: [
         { date: "2025-07-01", price: 1580 },
@@ -346,14 +347,13 @@ const UnlistedListed = () => {
     setActiveTab("listed");
   };
 
-  const {setSelectedDetail} = useUnlisted()
-  const navigate = useNavigate()
+  const { setSelectedDetail } = useUnlisted();
+  const navigate = useNavigate();
 
-  const handleSetData = (company)=>{
-    setSelectedDetail(company)
-    navigate("/unlisted-detail")
-  }
-
+  const handleSetData = (company) => {
+    setSelectedDetail(company);
+    navigate("/unlisted-detail");
+  };
 
   return (
     <motion.div
@@ -429,7 +429,9 @@ const UnlistedListed = () => {
         >
           {currData.map((company, index) => (
             <motion.div
-             onClick={()=>{handleSetData(company)}}
+              onClick={() => {
+                handleSetData(company);
+              }}
               key={company.name + index}
               className="flex flex-col sm:flex-row border shadow-md items-center justify-between px-4 py-3 rounded-lg hover:shadow-xl  cursor-pointer"
               custom={index}

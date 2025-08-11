@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { User2, X } from "lucide-react";
+import { LogOut, User2, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { fieldset } from "framer-motion/client";
@@ -22,7 +22,17 @@ const ProfileSection = (props) => {
     window.location.reload();
   };
 
-  const Details = [{ name: "Personal Details and more.." }];
+  const Details = [
+  {
+    name: "Personal Details and more..",
+    route: "/profile-section"
+  },
+  {
+    name: "Personal Dashboard",
+    route: "/dashboard"
+  }
+];
+
 
   const firstLetter = props.name.slice(0, 1);
 
@@ -33,16 +43,16 @@ const ProfileSection = (props) => {
   return (
     <div className="relative">
       {/* Profile Icon */}
-      <button onClick={toggleProfile} className="flex items-center flex-col">
+      <button onClick={toggleProfile} className="flex bg-white rounded-[50%] items-center flex-col">
         {savedPic ? (
           <img
-            className="w-[35px] h-[35px] rounded-[50%] "
+            className="w-[35px] h-[35px] rounded-[50%] object-cover "
             src={savedPic}
             alt=""
           />
         ) : (
-          <div className="w-[35px] h-[35px] rounded-[50%] border border-blue-400 text-center text-xl font-semibold">
-            <p>{firstLetter}</p>
+          <div className="w-[35px] h-[35px] rounded-[50%] border border-blue-400 text-center flex justify-center items-center text-xl font-semibold ">
+            <p className="font-dmserif uppercase">{firstLetter}</p>
           </div>
         )}
       </button>
@@ -73,11 +83,11 @@ const ProfileSection = (props) => {
               {Details.map((items) => {
                 return (
                   <Link
-                    to="/profile-section"
+                    to={items.route}
                     onClick={() => {
                       setIsOpen(false);
                     }}
-                    className="w-full py-2 bg-white  text-center rounded-lg hover:bg-gray-200 border border-gray-300"
+                    className="w-full py-2 bg-white  text-start px-4 rounded-lg hover:bg-gray-200 border border-gray-300"
                   >
                     {items.name}
                   </Link>
@@ -86,8 +96,12 @@ const ProfileSection = (props) => {
 
               <button
                 onClick={handleLogout}
-                className="w-full py-2 bg-red-500 text-white rounded-lg"
+                className="w-full py-2 bg-white  text-red-600 hover:bg-gray-200 rounded-lg flex items-center border border-gray-300 justify-center gap-3"
               >
+                <span>
+                  {" "}
+                  <LogOut />
+                </span>
                 Logout
               </button>
             </div>

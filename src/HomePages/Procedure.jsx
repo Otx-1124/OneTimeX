@@ -74,7 +74,7 @@ const Procedure = () => {
         </div>
 
         {/* Partner Logo Section */}
-        <div className="flex justify-center mb-10">
+        <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="flex justify-center mb-10">
           <div className="group relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
             <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
@@ -85,7 +85,7 @@ const Procedure = () => {
               />
             </div>
           </div>
-        </div>
+        </a>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">
