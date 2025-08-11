@@ -180,11 +180,11 @@ export default function AboutPage() {
           {/* 4 Teams in a col */}
           <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-20">
             {/* Sales Team */}
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col  items-center justify-center">
               <h4 className="text-xl font-semibold text-center text-[#009999]  mb-4  mb-4 pb-3">
                 Sales Team
               </h4>
-              <div className="space-x-2 flex ml-10">
+              <div className="space-x-2 grid grid-cols-1 md:grid-cols-2 gap-20 ">
                 {team
                   .filter(
                     (member) =>
@@ -211,7 +211,7 @@ export default function AboutPage() {
               <h4 className="text-xl font-semibold text-center text-[#009999] mb-4  mb-4 pb-3">
                 IT Team
               </h4>
-              <div className="flex gap-6 items-center justify-center">
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
                 {team
                   .filter((member) =>
                     ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
