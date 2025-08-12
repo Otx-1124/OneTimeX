@@ -1,3 +1,4 @@
+import { Trash } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
 const Cart = () => {
@@ -9,22 +10,32 @@ const Cart = () => {
       try {
         const parsedList = JSON.parse(storedList);
         setWatchlist(parsedList);
-        console.log(parsedList);
       } catch (err) {
         console.error("Error parsing WatchList from localStorage:", err);
       }
     }
   }, []);
 
+const handleRemove = (index) => {
+  console.log(index);
+  let updatedWatchList = watchlist.filter((item, i) => i !== index);
+  setWatchlist(updatedWatchList);
+  localStorage.setItem("WatchList", JSON.stringify(updatedWatchList)); // update localStorage
+};
+
+
+ 
+
   return (
     <div className="p-6">
       {watchlist.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {watchlist.map((item, index) => (
-            <div key={index} className="border p-4 rounded-xl w-full shadow hover:shadow-lg transition">
+            <div key={index} className="border p-4 rounded-xl w-full shadow hover:shadow-lg transition relative">
               <h3 className="text-lg font-semibold">{item.name}</h3>
               <p className="text-sm text-gray-600">Price: {item.price}</p>
               <p className="text-sm text-gray-500">ID: {index}</p>
+              <button onClick={()=>{handleRemove(index)}} className='absolute top-5 right-4'><Trash className='text-red-800'/></button>
             </div>
           ))}
         </div>

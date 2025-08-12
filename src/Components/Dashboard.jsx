@@ -1,5 +1,5 @@
 import React from "react";
-import { Bell, TrendingUp, Eye, Plus } from "lucide-react";
+import { Bell, TrendingUp, Eye, Plus, Delete } from "lucide-react";
 import { motion } from "framer-motion";
 import Cart from "../Tests/Cart";
 
@@ -74,6 +74,7 @@ const Dashboard = () => {
                 {item.title}
               </h2>
               <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
+              
               {item.subtitle && (
                 <p className="text-sm text-gray-500 mt-1">{item.subtitle}</p>
               )}
