@@ -1,18 +1,18 @@
+// App.jsx
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
+// ✅ Page Components
 import Home from "./Components/Home";
-import SignupPage from "./Components/Signup";
+import Signup from "./Components/Signup";
 import LoginPage from "./Components/Login";
 import AboutPage from "./Components/About";
 import BlogPage from "./Components/Blog";
 import TermsAndPolicies from "./Components/Terms&Policies";
 import Explore from "./Components/Explore";
 import Connect from "./Components/Connect";
-import ScrollToTop from "./Components/ScrolltoTop";
-import Signup from "./Components/Signup";
 import MainProfile from "./Components/MainProfile";
 import NotFound from "./Components/PageErr";
 import RiskDisclosurePopup from "./Components/Disclaimer";
@@ -21,33 +21,42 @@ import OnetimexIntro from "./Components/Onetimex-intro";
 import NSEChart from "./Tests/Graph";
 import UnlistedProp from "./PropComponent/UnlistedProp";
 import Dashboard from "./Components/Dashboard";
+import MyFunds from "./Components/My-funds";
+
+// ✅ Utils
+import ScrollToTop from "./Components/ScrolltoTop";
+import CompletedOrder from "./OrderComponents/CompletedOrder";
+import Processing from "./OrderComponents/Processing";
 
 function App() {
-    const location = useLocation();
+  const location = useLocation();
 
+  // ✅ Smooth scroll setup (Lenis)
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 3.2,
+      duration: 1.5,
       smooth: true,
       smoothTouch: false,
     });
 
-    function raf(time) {
+    let frameId;
+    const raf = (time) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+      frameId = requestAnimationFrame(raf);
+    };
 
-    requestAnimationFrame(raf);
+    frameId = requestAnimationFrame(raf);
 
     // Store globally if needed
     window.lenis = lenis;
 
     return () => {
+      cancelAnimationFrame(frameId);
       lenis.destroy();
     };
   }, []);
 
-  // 🛠 Fix: Scroll to top on route change
+  // ✅ Ensure scroll-to-top on route change
   useEffect(() => {
     if (window.lenis) {
       window.lenis.scrollTo(0, { immediate: true });
@@ -58,8 +67,10 @@ function App() {
 
   return (
     <>
+      {/* Disclaimer Popup Always Available */}
       <RiskDisclosurePopup />
 
+      {/* Routes */}
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -70,14 +81,17 @@ function App() {
           <Route path="/terms-con" element={<TermsAndPolicies />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/connect-us" element={<Connect />} />
-          <Route path="/profile-section" element={<MainProfile />} />
-          <Route path="/*" element={<NotFound />} />
           <Route path="/investment-props" element={<InvestmentProps />} />
           <Route path="/onetimex-intro" element={<OnetimexIntro />} />
           <Route path="/graph" element={<NSEChart />} />
           <Route path="/unlisted-detail" element={<UnlistedProp />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          
+          <Route path="/myfunds" element={<MyFunds />} />
+          <Route path="/profile-section" element={<MainProfile />} />
+          <Route path="/completed" element={<CompletedOrder />} />
+          <Route path="/processing" element={<Processing />} />
+          {/* Catch-all for 404 */}
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </ScrollToTop>
     </>

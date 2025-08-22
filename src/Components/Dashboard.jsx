@@ -2,6 +2,7 @@ import React from "react";
 import { Bell, TrendingUp, Eye, Plus, Delete } from "lucide-react";
 import { motion } from "framer-motion";
 import Cart from "../Tests/Cart";
+import { Link } from "react-router-dom";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -74,7 +75,7 @@ const Dashboard = () => {
                 {item.title}
               </h2>
               <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
-              
+
               {item.subtitle && (
                 <p className="text-sm text-gray-500 mt-1">{item.subtitle}</p>
               )}
@@ -90,11 +91,16 @@ const Dashboard = () => {
           custom={4}
           className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition mb-10"
         >
-          <h2 className="text-xl font-bold text-[#0f172a] mb-4 flex items-center gap-2">
-            <Eye size={20} /> Watchlist
-          </h2>
+          <div className="text-xl  text-[#0f172a] mb-4 flex items-center justify-between">
+            <h1 className="font-bold flex items-center gap-3"><Eye size={20} /> Watchlist</h1>
+            <div>
+              <button className="flex items-center gap-2 px-4 py-1 bg-[#009999] text-white rounded-xl shadow hover:bg-[#007777] transition">
+                <Plus size={18} /> Add Stocks
+              </button>
+            </div>
+          </div>
           <div className="">
-            <Cart/>
+            <Cart />
           </div>
         </motion.div>
 
@@ -109,43 +115,46 @@ const Dashboard = () => {
           <h2 className="text-xl font-bold text-[#0f172a] mb-4 flex items-center gap-2">
             🛒 My Orders
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {[
               {
-                name: "NSE",
-                quantity: 10,
-                price: "₹850",
-                status: "Processing",
-              },
-              {
-                name: "Tata Capital",
-                quantity: 5,
-                price: "₹320",
+                name: "Completed",
                 status: "Completed",
+                route:"/completed"
+                
               },
               {
-                name: "HDB Financial",
-                quantity: 3,
-                price: "₹1120",
+                name: "Processing",
+                status: "Processing",
+                route:"/processing"
+              },
+              
+              {
+                name: "Pending",
                 status: "Pending",
+                route:"/pending"
+              },
+              {
+                name: "Rejected",
+                status: "Rejected",
+                route:"/rejected"
               },
             ].map((order, i) => (
-              <div key={i} className="border rounded-xl p-4 hover:shadow-md">
+              <Link to={order.route}  key={i} className="border rounded-xl p-4 hover:shadow-md cursor-pointer">
                 <h3 className="font-semibold text-[#0f172a]">{order.name}</h3>
-                <p className="text-sm text-gray-600">Qty: {order.quantity}</p>
-                <p className="text-sm text-gray-600">Price: {order.price}</p>
-                <p
+                <div 
                   className={`text-sm font-medium mt-1 ${
                     order.status === "Completed"
                       ? "text-green-600"
                       : order.status === "Pending"
                       ? "text-yellow-600"
+                      : order.status === "Rejected" ?"text-red-400"
                       : "text-blue-600"
                   }`}
                 >
                   {order.status}
-                </p>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         </motion.div>

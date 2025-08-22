@@ -7,6 +7,7 @@ import ChargesFees from "./ChargesAndFees";
 import CloseAccount from "./CloseAccount";
 import Teamcard from "../Tests/Teamcard";
 import { h1 } from "framer-motion/client";
+import { Pen } from "lucide-react";
 
 const sections = [
   "Personal Details",
@@ -130,8 +131,9 @@ const MainProfile = () => {
             id="upload-photo"
             accept="image/*"
             onChange={handleImageUpload}
-            className="hidden"
+            className="hidden relative"
           />
+          {/* <button  className="absolute bottom-1 right-0 flex justify-center items-center h-[30px] w-[30px] bg-gray-300 rounded-[50%]"><Pen  size={18}/></button> */}
         </div>
 
         {/* Sections */}

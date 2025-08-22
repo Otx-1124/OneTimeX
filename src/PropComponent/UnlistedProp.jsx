@@ -13,15 +13,21 @@ import {
 } from "recharts";
 import { SlEarphones } from "react-icons/sl";
 import { CheckCircle } from "lucide-react";
+import BuySharePopup from "./buyCard";
+import { option } from "framer-motion/client";
 
 const UnlistedProp = () => {
   const { selectedDetail } = useUnlisted();
   const navigate = useNavigate();
 
-  const [showNotification , setShowNotification] = useState(false)
+  const [showNotification, setShowNotification] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    console.log(isOpen);
+  });
 
   const handleAddtoCart = () => {
-    setShowNotification(true)
+    setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
     }, 3000);
@@ -141,7 +147,12 @@ const UnlistedProp = () => {
           </div>
 
           <div className="flex gap-4 mt-6">
-            <button className="px-6 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition">
+            <button
+              onClick={() => {
+                setIsOpen(true);
+              }}
+              className="px-6 py-2 bg-green-600 text-white rounded-xl hover:bg-green-700 transition"
+            >
               Buy
             </button>
             <button className="px-6 py-2 bg-red-500 text-white rounded-xl hover:bg-red-600 transition">
@@ -150,21 +161,40 @@ const UnlistedProp = () => {
           </div>
         </div>
       </div>
-      {showNotification? <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed top-5 right-5 bg-white shadow-lg rounded-xl border border-gray-200 flex items-center gap-3 px-4 py-3 z-50"
-          >
-            <CheckCircle className="text-green-600" size={22} />
-            <div>
-              <p className="font-semibold text-gray-800">Added to Cart</p>
-              <p className="text-sm text-gray-500">
-                Your item has been successfully added.
-              </p>
-            </div>
-          </motion.div>:""}
+      {showNotification ? (
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -20, scale: 0.95 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="fixed top-5 right-5 bg-white shadow-lg rounded-xl border border-gray-200 flex items-center gap-3 px-4 py-3 z-50"
+        >
+          <CheckCircle className="text-green-600" size={22} />
+          <div>
+            <p className="font-semibold text-gray-800">Added to Cart</p>
+            <p className="text-sm text-gray-500">
+              Your item has been successfully added.
+            </p>
+          </div>
+        </motion.div>
+      ) : (
+        ""
+      )}
+
+      {isOpen ? (
+        <BuySharePopup
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          stock={{
+            name: selectedDetail.name,
+            logo: selectedDetail.logo,
+            price: selectedDetail.price,
+            option: "Buy"
+          }}
+        />
+      ) : (
+        <div></div>
+      )}
     </motion.div>
   );
 };

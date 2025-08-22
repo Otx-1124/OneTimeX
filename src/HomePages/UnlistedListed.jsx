@@ -27,7 +27,7 @@ const fadeInUp = {
   }),
 };
 
-const UnlistedListed = () => {
+const UnlistedListed = ({id}) => {
   const data = [
     {
       name: "NSE",
@@ -357,6 +357,7 @@ const UnlistedListed = () => {
 
   return (
     <motion.div
+      id={id}
       className=" bg-gradient-to-br from-blue-50 to-green-50 w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
       initial="hidden"
       whileInView="visible"

@@ -24,12 +24,16 @@ const ProfileSection = (props) => {
 
   const Details = [
   {
-    name: "Personal Details and more..",
+    name: "My Details",
     route: "/profile-section"
   },
   {
-    name: "Personal Dashboard",
+    name: "My Portfolio",
     route: "/dashboard"
+  },
+  {
+    name: "My Funds",
+    route: "/myfunds"
   }
 ];
 
