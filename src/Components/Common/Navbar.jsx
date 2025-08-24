@@ -21,7 +21,7 @@ const Navbar = () => {
     { path: "/", label: "Home" },
     { path: "/explore", label: "Explore" },
     { path: "/blog", label: "Blog" },
-    { path: "/trade", label: "Trade & Invest" },
+    { path: "/unlisted-data", label: "Unlisted Shares" },
     { path: "/about", label: "About" },
     { path: "/connect-us", label: <HeadphonesIcon /> },
   ];

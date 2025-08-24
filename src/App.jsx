@@ -27,6 +27,7 @@ import MyFunds from "./Components/My-funds";
 import ScrollToTop from "./Components/ScrolltoTop";
 import CompletedOrder from "./OrderComponents/CompletedOrder";
 import Processing from "./OrderComponents/Processing";
+import AllUnlistedData from "./Components/AllUnlistedData";
 
 function App() {
   const location = useLocation();
@@ -79,6 +80,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/terms-con" element={<TermsAndPolicies />} />
+          <Route path="/unlisted-data" element={<AllUnlistedData />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/connect-us" element={<Connect />} />
           <Route path="/investment-props" element={<InvestmentProps />} />

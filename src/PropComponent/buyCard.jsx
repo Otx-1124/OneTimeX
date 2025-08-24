@@ -31,7 +31,10 @@ const BuySharePopup = ({ isOpen, onClose, stock }) => {
     // Save back to localStorage
     localStorage.setItem("confirmed-Orders", JSON.stringify(existingOrders));
 
-    navigate("/processing")
+    let user = localStorage.getItem("user")
+    {user?navigate("/processing"): navigate("/login")}
+
+    
   };
 
   return (
