@@ -36,7 +36,7 @@ const Procedure = () => {
       description: "Access exclusive pre-IPO opportunities",
       color: "from-purple-600 to-purple-800",
       hoverColor: "hover:from-purple-700 hover:to-purple-900",
-      paths:"/graph"
+      paths:"/unlisted-data"
     },
     {
       title: "Listed | Mutual Funds",

@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Calculator, TrendingUp, TrendingDown, DollarSign, Percent } from "lucide-react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import {
+  Calculator,
+  TrendingUp,
+  TrendingDown,
+  DollarSign,
+  Percent,
+  Zap,
+  BarChart3,
+  ShieldCheck,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SimpleTradingCalculator = () => {
-  const [buyPrice, setBuyPrice] = useState('');
-  const [sellPrice, setSellPrice] = useState('');
-  const [quantity, setQuantity] = useState('');
+  const [buyPrice, setBuyPrice] = useState("");
+  const [sellPrice, setSellPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+
   // Animation variants
   const fadeInUpVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 60 
-    },
-    visible: { 
-      opacity: 1, 
+    hidden: { opacity: 0, y: 60 },
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const staggerContainerVariants = {
     hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
+    visible: { transition: { staggerChildren: 0.2 } },
   };
 
   const calculateResults = () => {
@@ -42,44 +42,53 @@ const SimpleTradingCalculator = () => {
     const investment = buy * qty;
     const returns = sell * qty;
     const profitLoss = returns - investment;
-    const profitPercentage = ((profitLoss / investment) * 100);
+    const profitPercentage = (profitLoss / investment) * 100;
 
     return {
       investment,
       returns,
       profitLoss,
       profitPercentage,
-      isProfit: profitLoss >= 0
+      isProfit: profitLoss >= 0,
     };
   };
 
   const results = calculateResults();
 
   const tradingTips = [
-    { type: "Day Trading", tip: "Buy and sell within the same day", success: "High Risk, High Reward" },
-    { type: "Swing Trading", tip: "Hold for days to weeks", success: "Moderate Risk" },
-    { type: "Long Term", tip: "Hold for months to years", success: "Lower Risk" },
+    {
+      type: "Day Trading",
+      icon: <Zap className="w-5 h-5 text-yellow-500 mr-2" />,
+      tip: "Buy and sell within the same day",
+      success: "High Risk, High Reward",
+    },
+    {
+      type: "Swing Trading",
+      icon: <BarChart3 className="w-5 h-5 text-blue-500 mr-2" />,
+      tip: "Hold for days to weeks",
+      success: "Moderate Risk",
+    },
+    {
+      type: "Long Term",
+      icon: <ShieldCheck className="w-5 h-5 text-green-500 mr-2" />,
+      tip: "Hold for months to years",
+      success: "Lower Risk",
+    },
   ];
 
-   
-
   return (
-
-   
-
     <div className="w-full bg-gradient-to-br from-blue-50 to-green-50 pt-24 pb-12 px-6 min-h-screen">
-      <div className="max-w-3xl mx-auto">
-        
+      <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <motion.div 
-          className="text-center mb-8"
+        <motion.div
+          className="text-center mb-12"
           variants={fadeInUpVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h1 className="text-3xl font-bold text-gray-900 mb-3 flex items-center justify-center">
-            <Calculator className="w-8 h-8 mr-3 text-blue-600" />
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-3 flex items-center justify-center">
+            <Calculator className="w-9 h-9 mr-3 text-blue-600" />
             Trading Profit Calculator
           </h1>
           <p className="text-lg text-gray-600">
@@ -87,24 +96,24 @@ const SimpleTradingCalculator = () => {
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid md:grid-cols-2 gap-8 "
+        {/* Main Grid */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-6"
           variants={staggerContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          
           {/* Calculator Section */}
-          <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-3"
+          <motion.div
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-transform"
             variants={fadeInUpVariants}
           >
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
               <DollarSign className="w-5 h-5 mr-2 text-green-600" />
               Enter Trade Details
             </h2>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -147,23 +156,25 @@ const SimpleTradingCalculator = () => {
 
               {/* Quick Examples */}
               <div className="bg-gray-50 rounded-lg p-4">
-                <h4 className="font-medium text-gray-700 mb-2">Quick Examples:</h4>
+                <h4 className="font-medium text-gray-700 mb-2">
+                  Quick Examples:
+                </h4>
                 <div className="space-y-2 text-sm">
-                  <button 
+                  <button
                     onClick={() => {
-                      setBuyPrice('2400');
-                      setSellPrice('2500');
-                      setQuantity('10');
+                      setBuyPrice("2400");
+                      setSellPrice("2500");
+                      setQuantity("10");
                     }}
                     className="block w-full text-left px-3 py-2 bg-blue-100 rounded hover:bg-blue-200 transition-colors"
                   >
                     Reliance: Buy ₹2400 → Sell ₹2500 (10 shares)
                   </button>
-                  <button 
+                  <button
                     onClick={() => {
-                      setBuyPrice('3600');
-                      setSellPrice('3500');
-                      setQuantity('5');
+                      setBuyPrice("3600");
+                      setSellPrice("3500");
+                      setQuantity("5");
                     }}
                     className="block w-full text-left px-3 py-2 bg-red-100 rounded hover:bg-red-200 transition-colors"
                   >
@@ -175,8 +186,8 @@ const SimpleTradingCalculator = () => {
           </motion.div>
 
           {/* Results Section */}
-          <motion.div 
-            className="bg-white rounded-2xl shadow-lg p-6"
+          <motion.div
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-transform"
             variants={fadeInUpVariants}
           >
             <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
@@ -187,38 +198,67 @@ const SimpleTradingCalculator = () => {
             {results ? (
               <div className="space-y-4">
                 <div className="bg-blue-50 rounded-lg p-4">
-                  <div className="text-sm text-blue-600 font-medium">Total Investment</div>
-                  <div className="text-2xl font-bold text-blue-800">₹{results.investment.toLocaleString()}</div>
+                  <div className="text-sm text-blue-600 font-medium">
+                    Total Investment
+                  </div>
+                  <div className="text-2xl font-bold text-blue-800">
+                    ₹{results.investment.toLocaleString()}
+                  </div>
                 </div>
 
                 <div className="bg-green-50 rounded-lg p-4">
-                  <div className="text-sm text-green-600 font-medium">Total Returns</div>
-                  <div className="text-2xl font-bold text-green-800">₹{results.returns.toLocaleString()}</div>
+                  <div className="text-sm text-green-600 font-medium">
+                    Total Returns
+                  </div>
+                  <div className="text-2xl font-bold text-green-800">
+                    ₹{results.returns.toLocaleString()}
+                  </div>
                 </div>
 
-                <div className={`rounded-lg p-4 ${results.isProfit ? 'bg-green-100' : 'bg-red-100'}`}>
-                  <div className={`text-sm font-medium flex items-center ${results.isProfit ? 'text-green-600' : 'text-red-600'}`}>
-                    {results.isProfit ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                    {results.isProfit ? 'Profit' : 'Loss'}
+                <div
+                  className={`rounded-lg p-4 ${
+                    results.isProfit ? "bg-green-100" : "bg-red-100"
+                  }`}
+                >
+                  <div
+                    className={`text-sm font-medium flex items-center ${
+                      results.isProfit ? "text-green-600" : "text-red-600"
+                    }`}
+                  >
+                    {results.isProfit ? (
+                      <TrendingUp className="w-4 h-4 mr-1" />
+                    ) : (
+                      <TrendingDown className="w-4 h-4 mr-1" />
+                    )}
+                    {results.isProfit ? "Profit" : "Loss"}
                   </div>
-                  <div className={`text-2xl font-bold ${results.isProfit ? 'text-green-800' : 'text-red-800'}`}>
+                  <div
+                    className={`text-2xl font-bold ${
+                      results.isProfit ? "text-green-800" : "text-red-800"
+                    }`}
+                  >
                     ₹{Math.abs(results.profitLoss).toLocaleString()}
                   </div>
-                  <div className={`text-lg font-semibold ${results.isProfit ? 'text-green-700' : 'text-red-700'}`}>
+                  <div
+                    className={`text-lg font-semibold ${
+                      results.isProfit ? "text-green-700" : "text-red-700"
+                    }`}
+                  >
                     ({results.profitPercentage.toFixed(2)}%)
                   </div>
                 </div>
 
                 {/* Risk Assessment */}
                 <div className="bg-yellow-50 rounded-lg p-4">
-                  <div className="text-sm text-yellow-700 font-medium">Risk Assessment</div>
+                  <div className="text-sm text-yellow-700 font-medium">
+                    Risk Assessment
+                  </div>
                   <div className="text-sm text-yellow-800 mt-1">
-                    {Math.abs(results.profitPercentage) > 10 
+                    {Math.abs(results.profitPercentage) > 10
                       ? "High volatility trade - Consider position sizing"
                       : Math.abs(results.profitPercentage) > 5
                       ? "Moderate risk - Good for swing trading"
-                      : "Low volatility - Suitable for conservative trading"
-                    }
+                      : "Low volatility - Suitable for conservative trading"}
                   </div>
                 </div>
               </div>
@@ -229,42 +269,52 @@ const SimpleTradingCalculator = () => {
               </div>
             )}
           </motion.div>
-        </motion.div>
 
-        {/* Trading Tips */}
-        <motion.div 
-          className="bg-white rounded-2xl shadow-lg p-6 mt-8"
-          variants={fadeInUpVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <h2 className="text-xl font-bold text-gray-900 mb-6">Trading Strategies</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {tradingTips.map((tip, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-green-50 rounded-lg p-4 border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-2">{tip.type}</h3>
-                <p className="text-sm text-gray-600 mb-2">{tip.tip}</p>
-                <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                  {tip.success}
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Trading Tips */}
+          <motion.div
+            className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-1 transition-transform"
+            variants={fadeInUpVariants}
+          >
+            <h2 className="text-xl font-bold text-gray-900 mb-6">
+              Trading Strategies
+            </h2>
+            <div className="flex flex-col space-y-4">
+              {tradingTips.map((tip, index) => (
+                <div
+                  key={index}
+                  className="flex items-start bg-gradient-to-br from-blue-50 to-green-50 rounded-lg p-4 border border-gray-100"
+                >
+                  {tip.icon}
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1">{tip.type}</h3>
+                    <p className="text-sm text-gray-600 mb-2">{tip.tip}</p>
+                    <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+                      {tip.success}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* CTA */}
-        <motion.div 
-          className="text-center mt-8"
+        <motion.div
+          className="text-center mt-12"
           variants={fadeInUpVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <Link to="/signup" className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-8 py-3 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <Link
+            to="/signup"
+            className="bg-gradient-to-r from-blue-600 to-green-600 text-white px-10 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
             Start Trading with OnetimeX
           </Link>
-          <p className="text-gray-600 mt-2">Calculate before you trade - Trade smart, not hard</p>
+          <p className="text-gray-600 mt-3">
+            Calculate before you trade — Trade smart, not hard
+          </p>
         </motion.div>
       </div>
     </div>

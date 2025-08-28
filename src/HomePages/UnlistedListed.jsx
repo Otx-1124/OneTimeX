@@ -282,55 +282,55 @@ const UnlistedListed = ({id}) => {
       name: "Listed Co. A",
       logo: "https://1000logos.net/wp-content/uploads/2021/09/Reliance-Industries-Limited-Logo.png",
       alt: "Reliance-Industries-Limited-Logo",
-      price: "₹1,229.30/-",
+     
     },
     {
       name: "Listed Co. B",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png",
       alt: "Tata_Consultancy_Services_Logo",
-      price: "₹4,066.20/-",
+     
     },
     {
       name: "Listed Co. B",
       logo: "https://seeklogo.com/images/H/hdfc-bank-logo-A0A2CDE793-seeklogo.com.png",
       alt: "hdfc-bank-logo",
-      price: "₹1,629.70/-",
+  
     },
     {
       name: "Listed Co. B",
       logo: "https://logolook.net/wp-content/uploads/2024/01/Infosys-Logo.png",
       alt: "Infosys-Logo",
-      price: "₹1,822.00/-",
+      
     },
     {
       name: "Listed Co. B",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png",
       alt: "ICICI_Bank_Logo",
-      price: "₹1,228.00/-",
+      
     },
     {
       name: "Listed Co. B",
       logo: "https://logos-world.net/wp-content/uploads/2020/11/Zomato-Logo.png",
       alt: "Zomato-Logo",
-      price: "₹206.15/-",
+     
     },
     {
       name: "Listed Co. B",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Persistent_Systems_Logo.svg/2560px-Persistent_Systems_Logo.svg.png",
       alt: "Persistent_Systems_Logo",
-      price: "₹6,255.00/-",
+   
     },
     {
       name: "Listed Co. B",
       logo: "Unlisted img//file-removebg-preview.png",
       alt: "polycab-logo",
-      price: "₹4,500.00/-",
+      
     },
     {
       name: "Listed Co. B",
       logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Coforge-Logo.png",
       alt: "Coforge-Logo",
-      price: "₹5,000.00/-",
+     
     },
   ];
 

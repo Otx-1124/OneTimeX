@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import {
   Search,
@@ -11,10 +11,13 @@ import {
   HeadphonesIcon,
 } from "lucide-react";
 import ProfileSection from "../Profile";
+import { unlistedData } from "../../Data/unlistedDatas";
+import { SearchContext } from "../../Context/SearchContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [suggestion, setSuggestion] = useState("");
+
   const navigate = useNavigate();
 
   const navItems = [
@@ -34,19 +37,20 @@ const Navbar = () => {
     "SIP Plans",
   ];
 
-  const handleSearch = () => {
-    // Search logic here
-  };
+  const { searchData, handleSearch } = useContext(SearchContext);
+
+
+  const handleInputChange = (e)=>{
+    handleSearch(e.target.value)
+    navigate('/unlisted-data')
+  }
 
   const [user, setUser] = useState(null);
-      
-
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
-      
     }
   }, []);
 
@@ -65,9 +69,10 @@ const Navbar = () => {
         {/* Search Bar */}
         <div className="flex-1 mx-8 relative hidden lg:block ml-20">
           <input
-            onClick={handleSearch}
             type="text"
-            placeholder="Search Markets..."
+            placeholder="Search Stocks..."
+            value={searchData}
+            onChange={handleInputChange}
             className="w-11/12 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           <div>
@@ -79,7 +84,6 @@ const Navbar = () => {
         <div className="hidden lg:flex space-x-6 text-gray-700 font-medium items-center">
           {navItems.map(({ path, label }) => (
             <NavLink
-            
               key={path}
               to={path}
               className={({ isActive }) =>
@@ -98,7 +102,6 @@ const Navbar = () => {
             </div>
           ) : (
             <Link
-             
               to="/login"
               className="rounded-3xl px-5 py-2 border border-blue-600 hover:bg-gradient-to-br from-blue-400 to-green-700 mr-2 hover:text-white"
             >
@@ -144,7 +147,6 @@ const Navbar = () => {
 
           {user ? (
             <Link
-            
               to="/"
               className="flex flex-col text-blue-600 mt-5 items-center"
             >
@@ -152,7 +154,9 @@ const Navbar = () => {
             </Link>
           ) : (
             <Link
-              onClick={()=>{setIsOpen(false)}}
+              onClick={() => {
+                setIsOpen(false);
+              }}
               to="/login"
               className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
             >

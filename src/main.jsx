@@ -10,15 +10,18 @@ import SocialFooter from "./Components/Common/Social.jsx";
 import ScrollToTop from "./Components/ScrolltoTop.jsx";
 import { InvestmentProvider } from "./Context/InvestmentContext.jsx";
 import { UnlistedProvider } from "./Context/UnlistedContext.jsx";
+import { SearchProvider } from "./Context/SearchContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
+   <SearchProvider>
     <Navbar />
     <InvestmentProvider>
       <UnlistedProvider>
         <App />
       </UnlistedProvider>
     </InvestmentProvider>
+    </SearchProvider>
     <SocialFooter />
     <Footer />
   </BrowserRouter>

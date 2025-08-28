@@ -40,9 +40,6 @@ const ProfileSection = (props) => {
 
   const firstLetter = props.name.slice(0, 1);
 
-  useEffect(() => {
-    console.log(firstLetter);
-  });
 
   return (
     <div className="relative">
