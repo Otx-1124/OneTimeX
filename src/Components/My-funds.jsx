@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const MyFunds = () => {
   const [activeTab, setActiveTab] = useState("deposit");
@@ -11,6 +12,27 @@ const MyFunds = () => {
     { name: "Bank Transfer", time: "24 hrs" },
     { name: "Net Banking", time: "48 hrs" },
   ];
+
+  // Door close animation (Y-axis rotation)
+  const doorVariants = {
+    hidden: {
+      rotateY: 90,
+      opacity: 0,
+      transformOrigin: "left center",
+    },
+    visible: {
+      rotateY: 0,
+      opacity: 1,
+      transformOrigin: "left center",
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+    exit: {
+      rotateY: -90,
+      opacity: 0,
+      transformOrigin: "right center",
+      transition: { duration: 0.6, ease: "easeInOut" },
+    },
+  };
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen py-20">
@@ -70,52 +92,76 @@ const MyFunds = () => {
             </button>
           </div>
 
-          {/* Amount Input */}
-          <div className="mb-4">
-            <label className="block mb-2 text-sm font-medium">Enter Amount</label>
-            <input
-              type="number"
-              value={amount}
-              onChange={(e) => setAmount(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
-              placeholder="₹0.00"
-            />
-          </div>
-
-          {/* Quick Amounts */}
-          <div className="flex gap-2 mb-4 flex-wrap">
-            {quickAmounts.map((amt) => (
-              <button
-                key={amt}
-                onClick={() => setAmount(amt)}
-                className="px-3 py-1 bg-gray-100 rounded-lg text-sm hover:bg-gray-200"
+          {/* Door Closing Animation Section */}
+          <div className="relative min-h-[300px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab}
+                variants={doorVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="absolute w-full"
               >
-                +₹{amt.toLocaleString()}
-              </button>
-            ))}
-          </div>
-
-          {/* Payment Methods */}
-          <div>
-            <h3 className="font-semibold mb-2">Payment Methods</h3>
-            <div className="space-y-2">
-              {paymentMethods.map((method, i) => (
-                <div
-                  key={i}
-                  className="flex justify-between items-center border p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
-                >
-                  <span>{method.name}</span>
-                  <span className="text-sm text-gray-500">{method.time}</span>
+                {/* Amount Input */}
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-medium">
+                    Enter Amount
+                  </label>
+                  <input
+                    type="number"
+                    value={amount}
+                    onChange={(e) => setAmount(e.target.value)}
+                    className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
+                    placeholder="₹0.00"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
 
-          {/* Action Button */}
-          <div className="mt-6">
-            <button className="w-full py-3 rounded-lg bg-[#009999] text-white font-semibold hover:bg-green-600">
-              {activeTab === "deposit" ? "Add Funds" : "Withdraw Funds"}
-            </button>
+                {/* Quick Amounts */}
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  {quickAmounts.map((amt) => (
+                    <button
+                      key={amt}
+                      onClick={() => setAmount(amt)}
+                      className="px-3 py-1 bg-gray-100 rounded-lg text-sm hover:bg-gray-200"
+                    >
+                      +₹{amt.toLocaleString()}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Payment Methods */}
+                <div>
+                  <h3 className="font-semibold mb-2">Payment Methods</h3>
+                  <div className="space-y-2">
+                    {paymentMethods.map((method, i) => (
+                      <div
+                        key={i}
+                        className="flex justify-between items-center border p-3 rounded-lg hover:bg-gray-50 cursor-pointer"
+                      >
+                        <span>{method.name}</span>
+                        <span className="text-sm text-gray-500">
+                          {method.time}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Button */}
+                <div className="mt-6">
+                  <button
+                    className={`w-full py-3 rounded-lg ${
+                      activeTab === "deposit"
+                        ? "bg-[#009999] hover:bg-green-600"
+                        : "bg-red-500 hover:bg-red-600"
+                    } text-white font-semibold`}
+                  >
+                    {activeTab === "deposit" ? "Add Funds" : "Withdraw Funds"}
+                  </button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

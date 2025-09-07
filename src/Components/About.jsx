@@ -166,106 +166,96 @@ export default function AboutPage() {
             Meet Our Team
           </h2>
 
-          {/* CEO */}
-          <div className="text-center mb-16">
-            <img
-              src={ceo.img}
-              alt={ceo.name}
-              className="w-28 h-28 rounded-full mx-auto mb-4 border-4 border-blue-200"
-            />
-            <h3 className="text-xl font-bold">{ceo.name}</h3>
-            <p className="text-gray-600">{ceo.role}</p>
-          </div>
+         {/* CEO */}
+<div className="text-center mb-12">
+  <img
+    src={ceo.img}
+    alt={ceo.name}
+    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg"
+  />
+  <h3 className="text-2xl font-bold text-gray-900 mb-1">{ceo.name}</h3>
+  <p className="text-gray-600 text-lg">{ceo.role}</p>
+</div>
 
-          {/* 4 Teams in a col */}
-          <div className="grid grid-cols-1 md:grid-rows-2 md:grid-cols-2 gap-20">
-            {/* Sales Team */}
-            <div className="flex flex-col  items-center justify-center">
-              <h4 className="text-xl font-semibold text-center text-[#009999]  mb-4  mb-4 pb-3">
-                Sales Team
-              </h4>
-              <div className="space-x-2 grid grid-cols-1 md:grid-cols-2 gap-20 ">
-                {team
-                  .filter(
-                    (member) =>
-                      ![
-                        "Raj Duani",
-                        "Aashtha Shrivastava",
-                        "Sandeep Pandit",
-                        "Parag Yadav",
-                      ].includes(member.name)
-                  )
-                  .map((member, i) => (
-                    <Teamcard
-                      name={member.name}
-                      img={member.img}
-                      role={member.role}
-                    />
-                  ))}
-              </div>
-            </div>
+{/* Management Team */}
+<div className="text-center mb-12">
+  <h4 className="text-xl font-semibold text-[#009999] mb-6">Management Team</h4>
+  <div className="flex justify-center">
+    {team
+      .filter((member) => ["Raj Duani"].includes(member.name))
+      .map((member, index) => (
+        <Teamcard
+          key={index}
+          name={member.name}
+          img={member.img}
+          role={member.role}
+        />
+      ))}
+  </div>
+</div>
 
+{/* Sales Team */}
+<div className="text-center mb-12">
+  <h4 className="text-xl font-semibold text-[#009999] mb-6">Sales Team</h4>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center max-w-5xl mx-auto">
+    {team
+      .filter(
+        (member) =>
+          ![
+            "Raj Duani",
+            "Aashtha Shrivastava",
+            "Sandeep Pandit",
+            "Parag Yadav",
+          ].includes(member.name)
+      )
+      .map((member, index) => (
+        <Teamcard
+          key={index}
+          name={member.name}
+          img={member.img}
+          role={member.role}
+        />
+      ))}
+  </div>
+</div>
 
-             {/* IT Team */}
-            <div className="flex flex-col">
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4  mb-4 pb-3">
-                IT Team
-              </h4>
-              <div className="flex flex-col md:flex-row gap-6 items-center justify-center">
-                {team
-                  .filter((member) =>
-                    ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
-                  )
-                  .map((member, i) => (
-                    <Teamcard
-                      name={member.name}
-                      img={member.img}
-                      role={member.role}
-                    />
-                  ))}
-              </div>
-            </div>
-           
+{/* IT Team */}
+<div className="text-center mb-12">
+  <h4 className="text-xl font-semibold text-[#009999] mb-6">IT Team</h4>
+  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+    {team
+      .filter((member) =>
+        ["Sandeep Pandit", "Parag Yadav"].includes(member.name)
+      )
+      .map((member, index) => (
+        <Teamcard
+          key={index}
+          name={member.name}
+          img={member.img}
+          role={member.role}
+        />
+      ))}
+  </div>
+</div>
 
-            {/* Social Team */}
-            <div>
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4 pb-3">
-                Social Team
-              </h4>
-              <div className="flex gap-6 items-center justify-center">
-                {team
-                  .filter((member) =>
-                    ["Aashtha Shrivastava"].includes(member.name)
-                  )
-                  .map((member, i) => (
-                    <Teamcard
-                      name={member.name}
-                      img={member.img}
-                      role={member.role}
-                    />
-                  ))}
-              </div>
-            </div>
-
-            
-
-            <div>
-              <h4 className="text-xl font-semibold text-center text-[#009999] mb-4  mb-4 pb-3 ">
-                Management Team
-              </h4>
-              <div className="flex gap-6 items-center justify-center">
-                {team
-                  .filter((member) => ["Raj Duani"].includes(member.name))
-                  .map((member, i) => (
-                    <Teamcard
-                      name={member.name}
-                      img={member.img}
-                      role={member.role}
-                    />
-                  ))}
-              </div>
-            </div>
-          </div>
+{/* Social Team */}
+<div className="text-center">
+  <h4 className="text-xl font-semibold text-[#009999] mb-6">Social Team</h4>
+  <div className="flex justify-center">
+    {team
+      .filter((member) =>
+        ["Aashtha Shrivastava"].includes(member.name)
+      )
+      .map((member, index) => (
+        <Teamcard
+          key={index}
+          name={member.name}
+          img={member.img}
+          role={member.role}
+        />
+      ))}
+  </div>
+</div>
         </div>
       </section>
     </div>

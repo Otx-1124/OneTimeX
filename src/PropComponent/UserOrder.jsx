@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Delete } from "lucide-react";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -7,15 +8,25 @@ const fadeInUp = {
 };
 
 const UserOrder = ({ confirmOrder, orderStatus }) => {
+  // ✅ Store orders in local state
+  const [orders, setOrders] = useState(confirmOrder || []);
+
+  // ✅ Keep state in sync if confirmOrder changes
+  useEffect(() => {
+    setOrders(confirmOrder || []);
+  }, [confirmOrder]);
+
+  // ✅ Delete function
+  const handleDelete = (orderToDelete) => {
+    const updatedOrders = orders.filter((item) => item !== orderToDelete);
+    setOrders(updatedOrders);
+  };
+
   // ✅ Calculate grand total
-  const grandTotal = confirmOrder?.reduce((acc, order) => {
+  const grandTotal = orders.reduce((acc, order) => {
     const price = parseFloat(order.price.replace(/[^\d.]/g, "")) || 0;
     return acc + price * order.quantity;
   }, 0);
-
-  useEffect(() => {
-    console.log(orderStatus);
-  });
 
   return (
     <div className="mt-20 container mx-auto px-6">
@@ -30,9 +41,9 @@ const UserOrder = ({ confirmOrder, orderStatus }) => {
           Your {orderStatus} Order
         </h1>
 
-        {confirmOrder && confirmOrder.length > 0 ? (
+        {orders && orders.length > 0 ? (
           <div className="space-y-4">
-            {confirmOrder.map((order, index) => {
+            {orders.map((order, index) => {
               const price =
                 parseFloat(order.price.replace(/[^\d.]/g, "")) || 0;
               const totalPrice = (price * order.quantity).toFixed(2);
@@ -45,7 +56,7 @@ const UserOrder = ({ confirmOrder, orderStatus }) => {
                   animate="visible"
                   transition={{
                     duration: 0.5,
-                    delay: index * 0.2, // ⬅ stagger animation
+                    delay: index * 0.2,
                   }}
                   className="flex items-center justify-between bg-gray-50 rounded-xl p-4 shadow-sm hover:shadow-md transition"
                 >
@@ -76,6 +87,14 @@ const UserOrder = ({ confirmOrder, orderStatus }) => {
                     </p>
                     <p className="text-sm text-gray-500">(₹{price} each)</p>
                   </div>
+
+                  {/* Delete Button */}
+                  <div>
+                    <Delete
+                      onClick={() => handleDelete(order)}
+                      className="cursor-pointer hover:text-red-500 transition"
+                    />
+                  </div>
                 </motion.div>
               );
             })}
@@ -85,7 +104,7 @@ const UserOrder = ({ confirmOrder, orderStatus }) => {
               variants={fadeInUp}
               initial="hidden"
               animate="visible"
-              transition={{ duration: 0.6, delay: confirmOrder.length * 0.2 }}
+              transition={{ duration: 0.6, delay: orders.length * 0.2 }}
               className="flex justify-between items-center border-t pt-4 mt-6"
             >
               <h2 className="text-xl font-bold text-gray-800">Grand Total</h2>

@@ -3,7 +3,7 @@ import { SearchX } from "lucide-react"; // optional icon
 
 const NotFound = ({ query }) => {
   return (
-    <div className="flex flex-col items-center  py-5 text-gray-700">
+    <div className="h-screen w-[100vw] flex flex-col items-center justify-center  text-gray-700  ">
       <SearchX size={64} className="text-red-500 mb-4" />
       <h2 className="text-2xl font-semibold">No Results Found</h2>
       <p className="mt-2 text-gray-500">

@@ -4,21 +4,18 @@ import {
   Search,
   Menu,
   X,
-  ContactRound,
-  Link2,
-  User,
-  User2,
   HeadphonesIcon,
 } from "lucide-react";
 import ProfileSection from "../Profile";
-import { unlistedData } from "../../Data/unlistedDatas";
 import { SearchContext } from "../../Context/SearchContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [suggestion, setSuggestion] = useState("");
+  const [searchFocus, setSearchFocus] = useState(false); // 👈 NEW
+  const [user, setUser] = useState(null);
 
   const navigate = useNavigate();
+  const { searchData, handleSearch } = useContext(SearchContext);
 
   const navItems = [
     { path: "/", label: "Home" },
@@ -29,23 +26,10 @@ const Navbar = () => {
     { path: "/connect-us", label: <HeadphonesIcon /> },
   ];
 
-  const suggestions = [
-    "Bitcoin",
-    "Ethereum",
-    "Mutual Funds",
-    "Stock Market",
-    "SIP Plans",
-  ];
-
-  const { searchData, handleSearch } = useContext(SearchContext);
-
-
-  const handleInputChange = (e)=>{
-    handleSearch(e.target.value)
-    navigate('/unlisted-data')
-  }
-
-  const [user, setUser] = useState(null);
+  const handleInputChange = (e) => {
+    handleSearch(e.target.value);
+    navigate("/unlisted-data");
+  };
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -55,7 +39,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-100 to-green-100  fixed top-0 z-50 shadow-md ">
+    <div className="w-full bg-gradient-to-br from-blue-100 to-green-100 fixed top-0 z-50 shadow-md">
       <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-4 md:px-8 md:py-1 sm:py-3">
         {/* Logo Section */}
         <Link to="/" className="w-1/6 max-w-[150px]">
@@ -66,7 +50,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Search Bar */}
+        {/* Search Bar (Desktop only) */}
         <div className="flex-1 mx-8 relative hidden lg:block ml-20">
           <input
             type="text"
@@ -75,12 +59,10 @@ const Navbar = () => {
             onChange={handleInputChange}
             className="w-11/12 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <div>
-            <Search className="absolute top-2 right-14  text-gray-500" />
-          </div>
+          <Search className="absolute top-2 right-14 text-gray-500" />
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation Links (Desktop) */}
         <div className="hidden lg:flex space-x-6 text-gray-700 font-medium items-center">
           {navItems.map(({ path, label }) => (
             <NavLink
@@ -109,6 +91,7 @@ const Navbar = () => {
             </Link>
           )}
         </div>
+
         {/* Mobile Menu Toggle */}
         <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
@@ -120,48 +103,57 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="w-full bg-slate-200 px-4 pb-4 space-y-4 text-gray-700 font-medium lg:hidden">
+          {/* Mobile Search */}
           <div className="mt-4 relative">
             <input
-              onClick={handleSearch}
               type="text"
-              placeholder="Search Markets..."
+              placeholder="Search Stocks..."
+              value={searchData}
+              onChange={handleInputChange}
+              onFocus={() => setSearchFocus(true)}   // 👈 hide nav on focus
+              onBlur={() => setSearchFocus(false)}   // 👈 show again on blur
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <Search className="absolute top-2 right-3 text-gray-500" />
           </div>
 
-          {navItems.map(({ path, label }, idx) => (
-            <NavLink
-              key={idx}
-              to={path}
-              onClick={() => setIsOpen(false)}
-              className={({ isActive }) =>
-                isActive
-                  ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
-                  : "block hover:text-blue-500"
-              }
-            >
-              {label}
-            </NavLink>
-          ))}
+          {/* Only show nav + login/profile if search is NOT focused */}
+          {!searchFocus && (
+            <>
+              {navItems.map(({ path, label }, idx) => (
+                <NavLink
+                  key={idx}
+                  to={path}
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "block text-blue-600 border-l-4 border-blue-600 pl-2"
+                      : "block hover:text-blue-500"
+                  }
+                >
+                  {label}
+                </NavLink>
+              ))}
 
-          {user ? (
-            <Link
-              to="/"
-              className="flex flex-col text-blue-600 mt-5 items-center"
-            >
-              <ProfileSection name={user.name} email={user.email} />
-            </Link>
-          ) : (
-            <Link
-              onClick={() => {
-                setIsOpen(false);
-              }}
-              to="/login"
-              className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
-            >
-              Login
-            </Link>
+              {user ? (
+                <Link
+                  to="/"
+                  className="flex flex-col text-blue-600 mt-5 items-center"
+                >
+                  <ProfileSection name={user.name} email={user.email} />
+                </Link>
+              ) : (
+                <Link
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                  to="/login"
+                  className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
+                >
+                  Login
+                </Link>
+              )}
+            </>
           )}
         </div>
       )}
