@@ -22,12 +22,12 @@ const UnlistedProp = () => {
 
   const [showNotification, setShowNotification] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  useEffect(() => {
-    console.log(isOpen);
-  });
+  const userAvailable = localStorage.getItem("user")
+  console.log(userAvailable)
 
   const handleAddtoCart = () => {
-    setShowNotification(true);
+    if(userAvailable){
+         setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
     }, 3000);
@@ -35,6 +35,11 @@ const UnlistedProp = () => {
       JSON.parse(localStorage.getItem("WatchList")) || [];
     const updatedWatchList = [selectedDetail, ...existingWatchList];
     localStorage.setItem("WatchList", JSON.stringify(updatedWatchList));
+    }
+    else{
+      navigate("/signup")
+    }
+ 
   };
 
   if (!selectedDetail)
@@ -189,7 +194,7 @@ const UnlistedProp = () => {
             name: selectedDetail.name,
             logo: selectedDetail.logo,
             price: selectedDetail.price,
-            option: "Buy"
+            option: "Buy",
           }}
         />
       ) : (
