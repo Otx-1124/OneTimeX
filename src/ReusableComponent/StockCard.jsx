@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, {useState , useEffect } from "react";
 
-import React, { useState } from "react";
+
 
 const StockCardPopup = ({ stock }) => {
   const [isOpen, setIsOpen] = useState(false);
