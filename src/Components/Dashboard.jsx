@@ -51,7 +51,7 @@ const Dashboard = () => {
               color: "text-[#009999]",
             },
             {
-              title: "📈 Total Gains",
+              title: "📈 Profit & Lose",
               value: "₹00,000",
               subtitle: "Across all investments",
               color: "text-green-600",
