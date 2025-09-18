@@ -35,7 +35,7 @@ const Banner = () => {
 
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-blue-100 via-green-100 to-white flex items-center justify-center px-6 py-10">
+    <div className="w-full min-h-screen bg-[url('/bgDiwali1.png')] bg-cover bg-center bg-opacity-50 flex items-center justify-center px-6 py-10">
       <motion.div
         className="max-w-6xl w-full text-center space-y-8"
         initial="hidden"
@@ -122,24 +122,24 @@ const Banner = () => {
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">🔒</span>
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">100% Secure</h3>
-            <p className="text-gray-600 text-sm">Bank-grade security for all your investments</p>
+            <h3 className="font-semibold text-white  mb-2">100% Secure</h3>
+            <p className="text-white text-sm">Bank-grade security for all your investments</p>
           </div>
 
           <div className="text-center">
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">⚡</span>
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">Instant Trading</h3>
-            <p className="text-gray-600 text-sm">Execute trades in seconds, not minutes</p>
+            <h3 className="font-semibold text-white mb-2">Instant Trading</h3>
+            <p className="text-white text-sm">Execute trades in seconds, not minutes</p>
           </div>
 
           <div className="text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">📈</span>
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">Expert Insights</h3>
-            <p className="text-gray-600 text-sm">Get market analysis from top experts</p>
+            <h3 className="font-semibold text-white mb-2">Expert Insights</h3>
+            <p className="text-white text-sm">Get market analysis from top experts</p>
           </div>
         </motion.div>
       </motion.div>
