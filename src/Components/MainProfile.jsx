@@ -8,6 +8,7 @@ import CloseAccount from "./CloseAccount";
 import Teamcard from "../Tests/Teamcard";
 import { h1 } from "framer-motion/client";
 import { Pen } from "lucide-react";
+import SubscriptionPlans from "./ChargesAndFees";
 
 const sections = [
   "Personal Details",
@@ -69,7 +70,7 @@ const MainProfile = () => {
       case "KYC Details":
         return <KYCDetails />;
       case "Charges & Fees":
-        return <ChargesFees />;
+        return <SubscriptionPlans />;
       case "Your Relationship Manager":
         return (
           <Teamcard

@@ -74,7 +74,8 @@ const Procedure = () => {
         </div>
 
         {/* Partner Logo Section */}
-        <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="flex justify-center mb-10">
+       <div className="flex justify-center gap-10">
+         <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="flex justify-center mb-10">
           <div className="group relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
             <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
@@ -86,6 +87,19 @@ const Procedure = () => {
             </div>
           </div>
         </a>
+        <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="flex justify-center mb-10">
+          <div className="group relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
+            <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
+              <img
+                className="w-40 h-12 object-contain filter hover:brightness-110 transition-all duration-300"
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Motilal_Oswal_Financial_Services.svg/1200px-Motilal_Oswal_Financial_Services.svg.png"
+                alt="Alice Blue - Our Trusted Partner"
+              />
+            </div>
+          </div>
+        </a>
+       </div>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">

@@ -28,6 +28,8 @@ import ScrollToTop from "./Components/ScrolltoTop";
 import CompletedOrder from "./OrderComponents/CompletedOrder";
 import Processing from "./OrderComponents/Processing";
 import AllUnlistedData from "./Components/AllUnlistedData";
+import OneTimeXAdminPanel from "./Tests/AdminPanel";
+import AdminPanel from "./Tests/AdminPanel";
 
 function App() {
   const location = useLocation();
@@ -92,6 +94,7 @@ function App() {
           <Route path="/profile-section" element={<MainProfile />} />
           <Route path="/completed" element={<CompletedOrder />} />
           <Route path="/processing" element={<Processing />} />
+          <Route path="/admin" element={<OneTimeXAdminPanel />} />
           {/* Catch-all for 404 */}
           <Route path="/*" element={<NotFound />} />
         </Routes>

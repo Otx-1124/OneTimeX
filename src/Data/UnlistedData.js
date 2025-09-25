@@ -126,7 +126,7 @@ const Data = [
   },
   {
     name: "Zepto",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Zepto_Logo.svg/2560px-Zepto_Logo.svg.png",
+    logo: "",
     alt: "Zepto Logo",
     price: "₹2,730.32/-",
     founded: 2021,

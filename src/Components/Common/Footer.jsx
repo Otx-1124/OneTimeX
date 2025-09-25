@@ -62,11 +62,8 @@ export default function Footer() {
             </button>
             <ul className={`space-y-3 md:block ${openSections.services ? 'block' : 'hidden'}`}>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Open Demat Account</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Financial Services</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Listed IPO</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Unlisted IPO</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">AIF & PMS</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Trading Types</a></li>
             </ul>
           </div>
 
@@ -86,8 +83,6 @@ export default function Footer() {
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Blog</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Portfolio</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Events</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Careers</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Press</a></li>
             </ul>
           </div>
 
@@ -107,7 +102,6 @@ export default function Footer() {
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Contact Us</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">FAQ</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Downloads</a></li>
-              <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">System Status</a></li>
               <li><a href="#" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Partners</a></li>
             </ul>
           </div>

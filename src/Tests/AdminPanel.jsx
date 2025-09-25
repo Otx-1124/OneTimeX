@@ -1,0 +1,340 @@
+import React, { useState } from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, PieChart, Pie, Cell } from 'recharts';
+
+const OneTimeXAdminPanel = () => {
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // Sample data
+  const marketData = [
+    { time: '09:30', nifty: 19850, sensex: 66200 },
+    { time: '10:00', nifty: 19875, sensex: 66350 },
+    { time: '10:30', nifty: 19820, sensex: 66180 },
+    { time: '11:00', nifty: 19890, sensex: 66420 },
+    { time: '11:30', nifty: 19910, sensex: 66480 },
+    { time: '12:00', nifty: 19885, sensex: 66380 },
+  ];
+
+  const userStats = [
+    { name: 'Active Users', value: 12450, color: '#3B82F6' },
+    { name: 'New Users', value: 1250, color: '#10B981' },
+    { name: 'Inactive Users', value: 850, color: '#F59E0B' },
+  ];
+
+  const tradeVolume = [
+    { month: 'Jan', volume: 45000 },
+    { month: 'Feb', volume: 52000 },
+    { month: 'Mar', volume: 48000 },
+    { month: 'Apr', volume: 61000 },
+    { month: 'May', volume: 55000 },
+    { month: 'Jun', volume: 67000 },
+  ];
+
+  const recentTrades = [
+    { id: 1, user: 'John Doe', stock: 'RELIANCE', type: 'BUY', quantity: 100, price: '₹2,450', time: '14:30:25' },
+    { id: 2, user: 'Sarah Smith', stock: 'TCS', type: 'SELL', quantity: 50, price: '₹3,680', time: '14:29:45' },
+    { id: 3, user: 'Mike Johnson', stock: 'INFY', type: 'BUY', quantity: 200, price: '₹1,520', time: '14:28:12' },
+    { id: 4, user: 'Anna Wilson', stock: 'HDFC', type: 'BUY', quantity: 75, price: '₹1,680', time: '14:27:33' },
+    { id: 5, user: 'David Brown', stock: 'ITC', type: 'SELL', quantity: 300, price: '₹415', time: '14:26:58' },
+  ];
+
+  const MenuItem = ({ icon, label, tabKey, badge = null }) => (
+    <div
+      className={`flex items-center px-4 py-3 cursor-pointer rounded-lg mx-2 mb-1 transition-colors duration-200 ${
+        activeTab === tabKey ? 'bg-blue-600 text-white' : 'text-gray-300 hover:bg-gray-700'
+      }`}
+      onClick={() => setActiveTab(tabKey)}
+    >
+      <span className="text-xl mr-3">{icon}</span>
+      {sidebarOpen && (
+        <>
+          <span className="font-medium">{label}</span>
+          {badge && <span className="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">{badge}</span>}
+        </>
+      )}
+    </div>
+  );
+
+  const StatCard = ({ title, value, change, changeType, icon, color }) => (
+    <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-gray-500 text-sm font-medium">{title}</p>
+          <p className="text-2xl font-bold text-gray-900 mt-1">{value}</p>
+          <p className={`text-sm mt-2 flex items-center ${changeType === 'positive' ? 'text-green-600' : 'text-red-600'}`}>
+            <span className="mr-1">{changeType === 'positive' ? '↗' : '↘'}</span>
+            {change}
+          </p>
+        </div>
+        <div className={`p-3 rounded-full ${color}`}>
+          <span className="text-2xl">{icon}</span>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderDashboard = () => (
+    <div className="space-y-6">
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <StatCard
+          title="Total Users"
+          value="14,550"
+          change="+12.5%"
+          changeType="positive"
+          icon="👥"
+          color="bg-blue-100"
+        />
+        <StatCard
+          title="Daily Volume"
+          value="₹45.2Cr"
+          change="+8.3%"
+          changeType="positive"
+          icon="📈"
+          color="bg-green-100"
+        />
+        <StatCard
+          title="Active Trades"
+          value="2,847"
+          change="-2.1%"
+          changeType="negative"
+          icon="🔄"
+          color="bg-yellow-100"
+        />
+        <StatCard
+          title="Revenue"
+          value="₹12.8L"
+          change="+15.7%"
+          changeType="positive"
+          icon="💰"
+          color="bg-purple-100"
+        />
+      </div>
+
+      {/* Charts Row */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Market Trends */}
+        <div className="bg-white rounded-xl shadow-lg p-6">
+          <h3 className="text-lg font-semibold mb-4">Market Trends</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <LineChart data={marketData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="time" />
+              <YAxis />
+              <Tooltip />
+              <Line type="monotone" dataKey="nifty" stroke="#3B82F6" strokeWidth={3} name="NIFTY 50" />
+              <Line type="monotone" dataKey="sensex" stroke="#10B981" strokeWidth={3} name="SENSEX" />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* User Distribution */}
+        <div className="bg-white rounded-xl shadow-lg p-6">
+          <h3 className="text-lg font-semibold mb-4">User Distribution</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <PieChart>
+              <Pie
+                data={userStats}
+                cx="50%"
+                cy="50%"
+                innerRadius={60}
+                outerRadius={120}
+                paddingAngle={5}
+                dataKey="value"
+              >
+                {userStats.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.color} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+          <div className="flex justify-center space-x-4 mt-4">
+            {userStats.map((item, index) => (
+              <div key={index} className="flex items-center">
+                <div className={`w-3 h-3 rounded-full mr-2`} style={{ backgroundColor: item.color }}></div>
+                <span className="text-sm text-gray-600">{item.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Recent Trades Table */}
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-lg font-semibold mb-4">Recent Trades</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50">
+              <tr>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">User</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Stock</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Type</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Quantity</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Price</th>
+                <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Time</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {recentTrades.map((trade) => (
+                <tr key={trade.id} className="hover:bg-gray-50">
+                  <td className="px-4 py-3 text-sm font-medium text-gray-900">{trade.user}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{trade.stock}</td>
+                  <td className="px-4 py-3">
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
+                      trade.type === 'BUY' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                    }`}>
+                      {trade.type}
+                    </span>
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{trade.quantity}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{trade.price}</td>
+                  <td className="px-4 py-3 text-sm text-gray-500">{trade.time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderUsers = () => (
+    <div className="bg-white rounded-xl shadow-lg p-6">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-lg font-semibold">User Management</h3>
+        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+          Add User
+        </button>
+      </div>
+      <div className="mb-4">
+        <input
+          type="text"
+          placeholder="Search users..."
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Name</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Email</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Status</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Portfolio Value</th>
+              <th className="px-4 py-3 text-left text-sm font-medium text-gray-500">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200">
+            {[1,2,3,4,5].map((i) => (
+              <tr key={i} className="hover:bg-gray-50">
+                <td className="px-4 py-3 text-sm font-medium text-gray-900">User {i}</td>
+                <td className="px-4 py-3 text-sm text-gray-500">user{i}@email.com</td>
+                <td className="px-4 py-3">
+                  <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                    Active
+                  </span>
+                </td>
+                <td className="px-4 py-3 text-sm text-gray-500">₹{(Math.random() * 1000000).toFixed(0)}</td>
+                <td className="px-4 py-3 text-sm">
+                  <button className="text-blue-600 hover:text-blue-800 mr-3">Edit</button>
+                  <button className="text-red-600 hover:text-red-800">Block</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+
+  const renderContent = () => {
+    switch (activeTab) {
+      case 'dashboard': return renderDashboard();
+      case 'users': return renderUsers();
+      case 'trades': return <div className="bg-white rounded-xl shadow-lg p-6"><h3 className="text-lg font-semibold">Trade Management</h3></div>;
+      case 'market': return <div className="bg-white rounded-xl shadow-lg p-6"><h3 className="text-lg font-semibold">Market Data</h3></div>;
+      case 'reports': return <div className="bg-white rounded-xl shadow-lg p-6"><h3 className="text-lg font-semibold">Reports & Analytics</h3></div>;
+      case 'settings': return <div className="bg-white rounded-xl shadow-lg p-6"><h3 className="text-lg font-semibold">System Settings</h3></div>;
+      default: return renderDashboard();
+    }
+  };
+
+  return (
+    <div className="flex min-h-screen bg-gray-100 mt-10">
+      {/* Sidebar */}
+      <div className={`${sidebarOpen ? 'w-64' : 'w-16'} bg-gray-900 text-white transition-all duration-300 py-10`}>
+        <div className="p-4">
+          <div className="flex items-center justify-between">
+            {sidebarOpen && <h1 className="text-xl font-bold text-blue-400">OneTimeX Admin</h1>}
+            <button
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="p-2 rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              <span className="text-lg">{sidebarOpen ? '←' : '→'}</span>
+            </button>
+          </div>
+        </div>
+
+        <nav className="mt-8">
+          <MenuItem icon="📊" label="Dashboard" tabKey="dashboard" />
+          <MenuItem icon="👥" label="Users" tabKey="users" badge="12" />
+          <MenuItem icon="🔄" label="Trades" tabKey="trades" />
+          <MenuItem icon="📈" label="Market Data" tabKey="market" />
+          <MenuItem icon="📋" label="Reports" tabKey="reports" />
+          <MenuItem icon="⚙️" label="Settings" tabKey="settings" />
+        </nav>
+
+        <div className="absolute bottom-4 left-4">
+          {sidebarOpen && (
+            <div className="flex items-center space-x-3">
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                alt="Admin"
+                className="w-10 h-10 rounded-full"
+              />
+              <div>
+                <p className="text-sm font-medium">Admin User</p>
+                <p className="text-xs text-gray-400">admin@onetimex.in</p>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-1 overflow-auto py-10">
+        {/* Header */}
+        <header className="bg-white shadow-sm px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900">
+                {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
+              </h2>
+              <p className="text-gray-500">Welcome back to OneTimeX Admin Panel</p>
+            </div>
+            <div className="flex items-center space-x-4">
+              <div className="relative">
+                <button className="p-2 text-gray-400 hover:text-gray-600 relative">
+                  <span className="text-xl">🔔</span>
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">3</span>
+                </button>
+              </div>
+              <div className="text-right">
+                <p className="text-sm font-medium text-gray-900">Live Market Status</p>
+                <p className="text-xs text-green-600">● Market Open</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* Content */}
+        <main className="p-6">
+          {renderContent()}
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default OneTimeXAdminPanel;

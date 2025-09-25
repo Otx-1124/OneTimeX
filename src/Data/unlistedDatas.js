@@ -1,16 +1,14 @@
 export const unlistedData = [
-  
   {
     name: "National Stock Exchange (NSE)",
     logo: "https://upload.wikimedia.org/wikipedia/en/0/0f/NSE_Logo.png",
     alt: "NSE Logo",
     founded: 1992,
     sector: "Stock Exchange",
-    price: "₹3,800",
+    price: "₹2,220.39",
     description:
       "NSE is the largest stock exchange in India, providing trading and investment platforms for equities, derivatives, and debt.",
     ipoStatus: "Planned (Upcoming)",
-    website: "https://www.nseindia.com",
   },
   {
     name: "HDB Financial Services",
@@ -18,11 +16,10 @@ export const unlistedData = [
     alt: "HDB Financial Logo",
     founded: 2007,
     sector: "NBFC - Financial Services",
-    price: "₹950",
+    price: "₹846.88",
     description:
       "HDB Financial Services, a subsidiary of HDFC Bank, provides loans, asset financing, and BPO services.",
     ipoStatus: "Expected",
-    website: "https://www.hdbfs.com",
   },
   {
     name: "Tata Capital",
@@ -30,11 +27,10 @@ export const unlistedData = [
     alt: "Tata Capital Logo",
     founded: 2007,
     sector: "Financial Services",
-    price: "₹480",
+    price: "₹880.52",
     description:
       "Tata Capital is a subsidiary of Tata Sons, offering consumer loans, wealth management, and investment banking.",
     ipoStatus: "Expected",
-    website: "https://www.tatacapital.com",
   },
   {
     name: "boAt (Imagine Marketing)",
@@ -42,11 +38,10 @@ export const unlistedData = [
     alt: "boAt Logo",
     founded: 2016,
     sector: "Consumer Electronics",
-    price: "₹750",
+    price: "₹1,800",
     description:
       "boAt is India’s leading audio and wearables brand, known for headphones, smartwatches, and speakers.",
     ipoStatus: "Deferred (Planned)",
-    website: "https://www.boat-lifestyle.com",
   },
   {
     name: "PharmEasy (API Holdings)",
@@ -54,11 +49,10 @@ export const unlistedData = [
     alt: "PharmEasy Logo",
     founded: 2015,
     sector: "Healthcare & E-Pharmacy",
-    price: "₹85",
+    price: "₹7.11",
     description:
       "PharmEasy is an online pharmacy and diagnostics platform providing medicines, healthcare products, and lab tests.",
     ipoStatus: "Withdrawn (May revive)",
-    website: "https://pharmeasy.in",
   },
   {
     name: "Hero FinCorp",
@@ -66,11 +60,10 @@ export const unlistedData = [
     alt: "Hero FinCorp Logo",
     founded: 1991,
     sector: "NBFC - Financial Services",
-    price: "₹1,200",
+    price: "₹1,640.23",
     description:
       "Hero FinCorp is an NBFC offering retail, SME, and corporate loans, and is part of the Hero Group.",
     ipoStatus: "Planned",
-    website: "https://www.herofincorp.com",
   },
   {
     name: "Chennai Super Kings (CSK) Cricket Ltd",
@@ -78,11 +71,10 @@ export const unlistedData = [
     alt: "CSK Logo",
     founded: 2008,
     sector: "Sports & Entertainment",
-    price: "₹180",
+    price: "₹180.67",
     description:
       "CSK is one of the most successful IPL franchises, with high brand value and consistent cricketing performance.",
     ipoStatus: "Not planned",
-    website: "https://www.chennaisuperkings.com",
   },
   {
     name: "Hexaware Technologies",
@@ -90,11 +82,10 @@ export const unlistedData = [
     alt: "Hexaware Logo",
     founded: 1990,
     sector: "IT Services & Consulting",
-    price: "₹480",
+    price: "₹850",
     description:
       "Hexaware is an IT and BPO services company specializing in cloud, automation, and digital transformation.",
     ipoStatus: "Acquired by Carlyle, possible re-listing",
-    website: "https://hexaware.com",
   },
   {
     name: "Studds Accessories",
@@ -106,19 +97,17 @@ export const unlistedData = [
     description:
       "Studds is the world’s largest manufacturer of helmets and two-wheeler accessories.",
     ipoStatus: "Planned",
-    website: "https://www.studds.com",
   },
   {
     name: "Zepto",
-    logo: "https://companieslogo.com/img/orig/ZEPTO-01.png",
+    logo: "",
     alt: "Zepto Logo",
     founded: 2021,
     sector: "Quick Commerce (Q-Commerce)",
-    price: "₹750",
+    price: "₹2,730",
     description:
       "Zepto is a fast-growing Q-commerce startup in India delivering groceries and essentials in 10 minutes.",
     ipoStatus: "Future (Expected)",
-    website: "https://www.zeptonow.com",
   },
 
   {
@@ -131,7 +120,6 @@ export const unlistedData = [
     description:
       "Reliance Retail is India's largest retailer, spanning grocery, fashion, electronics, and e-commerce through JioMart.",
     ipoStatus: "Expected",
-    website: "https://www.relianceretail.com",
   },
   {
     name: "OYO Rooms",
@@ -143,7 +131,6 @@ export const unlistedData = [
     description:
       "OYO is a hospitality tech company providing affordable hotels and homestays across India and abroad.",
     ipoStatus: "Planned (Delayed)",
-    website: "https://www.oyorooms.com",
   },
   {
     name: "Byju’s (Think & Learn Pvt Ltd)",
@@ -155,7 +142,6 @@ export const unlistedData = [
     description:
       "Byju’s is India’s leading EdTech company offering online learning programs for school and competitive exams.",
     ipoStatus: "Future (Expected)",
-    website: "https://byjus.com",
   },
   {
     name: "Swiggy",
@@ -167,7 +153,6 @@ export const unlistedData = [
     description:
       "Swiggy is India’s leading food delivery and quick-commerce platform with Instamart and Genie services.",
     ipoStatus: "Expected",
-    website: "https://www.swiggy.com",
   },
   {
     name: "Flipkart",
@@ -179,7 +164,6 @@ export const unlistedData = [
     description:
       "Flipkart is India’s top e-commerce marketplace, owned by Walmart, competing with Amazon and Reliance JioMart.",
     ipoStatus: "Expected (US Listing)",
-    website: "https://www.flipkart.com",
   },
   {
     name: "Lava International",
@@ -191,7 +175,6 @@ export const unlistedData = [
     description:
       "Lava is an Indian smartphone manufacturer known for budget and mid-range mobile devices.",
     ipoStatus: "Planned",
-    website: "https://www.lavamobiles.com",
   },
   {
     name: "MobiKwik",
@@ -203,7 +186,6 @@ export const unlistedData = [
     description:
       "MobiKwik is a digital wallet and Buy Now Pay Later (BNPL) platform offering payments and credit services.",
     ipoStatus: "Deferred (Planned)",
-    website: "https://www.mobikwik.com",
   },
   {
     name: "FirstCry",
@@ -215,7 +197,6 @@ export const unlistedData = [
     description:
       "FirstCry is India’s largest online and offline store for baby and kids products including toys, clothes, and essentials.",
     ipoStatus: "Expected",
-    website: "https://www.firstcry.com",
   },
   {
     name: "Kurlon Enterprises",
@@ -227,7 +208,6 @@ export const unlistedData = [
     description:
       "Kurlon is India’s largest mattress and home comfort products brand with a strong retail presence.",
     ipoStatus: "Planned",
-    website: "https://www.kurlon.com",
   },
   {
     name: "Tata Technologies",
@@ -239,9 +219,7 @@ export const unlistedData = [
     description:
       "Tata Technologies is an engineering services company providing digital solutions, design, and R&D for automotive and aerospace clients.",
     ipoStatus: "Upcoming",
-    website: "https://www.tatatechnologies.com",
   },
-
   {
     name: "HDB Housing Finance",
     logo: "https://companieslogo.com/img/orig/HDBHOUSING-01.png",
@@ -252,7 +230,6 @@ export const unlistedData = [
     description:
       "HDB Housing Finance is a subsidiary of HDB Financial Services providing affordable home loans across India.",
     ipoStatus: "Future (Expected)",
-    website: "https://www.hdbhousing.com",
   },
   {
     name: "Cleartrip",
@@ -264,7 +241,6 @@ export const unlistedData = [
     description:
       "Cleartrip, now owned by Flipkart, is an online travel aggregator providing flight, hotel, and train bookings.",
     ipoStatus: "Not Planned",
-    website: "https://www.cleartrip.com",
   },
   {
     name: "Ixigo",
@@ -276,7 +252,6 @@ export const unlistedData = [
     description:
       "Ixigo is an AI-powered travel and booking platform offering train, bus, and flight reservations.",
     ipoStatus: "Filed DRHP (Upcoming IPO)",
-    website: "https://www.ixigo.com",
   },
   {
     name: "Patanjali Foods",
@@ -288,7 +263,6 @@ export const unlistedData = [
     description:
       "Patanjali is a leading FMCG brand in India, offering ayurvedic products, food, and personal care items.",
     ipoStatus: "Future (Expected)",
-    website: "https://www.patanjaliayurved.net",
   },
   {
     name: "Tata Play (formerly Tata Sky)",
@@ -300,7 +274,6 @@ export const unlistedData = [
     description:
       "Tata Play is a leading DTH and OTT services provider in India, offering television and digital streaming solutions.",
     ipoStatus: "Expected",
-    website: "https://www.tataplay.com",
   },
   {
     name: "Snapdeal",
@@ -312,7 +285,6 @@ export const unlistedData = [
     description:
       "Snapdeal is an Indian e-commerce platform focused on affordable fashion, home, and lifestyle products.",
     ipoStatus: "Filed DRHP but Deferred",
-    website: "https://www.snapdeal.com",
   },
   {
     name: "OLA Electric",
@@ -324,7 +296,6 @@ export const unlistedData = [
     description:
       "Ola Electric, a subsidiary of Ola, manufactures electric scooters and EV infrastructure in India.",
     ipoStatus: "Filed DRHP (Upcoming IPO)",
-    website: "https://olaelectric.com",
   },
   {
     name: "Hike Messenger",
@@ -336,7 +307,6 @@ export const unlistedData = [
     description:
       "Hike started as a messaging app and pivoted into gaming and Web3 entertainment services.",
     ipoStatus: "Not Planned",
-    website: "https://www.hike.in",
   },
   {
     name: "Paytm Payments Bank",
@@ -348,7 +318,6 @@ export const unlistedData = [
     description:
       "Paytm Payments Bank offers digital banking, savings accounts, UPI, and mobile banking services.",
     ipoStatus: "Not Listed Separately (Subsidiary of Paytm)",
-    website: "https://www.paytmbank.com",
   },
   {
     name: "Delhivery Logistics",
@@ -360,9 +329,7 @@ export const unlistedData = [
     description:
       "Delhivery is India’s largest logistics and supply chain services provider, serving e-commerce and enterprises.",
     ipoStatus: "Listed (2022) – Previously unlisted",
-    website: "https://www.delhivery.com",
   },
-
   {
     name: "Bira 91",
     logo: "https://companieslogo.com/img/orig/BIRA91-01.png",
@@ -373,7 +340,6 @@ export const unlistedData = [
     description:
       "Bira 91 is a fast-growing craft beer brand from India with strong domestic and international presence.",
     ipoStatus: "Future (Expected)",
-    website: "https://www.bira91.com",
   },
   {
     name: "Zerodha",
@@ -385,7 +351,6 @@ export const unlistedData = [
     description:
       "Zerodha is India’s largest stock brokerage firm, known for discount broking and trading platforms like Kite.",
     ipoStatus: "No IPO Planned",
-    website: "https://zerodha.com",
   },
   {
     name: "PhonePe",
@@ -397,7 +362,6 @@ export const unlistedData = [
     description:
       "PhonePe is one of India’s leading digital payments platforms offering UPI, insurance, mutual funds, and gold investment.",
     ipoStatus: "Planned (Future)",
-    website: "https://www.phonepe.com",
   },
   {
     name: "BigBasket",
@@ -409,7 +373,6 @@ export const unlistedData = [
     description:
       "BigBasket, owned by Tata Group, is India’s largest online grocery delivery platform.",
     ipoStatus: "Expected",
-    website: "https://www.bigbasket.com",
   },
   {
     name: "Urban Company",
@@ -421,7 +384,6 @@ export const unlistedData = [
     description:
       "Urban Company is a leading home services marketplace in India offering beauty, cleaning, and repair services.",
     ipoStatus: "Planned",
-    website: "https://www.urbancompany.com",
   },
   {
     name: "Policybazaar (PB Fintech)",
@@ -433,7 +395,6 @@ export const unlistedData = [
     description:
       "Policybazaar is an insurance aggregator that allows users to compare and purchase insurance policies online.",
     ipoStatus: "Listed (2021) – Previously unlisted",
-    website: "https://www.policybazaar.com",
   },
   {
     name: "Rebel Foods (Faasos)",
@@ -445,7 +406,6 @@ export const unlistedData = [
     description:
       "Rebel Foods is the world’s largest internet restaurant company operating brands like Faasos, Behrouz Biryani, and Ovenstory.",
     ipoStatus: "Expected",
-    website: "https://www.rebelfoods.com",
   },
   {
     name: "Muthoot Microfin",
@@ -457,7 +417,6 @@ export const unlistedData = [
     description:
       "Muthoot Microfin is an NBFC that provides micro-loans to rural women entrepreneurs across India.",
     ipoStatus: "Planned",
-    website: "https://www.muthootmicrofin.com",
   },
   {
     name: "Kochi Metro Rail Ltd (KMRL)",
@@ -469,7 +428,6 @@ export const unlistedData = [
     description:
       "Kochi Metro Rail Ltd is a government-owned public transport company operating metro services in Kochi, Kerala.",
     ipoStatus: "Not Planned",
-    website: "https://kochimetro.org",
   },
   {
     name: "BharatPe",
@@ -481,477 +439,5 @@ export const unlistedData = [
     description:
       "BharatPe is a FinTech startup providing QR code-based payments and merchant lending solutions across India.",
     ipoStatus: "Future (Expected)",
-    website: "https://bharatpe.com",
-  },
-
-  {
-    name: "LIC Housing Finance",
-    logo: "https://companieslogo.com/img/orig/LICHOUSING-01.png",
-    alt: "LIC Housing Finance Logo",
-    founded: 1989,
-    sector: "Financial Services",
-    price: "₹410",
-    description:
-      "LIC Housing Finance is a subsidiary of LIC providing housing finance solutions across India.",
-    ipoStatus: "Expected",
-    website: "https://www.lichousing.com",
-  },
-  {
-    name: "Tata Sons",
-    logo: "https://companieslogo.com/img/orig/TATASONS-01.png",
-    alt: "Tata Sons Logo",
-    founded: 1868,
-    sector: "Conglomerate (Holding Company)",
-    price: "₹22,500",
-    description:
-      "Tata Sons is the principal holding company of the Tata Group with interests across multiple industries.",
-    ipoStatus: "No IPO Planned",
-    website: "https://www.tata.com",
-  },
-  {
-    name: "Royal Sundaram General Insurance",
-    logo: "https://companieslogo.com/img/orig/ROYALSUNDARAM-01.png",
-    alt: "Royal Sundaram Logo",
-    founded: 2001,
-    sector: "Insurance",
-    price: "₹145",
-    description:
-      "Royal Sundaram is a private sector general insurance company in India offering health, motor, and travel insurance.",
-    ipoStatus: "Expected",
-    website: "https://www.royalsundaram.in",
-  },
-  {
-    name: "Tata Sky Broadband",
-    logo: "https://companieslogo.com/img/orig/TATASKYBB-01.png",
-    alt: "Tata Sky Broadband Logo",
-    founded: 2008,
-    sector: "Telecom & Broadband",
-    price: "₹350",
-    description:
-      "Tata Sky Broadband provides high-speed internet services in India with advanced fiber connectivity.",
-    ipoStatus: "Not Planned",
-    website: "https://www.tataskybroadband.com",
-  },
-  {
-    name: "Aditya Birla Finance",
-    logo: "https://companieslogo.com/img/orig/ADITYABIRLAFIN-01.png",
-    alt: "Aditya Birla Finance Logo",
-    founded: 1991,
-    sector: "NBFC",
-    price: "₹950",
-    description:
-      "Aditya Birla Finance, a subsidiary of Aditya Birla Capital, provides loans, SME finance, and wealth management.",
-    ipoStatus: "Expected",
-    website: "https://www.adityabirlacapital.com",
-  },
-  {
-    name: "Kalyan Jewellers (Private Arm)",
-    logo: "https://companieslogo.com/img/orig/KALYAN-01.png",
-    alt: "Kalyan Jewellers Logo",
-    founded: 1993,
-    sector: "Retail (Jewellery)",
-    price: "₹600",
-    description:
-      "Kalyan Jewellers is one of India’s largest jewellery retail chains with strong presence across domestic and international markets.",
-    ipoStatus: "Listed (Retail arm) – Parent holding unlisted",
-    website: "https://www.kalyanjewellers.net",
-  },
-  {
-    name: "Hindustan Aeronautics (Subsidiary Units)",
-    logo: "https://companieslogo.com/img/orig/HAL-01.png",
-    alt: "HAL Logo",
-    founded: 1940,
-    sector: "Defence & Aerospace",
-    price: "₹1,850",
-    description:
-      "HAL subsidiaries manufacture defence equipment, helicopters, and aircraft components for the Indian government.",
-    ipoStatus: "Subsidiary Listings Planned",
-    website: "https://hal-india.co.in",
-  },
-  {
-    name: "Amul (GCMMF)",
-    logo: "https://companieslogo.com/img/orig/AMUL-01.png",
-    alt: "Amul Logo",
-    founded: 1946,
-    sector: "Dairy & FMCG",
-    price: "₹2,800",
-    description:
-      "Amul, operated by GCMMF, is India’s largest dairy brand and a cooperative society with international exports.",
-    ipoStatus: "No IPO Planned (Cooperative)",
-    website: "https://amul.com",
-  },
-  {
-    name: "Hinduja Leyland Finance",
-    logo: "https://companieslogo.com/img/orig/HINDUJAFIN-01.png",
-    alt: "Hinduja Finance Logo",
-    founded: 2008,
-    sector: "NBFC (Vehicle Finance)",
-    price: "₹165",
-    description:
-      "Hinduja Leyland Finance provides vehicle financing solutions and is part of the Hinduja Group.",
-    ipoStatus: "Future IPO Planned",
-    website: "https://www.hlf.in",
-  },
-  {
-    name: "TVS Finance",
-    logo: "https://companieslogo.com/img/orig/TVSFINANCE-01.png",
-    alt: "TVS Finance Logo",
-    founded: 2002,
-    sector: "Financial Services",
-    price: "₹140",
-    description:
-      "TVS Finance is an NBFC arm of the TVS Group providing loans, leasing, and SME financing.",
-    ipoStatus: "Expected",
-    website: "https://www.tvsfinance.com",
-  },
-
-  {
-    name: "HDFC Securities",
-    logo: "https://companieslogo.com/img/orig/HDFCSEC-01.png",
-    alt: "HDFC Securities Logo",
-    founded: 2000,
-    sector: "Stock Broking",
-    price: "₹3,200",
-    description:
-      "HDFC Securities is a subsidiary of HDFC Bank offering stock broking and investment services in India.",
-    ipoStatus: "Planned",
-    website: "https://www.hdfcsec.com",
-  },
-  {
-    name: "Tata Advanced Systems",
-    logo: "https://companieslogo.com/img/orig/TATAADVANCED-01.png",
-    alt: "Tata Advanced Systems Logo",
-    founded: 2007,
-    sector: "Defence & Aerospace",
-    price: "₹2,100",
-    description:
-      "Tata Advanced Systems develops aerospace, defence, and homeland security solutions for India and global clients.",
-    ipoStatus: "Expected",
-    website: "https://www.tataadvancedsystems.com",
-  },
-  {
-    name: "National Insurance Company",
-    logo: "https://companieslogo.com/img/orig/NATIONALINS-01.png",
-    alt: "National Insurance Logo",
-    founded: 1906,
-    sector: "Insurance",
-    price: "₹130",
-    description:
-      "National Insurance Company is one of the oldest general insurance firms in India, owned by the Government of India.",
-    ipoStatus: "Planned (Govt Divestment)",
-    website: "https://nationalinsurance.nic.co.in",
-  },
-  {
-    name: "Shyam Steel",
-    logo: "https://companieslogo.com/img/orig/SHYAMSTEEL-01.png",
-    alt: "Shyam Steel Logo",
-    founded: 1953,
-    sector: "Steel & Infrastructure",
-    price: "₹95",
-    description:
-      "Shyam Steel is a leading TMT bar manufacturer in India with strong presence in the construction sector.",
-    ipoStatus: "Expected",
-    website: "https://www.shyamsteel.com",
-  },
-  {
-    name: "Hinduja Global Solutions (Private Arm)",
-    logo: "https://companieslogo.com/img/orig/HGS-01.png",
-    alt: "HGS Logo",
-    founded: 1993,
-    sector: "IT & BPO Services",
-    price: "₹850",
-    description:
-      "HGS provides outsourcing, digital transformation, and BPO services worldwide. Parent arm remains unlisted.",
-    ipoStatus: "Subsidiary Listed, Parent Unlisted",
-    website: "https://hgs.cx",
-  },
-  {
-    name: "Sterlite Power",
-    logo: "https://companieslogo.com/img/orig/STERLITEPWR-01.png",
-    alt: "Sterlite Power Logo",
-    founded: 2010,
-    sector: "Power & Energy Infrastructure",
-    price: "₹450",
-    description:
-      "Sterlite Power is a leader in power transmission infrastructure and renewable energy integration.",
-    ipoStatus: "Filed DRHP (Upcoming IPO)",
-    website: "https://www.sterlitepower.com",
-  },
-  {
-    name: "MSEI (Metropolitan Stock Exchange of India)",
-    logo: "https://companieslogo.com/img/orig/MSEI-01.png",
-    alt: "MSEI Logo",
-    founded: 2008,
-    sector: "Stock Exchange",
-    price: "₹12",
-    description:
-      "MSEI is one of India’s youngest stock exchanges, focusing on derivatives, debt, and currency trading.",
-    ipoStatus: "Not Planned",
-    website: "https://www.msei.in",
-  },
-  {
-    name: "Haldiram’s",
-    logo: "https://companieslogo.com/img/orig/HALDIRAMS-01.png",
-    alt: "Haldiram Logo",
-    founded: 1937,
-    sector: "Food & FMCG",
-    price: "₹1,050",
-    description:
-      "Haldiram’s is one of India’s most popular FMCG brands, specializing in packaged snacks, sweets, and restaurants.",
-    ipoStatus: "Future (Expected)",
-    website: "https://www.haldirams.com",
-  },
-  {
-    name: "Reliance Jio Platforms",
-    logo: "https://companieslogo.com/img/orig/JIO-01.png",
-    alt: "Jio Logo",
-    founded: 2016,
-    sector: "Telecom & Digital Services",
-    price: "₹8,000",
-    description:
-      "Reliance Jio Platforms is India’s largest telecom and digital services company with over 450 million subscribers.",
-    ipoStatus: "Expected (Future)",
-    website: "https://www.jio.com",
-  },
-  {
-    name: "Adani Airports Holdings",
-    logo: "https://companieslogo.com/img/orig/ADANIAIR-01.png",
-    alt: "Adani Airports Logo",
-    founded: 2019,
-    sector: "Infrastructure (Airports)",
-    price: "₹900",
-    description:
-      "Adani Airports Holdings operates several major airports in India and is part of the Adani Group.",
-    ipoStatus: "Planned",
-    website: "https://www.adani.com",
-  },
-
-  {
-    name: "Airtel Payments Bank",
-    logo: "https://logo.clearbit.com/airtel.in",
-    alt: "Airtel Payments Bank Logo",
-    price: "₹70",
-    founded: 2017,
-    sector: "Fintech / Banking",
-    description:
-      "Airtel Payments Bank is India's first payments bank offering digital banking and payment services to over 50 million users.",
-    ipoStatus: "Not Announced",
-    website: "https://www.airtel.in/bank",
-  },
-  {
-    name: "B9 Beverages (Bira 91)",
-    logo: "https://logo.clearbit.com/bira91.com",
-    alt: "Bira 91 Logo",
-    price: "₹220",
-    founded: 2015,
-    sector: "Beverages",
-    description:
-      "Bira 91 is one of the fastest-growing premium beer brands in India with a global presence.",
-    ipoStatus: "Expected in 2026",
-    website: "https://www.bira91.com",
-  },
-  {
-    name: "Swiggy",
-    logo: "https://logo.clearbit.com/swiggy.com",
-    alt: "Swiggy Logo",
-    price: "₹580",
-    founded: 2014,
-    sector: "Food Delivery",
-    description:
-      "Swiggy is India's leading food delivery and hyperlocal services platform with millions of daily active users.",
-    ipoStatus: "Planned for 2026",
-    website: "https://www.swiggy.com",
-  },
-  {
-    name: "OYO Rooms",
-    logo: "https://logo.clearbit.com/oyorooms.com",
-    alt: "OYO Logo",
-    price: "₹95",
-    founded: 2013,
-    sector: "Hospitality",
-    description:
-      "OYO Rooms is a global hospitality chain offering affordable stays across hotels and homes in 80+ countries.",
-    ipoStatus: "Filed with SEBI",
-    website: "https://www.oyorooms.com",
-  },
-  {
-    name: "Razorpay",
-    logo: "https://logo.clearbit.com/razorpay.com",
-    alt: "Razorpay Logo",
-    price: "₹2200",
-    founded: 2014,
-    sector: "Fintech / Payments",
-    description:
-      "Razorpay is a fintech unicorn providing digital payment solutions, payroll, and banking services for businesses.",
-    ipoStatus: "Expected in 2025",
-    website: "https://www.razorpay.com",
-  },
-  {
-    name: "Meesho",
-    logo: "https://logo.clearbit.com/meesho.com",
-    alt: "Meesho Logo",
-    price: "₹310",
-    founded: 2015,
-    sector: "E-commerce",
-    description:
-      "Meesho is a leading social commerce platform enabling small businesses and resellers to sell online.",
-    ipoStatus: "Planned for 2026",
-    website: "https://www.meesho.com",
-  },
-  {
-    name: "Dream11 (Dream Sports)",
-    logo: "https://logo.clearbit.com/dream11.com",
-    alt: "Dream11 Logo",
-    price: "₹420",
-    founded: 2008,
-    sector: "Fantasy Sports",
-    description:
-      "Dream11 is India's biggest fantasy sports platform and a market leader in online sports gaming.",
-    ipoStatus: "Expected in 2026",
-    website: "https://www.dream11.com",
-  },
-  {
-    name: "Pine Labs",
-    logo: "https://logo.clearbit.com/pinelabs.com",
-    alt: "Pine Labs Logo",
-    price: "₹850",
-    founded: 1998,
-    sector: "Fintech / Payments",
-    description:
-      "Pine Labs is a fintech company providing point-of-sale (POS) and merchant commerce solutions in Asia.",
-    ipoStatus: "Filed for US IPO",
-    website: "https://www.pinelabs.com",
-  },
-  {
-    name: "MobiKwik",
-    logo: "https://logo.clearbit.com/mobikwik.com",
-    alt: "MobiKwik Logo",
-    price: "₹190",
-    founded: 2009,
-    sector: "Digital Wallet / Fintech",
-    description:
-      "MobiKwik is one of India’s leading digital wallets and financial services platforms.",
-    ipoStatus: "Expected in 2025",
-    website: "https://www.mobikwik.com",
-  },
-  {
-    name: "Rebel Foods (Faasos)",
-    logo: "https://logo.clearbit.com/faasos.com",
-    alt: "Rebel Foods Logo",
-    price: "₹640",
-    founded: 2011,
-    sector: "Cloud Kitchen",
-    description:
-      "Rebel Foods is the world’s largest internet restaurant company operating brands like Faasos, Behrouz Biryani, Oven Story, etc.",
-    ipoStatus: "Expected in 2026",
-    website: "https://www.rebelfoods.com",
-  },
-  {
-    name: "Lenskart",
-    logo: "https://logo.clearbit.com/lenskart.com",
-    alt: "Lenskart Logo",
-    price: "₹560",
-    founded: 2010,
-    sector: "E-commerce / Eyewear",
-    description:
-      "Lenskart is India’s leading eyewear brand selling glasses, lenses, and accessories online and offline.",
-    ipoStatus: "Filed with SEBI",
-    website: "https://www.lenskart.com",
-  },
-  {
-    name: "Snapdeal",
-    logo: "https://logo.clearbit.com/snapdeal.com",
-    alt: "Snapdeal Logo",
-    price: "₹35",
-    founded: 2010,
-    sector: "E-commerce",
-    description:
-      "Snapdeal is one of India’s earliest e-commerce marketplaces focused on affordable products.",
-    ipoStatus: "Withdrawn, may refile",
-    website: "https://www.snapdeal.com",
-  },
-  {
-    name: "InMobi",
-    logo: "https://logo.clearbit.com/inmobi.com",
-    alt: "InMobi Logo",
-    price: "₹890",
-    founded: 2007,
-    sector: "AdTech",
-    description:
-      "InMobi is a global mobile advertising and marketing technology company headquartered in Bengaluru.",
-    ipoStatus: "Planned for US Listing",
-    website: "https://www.inmobi.com",
-  },
-  {
-    name: "CarDekho",
-    logo: "https://logo.clearbit.com/cardekho.com",
-    alt: "CarDekho Logo",
-    price: "₹310",
-    founded: 2008,
-    sector: "Automobile Marketplace",
-    description:
-      "CarDekho is India’s leading online platform for buying and selling new and used cars.",
-    ipoStatus: "Expected in 2025",
-    website: "https://www.cardekho.com",
-  },
-  {
-    name: "PolicyBazaar (PB Fintech)",
-    logo: "https://logo.clearbit.com/policybazaar.com",
-    alt: "PolicyBazaar Logo",
-    price: "₹720",
-    founded: 2008,
-    sector: "Insurance Tech",
-    description:
-      "PolicyBazaar is an online platform for comparing and buying insurance and financial products.",
-    ipoStatus: "Listed (2021) - but still traded as pre-IPO unlisted earlier",
-    website: "https://www.policybazaar.com",
-  },
-  {
-    name: "FirstCry",
-    logo: "https://logo.clearbit.com/firstcry.com",
-    alt: "FirstCry Logo",
-    price: "₹530",
-    founded: 2010,
-    sector: "E-commerce / Kids Products",
-    description:
-      "FirstCry is Asia’s largest online and offline store for baby and kids products.",
-    ipoStatus: "Expected in 2025",
-    website: "https://www.firstcry.com",
-  },
-  {
-    name: "Udaan",
-    logo: "https://logo.clearbit.com/udaan.com",
-    alt: "Udaan Logo",
-    price: "₹280",
-    founded: 2016,
-    sector: "B2B E-commerce",
-    description:
-      "Udaan is India’s largest B2B marketplace connecting wholesalers, manufacturers, and retailers.",
-    ipoStatus: "Planned for 2026",
-    website: "https://www.udaan.com",
-  },
-  {
-    name: "Delhivery",
-    logo: "https://logo.clearbit.com/delhivery.com",
-    alt: "Delhivery Logo",
-    price: "₹620",
-    founded: 2011,
-    sector: "Logistics",
-    description:
-      "Delhivery is a supply chain and logistics company offering parcel delivery, warehousing, and freight services.",
-    ipoStatus: "Listed (2022) - earlier pre-IPO unlisted",
-    website: "https://www.delhivery.com",
-  },
-  {
-    name: "BYJU’s",
-    logo: "https://logo.clearbit.com/byjus.com",
-    alt: "BYJU's Logo",
-    price: "₹310",
-    founded: 2011,
-    sector: "EdTech",
-    description:
-      "BYJU’s is the world’s most valuable edtech company, offering digital learning for students globally.",
-    ipoStatus: "Expected in 2026",
-    website: "https://www.byjus.com",
-  },
-];
+  }
+]
