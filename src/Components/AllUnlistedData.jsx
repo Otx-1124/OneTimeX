@@ -226,15 +226,7 @@ const AllUnlistedData = () => {
                     <p className="text-gray-600">{viewDetails.ipoStatus}</p>{" "}
                   </div>{" "}
                 </div>{" "}
-                <a
-                  href={viewDetails.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-blue-500 hover:bg-blue-600 text-white text-center py-2.5 rounded font-medium transition-colors"
-                >
-                  {" "}
-                  Visit Website{" "}
-                </a>{" "}
+               
               </div>{" "}
             </motion.div>{" "}
           </div>

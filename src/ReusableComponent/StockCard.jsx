@@ -49,14 +49,7 @@ const StockCardPopup = ({ stock }) => {
               <p><span className="font-medium">IPO Status:</span> {stock.ipoStatus}</p>
             </div>
 
-            <a
-              href={stock.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block text-blue-600 font-medium hover:underline"
-            >
-              Visit Website →
-            </a>
+          
           </div>
         </div>
       )}

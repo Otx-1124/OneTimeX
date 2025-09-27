@@ -1,23 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import { TbHandClick } from "react-icons/tb";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const BuySharePopup = ({ isOpen, onClose, stock }) => {
   const [quantity, setQuantity] = useState(1);
 
   if (!isOpen) return null;
 
-  const price = parseFloat(stock.price.replace(/[^\d.]/g, ""));
-  const totalPrice = (price * quantity).toFixed(2);
+  const price = parseFloat(stock.price.replace(/[^\d.]/g, "")) || 0;
+  const totalPrice = price * quantity;
+
+  // Transaction fee logic
+  const transactionRate = totalPrice < 100000 ? 0.02 : 0.01;
+  const transactionFee = totalPrice * transactionRate;
+  const finalAmount = (totalPrice + transactionFee).toFixed(2);
+
   const navigate = useNavigate();
 
   const HandleOrder = () => {
     const newOrder = {
       ...stock,
       quantity,
-      totalPrice,
+      pricePerShare: price,
+      totalPrice: totalPrice.toFixed(2),
+      transactionFee: transactionFee.toFixed(2),
+      finalAmount,
       orderDate: new Date().toISOString(),
     };
 
@@ -31,10 +39,8 @@ const BuySharePopup = ({ isOpen, onClose, stock }) => {
     // Save back to localStorage
     localStorage.setItem("confirmed-Orders", JSON.stringify(existingOrders));
 
-    let user = localStorage.getItem("user")
-    {user?navigate("/processing"): navigate("/login")}
-
-    
+    let user = localStorage.getItem("user");
+    user ? navigate("/processing") : navigate("/login");
   };
 
   return (
@@ -83,9 +89,21 @@ const BuySharePopup = ({ isOpen, onClose, stock }) => {
           </div>
 
           {/* Summary */}
-          <div className="flex justify-between items-center">
-            <p className="text-gray-600">Total</p>
-            <p className="font-semibold">₹{totalPrice}</p>
+          <div className="space-y-1 text-sm">
+            <div className="flex justify-between">
+              <p className="text-gray-600">Total</p>
+              <p className="font-medium">₹{totalPrice.toFixed(2)}</p>
+            </div>
+            <div className="flex justify-between">
+              <p className="text-gray-600">
+                Transaction Fee ({transactionRate * 100}%)
+              </p>
+              <p className="font-medium">₹{transactionFee.toFixed(2)}</p>
+            </div>
+            <div className="flex justify-between font-semibold border-t pt-1">
+              <p>Final Amount</p>
+              <p>₹{finalAmount}</p>
+            </div>
           </div>
 
           {/* Action */}
@@ -93,7 +111,7 @@ const BuySharePopup = ({ isOpen, onClose, stock }) => {
             onClick={HandleOrder}
             className="w-full rounded-xl bg-green-600 hover:bg-green-700 text-white py-2 font-medium"
           >
-            Confirm {stock.option}
+            Confirm Buy (₹{finalAmount})
           </button>
         </div>
       </motion.div>

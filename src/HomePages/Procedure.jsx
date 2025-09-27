@@ -87,7 +87,7 @@ const Procedure = () => {
             </div>
           </div>
         </a>
-        <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="flex justify-center mb-10">
+        <a href="https://ekyc.motilaloswal.com/Partner/?diyid=23472008-2abf-4e4b-b498-f6c382305bb8" className="flex justify-center mb-10">
           <div className="group relative">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
             <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
