@@ -337,7 +337,7 @@ const InvestmentCards = () => {
                   </ul>
                 </section>
                 <div className={` absolute bottom-8  right-2 flex flex-col justify-center gap-3 p-5  rounded-lg`}>
-                <Link to="" className="rounded-3xl px-3 py-2 bg-green-400 font-semibold">Start Investing</Link>
+                <Link to="/unlisted-data" className="rounded-3xl px-3 py-2 bg-green-400 font-semibold">Start Investing</Link>
 
                  <h1 className="text-red-800 text-center">Need help..?</h1>
                  <a className="text-4xl text-green-900 flex self-center" href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"><FaWhatsapp/></a>

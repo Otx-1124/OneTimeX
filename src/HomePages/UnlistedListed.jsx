@@ -30,6 +30,35 @@ const fadeInUp = {
 const UnlistedListed = ({id}) => {
   const data = [
     {
+  "name": "Groww",
+  "logo": "	https://resources.groww.in/web-assets/img/website-logo/groww-logo-270.webp",
+  "alt": "Groww Logo",
+  "price": "₹139 per share (unlisted market estimate, 2025)",
+  "foundedYear": 2016,
+  "sector": "Fintech / WealthTech",
+  "description": "Groww is a leading Indian online investment platform that allows users to invest in stocks, mutual funds, IPOs, ETFs, and fixed deposits through a simple and user-friendly interface. It has become one of India's fastest growing fintech startups, focusing on democratizing access to financial products.",
+  "ipoStatus": "Planned (Filed DRHP with SEBI in 2025 for ~₹7,000 Cr IPO)",
+  "website": "https://groww.in/",
+  "financialsFY25": {
+    "revenue": "₹4,056 Cr",
+    "netProfit": "₹1,819 Cr",
+    "growth": "Tripled net profit compared to FY24"
+  },
+  "ipoDetails": {
+    "ipoSize": "₹7,000 Cr (approx.)",
+    "expectedListing": "2025-26",
+    "valuation": "$7 Billion"
+  },
+  "priceHistory": [
+    { "year": 2021, "price": "₹120" },
+    { "year": 2022, "price": "₹300" },
+    { "year": 2023, "price": "₹550" },
+    { "year": 2024, "price": "₹720" },
+    { "year": 2025, "price": "₹820" }
+  ]
+}
+,
+    {
       name: "NSE",
       logo: "/nse.jpg",
       alt: "NSE Logo",
@@ -164,34 +193,7 @@ const UnlistedListed = ({id}) => {
         { date: "2025-07-25", price: 180.67 },
       ],
     },
-    {
-      name: "Hero FinCorp",
-      logo: "/Fincorp.jpg",
-      alt: "Hero FinCorp Logo",
-      price: "₹1,640.23/-",
-      founded: 1991,
-      sector: "NBFC (Consumer & Commercial Finance)",
-      description:
-        "Hero FinCorp is the financial arm of Hero MotoCorp. It disburses a loan every 30 seconds and offers vehicle financing, loans against property, and SME lending.",
-      ipoStatus:
-        "IPO listed in July 2025, gained ~13% debut pop, valued at $8.2 billion on listing at ₹740/share.",
-      website: "https://www.herofincorp.com/",
-      financialsFY25: {
-        assets: 31200, // example value in ₹ Crores
-        netWorth: 7800,
-        revenueGrowth: 18.4,
-        ROE: 14.2,
-        profitYoY: 19.7,
-      },
-      graphData: [
-        { date: "2025-07-01", price: 1580 },
-        { date: "2025-07-05", price: 1600 },
-        { date: "2025-07-10", price: 1625 },
-        { date: "2025-07-15", price: 1630 },
-        { date: "2025-07-20", price: 1635 },
-        { date: "2025-07-25", price: 1640.23 },
-      ],
-    },
+    
     {
       name: "PharmEasy",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/PharmEasy_logo.png/800px-PharmEasy_logo.png",

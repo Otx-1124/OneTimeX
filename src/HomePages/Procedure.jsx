@@ -71,6 +71,7 @@ const Procedure = () => {
           <p className="text-gray-600 text-sm max-w-xl mx-auto">
             Join thousands of investors who trust our platform for their financial growth
           </p>
+          <p className="text-yellow-700 text-sm mx-auto mt-2">Click Below to Open Free Demat Account</p>
         </div>
 
         {/* Partner Logo Section */}
@@ -99,7 +100,7 @@ const Procedure = () => {
             </div>
           </div>
         </a>
-       </div>
+        </div>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">
