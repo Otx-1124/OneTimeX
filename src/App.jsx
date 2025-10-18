@@ -1,8 +1,9 @@
 // App.jsx
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
+import { motion } from "framer-motion";
 
 // ✅ Page Components
 import Home from "./Components/Home";
@@ -30,6 +31,7 @@ import Processing from "./OrderComponents/Processing";
 import AllUnlistedData from "./Components/AllUnlistedData";
 import OneTimeXAdminPanel from "./Tests/AdminPanel";
 import AdminPanel from "./Tests/AdminPanel";
+import DiwaliDisclaimer from "./Tests/DiwaliDis";
 
 function App() {
   const location = useLocation();
@@ -68,8 +70,23 @@ function App() {
     }
   }, [location.pathname]);
 
+  const [diwaliDisclaimer, setDiwaliDisclaimer] = useState(true);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setDiwaliDisclaimer(false);
+  //   }, 20000);
+  //   return () => clearTimeout(timer);
+  // }, []); // empty dependency array
+
   return (
     <>
+      {/*Deewali Dislaimer Popup for 20 sec */}
+      <DiwaliDisclaimer
+        show={diwaliDisclaimer}
+        onClose={() => setDiwaliDisclaimer(false)}
+      />
+
       {/* Disclaimer Popup Always Available */}
       <RiskDisclosurePopup />
 
