@@ -18,53 +18,7 @@ const Banner = () => {
 
   return (
     <div className="relative w-full min-h-screen bg-gradient-to-br from-blue-300 via-blue-200 to-blue-300 flex items-center justify-center px-6 py-10 overflow-hidden">
-      {/* 🌟 Diwali Latkan Lights - Top Full Width */}
-      <div className="absolute top-5 left-0 w-full flex justify-center space-x-4 z-30">
-        {lights.map((_, i) => (
-          <div key={i} className="relative flex flex-col items-center">
-            <div className="w-[2px] h-8 bg-yellow-200"></div>
-            <span
-              className="w-3 h-3 rounded-full animate-blinkLight shadow-md"
-              style={{
-                backgroundColor: randomColor(),
-                animationDelay: `${i * 0.25}s`,
-              }}
-            ></span>
-          </div>
-        ))}
-      </div>
-
-      {/* 🌟 Left Side Lights */}
-      <div className="absolute left-2 top-0 h-full flex flex-col items-center justify-center space-y-4 z-30">
-        {lights.slice(0, 14).map((_, i) => (
-          <div key={i} className="relative flex flex-col items-center">
-            <div className="w-[2px] h-4 bg-yellow-200"></div>
-            <span
-              className="w-3 h-3 rounded-full animate-blinkLight shadow-md"
-              style={{
-                backgroundColor: randomColor(),
-                animationDelay: `${i * 0.3}s`,
-              }}
-            ></span>
-          </div>
-        ))}
-      </div>
-
-      {/* 🌟 Right Side Lights */}
-      <div className="absolute right-2 top-0 h-full flex flex-col items-center justify-center space-y-4 z-30">
-        {lights.slice(0, 14).map((_, i) => (
-          <div key={i} className="relative flex flex-col items-center">
-            <div className="w-[2px] h-4 bg-yellow-200"></div>
-            <span
-              className="w-3 h-3 rounded-full animate-blinkLight shadow-md"
-              style={{
-                backgroundColor: randomColor(),
-                animationDelay: `${i * 0.3}s`,
-              }}
-            ></span>
-          </div>
-        ))}
-      </div>
+      
 
       {/* 🪔 Main Content */}
       <motion.div

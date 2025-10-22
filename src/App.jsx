@@ -39,7 +39,7 @@ function App() {
   // ✅ Smooth scroll setup (Lenis)
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 1,
       smooth: true,
       smoothTouch: false,
     });
@@ -70,22 +70,11 @@ function App() {
     }
   }, [location.pathname]);
 
-  const [diwaliDisclaimer, setDiwaliDisclaimer] = useState(true);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setDiwaliDisclaimer(false);
-  //   }, 20000);
-  //   return () => clearTimeout(timer);
-  // }, []); // empty dependency array
 
   return (
     <>
-      {/*Deewali Dislaimer Popup for 20 sec */}
-      <DiwaliDisclaimer
-        show={diwaliDisclaimer}
-        onClose={() => setDiwaliDisclaimer(false)}
-      />
+     
 
       {/* Disclaimer Popup Always Available */}
       <RiskDisclosurePopup />
