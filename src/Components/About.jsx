@@ -14,7 +14,7 @@ export default function AboutPage() {
     img: "/CeoLogo.jpg",
   };
   const team = [
-    { name: "Parag Yadav", role: "IT Backend Developer", img: "/logoOne.jpg" },
+    { name: "Parag Yadav", role: "IT Backend Developer", img: "/parag.jpg" },
     { name: "Sandeep Pandit", role: "Frontend Developer", img: "/sandeep.jpg" },
     { name: "Ankkit Ghag", role: "Marketing & Sales Lead", img: "/ankit.jpg" },
     {
@@ -37,6 +37,11 @@ export default function AboutPage() {
       name: "Aashtha Shrivastava",
       role: "Video Content Creator",
       img: "/logoOne.jpg",
+    },
+    {
+      name: "Shiksha",
+      role: "Business Development Executive",
+      img: "/shiksha2.jpg",
     },
   ];
 
@@ -208,7 +213,7 @@ export default function AboutPage() {
             <h4 className="text-2xl font-semibold text-[#009999] mb-8">
               Sales Team
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center max-w-5xl mx-auto">
               {team
                 .filter(
                   (member) =>
