@@ -30,17 +30,17 @@ const SubscriptionPlans = () => {
     {
       name: "ONELITE",
       amount: "₹10K – ₹49K",
-      fees: "₹1,499 – ₹2,999",
+      fees: "15% of Investment",
     },
     {
       name: "ONETRAIL",
       amount: "₹50K – ₹1,99L",
-      fees: "₹4,999 – ₹7,999",
+      fees: "10% of Investment",
     },
     {
       name: "ONEMANAGE",
       amount: "₹2L – ₹5L",
-      fees: "₹10K – ₹15K PA",
+      fees: "5% of Investment",
     },
     {
       name: "ONEPREMIUM (IAP)",
