@@ -210,17 +210,6 @@ export const unlistedData = [
     ipoStatus: "Upcoming",
   },
   {
-    name: "HDB Housing Finance",
-    logo: "https://companieslogo.com/img/orig/HDBHOUSING-01.png",
-    alt: "HDB Housing Finance Logo",
-    founded: 2017,
-    sector: "Financial Services (Housing Finance)",
-    price: "₹600",
-    description:
-      "HDB Housing Finance is a subsidiary of HDB Financial Services providing affordable home loans across India.",
-    ipoStatus: "Future (Expected)",
-  },
-  {
     name: "Cleartrip",
     logo: "https://companieslogo.com/img/orig/CLEARTRIP-01.png",
     alt: "Cleartrip Logo",
