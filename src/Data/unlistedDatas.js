@@ -11,17 +11,6 @@ export const unlistedData = [
     ipoStatus: "Planned (Upcoming)",
   },
   {
-    name: "HDB Financial Services",
-    logo: "https://companieslogo.com/img/orig/HDBS-01c5c67d.png?t=1721583232",
-    alt: "HDB Financial Logo",
-    founded: 2007,
-    sector: "NBFC - Financial Services",
-    price: "₹846.88",
-    description:
-      "HDB Financial Services, a subsidiary of HDFC Bank, provides loans, asset financing, and BPO services.",
-    ipoStatus: "Expected",
-  },
-  {
     name: "Tata Capital",
     logo: "https://companieslogo.com/img/orig/TATACAPITAL.NS-8b1ef82d.png",
     alt: "Tata Capital Logo",
