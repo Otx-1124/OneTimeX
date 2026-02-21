@@ -86,33 +86,6 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "HDB Financial Services",
-      logo: "/Hbd.jpg",
-      alt: "HDB Financial Logo",
-      price: "₹846.88/-",
-      founded: 2007,
-      sector: "Housing & Development Finance (NBFC)",
-      description:
-        "A subsidiary of HDFC Bank, HDB Financial Services provides personal loans, business loans, and asset financing. It plays a major role in India's retail lending ecosystem.",
-      ipoStatus: "Filed ₹12,500 crore IPO; expected to go public by 2025 end.",
-      website: "https://www.hdbfs.com/",
-      financialsFY25: {
-        assets: 108000,
-        netWorth: 14936.5,
-        revenueGrowth: 15,
-        ROE: 14.72,
-        profitYoY: -2,
-      },
-      graphData: [
-        { date: "2025-07-01", price: 820 },
-        { date: "2025-07-05", price: 828 },
-        { date: "2025-07-10", price: 834 },
-        { date: "2025-07-15", price: 841 },
-        { date: "2025-07-20", price: 846 },
-        { date: "2025-07-25", price: 846.88 },
-      ],
-    },
-    {
       name: "Tata Capital",
       logo: "/tataCap.jpg",
       alt: "Tata Capital Logo",
