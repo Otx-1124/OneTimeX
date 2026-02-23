@@ -43,6 +43,16 @@ export default function AboutPage() {
       role: "Business Development Executive",
       img: "/shiksha2.jpg",
     },
+    {
+      name:"Tushar More",
+      role:"Brand & Design Lead",
+      img:"/newImage.png"
+    },
+    {
+      name:"Jiya shah",
+      role:"Social Media Manager",
+      img:"/jiya.jpg"
+    }
   ];
 
   const verticals = [
@@ -222,6 +232,8 @@ export default function AboutPage() {
                       "Aashtha Shrivastava",
                       "Sandeep Pandit",
                       "Parag Yadav",
+                      "Tushar More",
+                      "Jiya shah"
                     ].includes(member.name)
                 )
                 .map((member, index) => (
@@ -264,7 +276,7 @@ export default function AboutPage() {
             <div className="flex justify-center gap-6 flex-wrap">
               {team
                 .filter((member) =>
-                  ["Aashtha Shrivastava"].includes(member.name)
+                  ["Aashtha Shrivastava" , "Tushar More" , "Jiya shah"].includes(member.name)
                 )
                 .map((member, index) => (
                   <Teamcard
