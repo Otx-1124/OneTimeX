@@ -51,7 +51,7 @@ export default function AboutPage() {
     {
       name:"Jiya shah",
       role:"Social Media Manager",
-      img:"/jiya.jpg"
+      img:"/jiya.jpeg"
     }
   ];
 
