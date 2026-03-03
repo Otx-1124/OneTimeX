@@ -28,7 +28,7 @@ const MainProfile = () => {
   useEffect(() => {
     setActive(sections[0]);
 
-    const savedUser = localStorage.getItem("user");
+    const savedUser = localStorage.getItem("currTimeUser");
     if (savedUser) {
       setCurrUser(JSON.parse(savedUser));
     }

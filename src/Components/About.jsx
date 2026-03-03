@@ -42,6 +42,7 @@ export default function AboutPage() {
       name: "Shiksha",
       role: "Business Development Executive",
       img: "/shiksha2.jpg",
+
     },
     {
       name:"Tushar More",
@@ -228,6 +229,7 @@ export default function AboutPage() {
                       "Sandeep Pandit",
                       "Parag Yadav",
                       "Tushar More",
+
                     ].includes(member.name)
                 )
                 .map((member, index) => (
@@ -271,6 +273,7 @@ export default function AboutPage() {
               {team
                 .filter((member) =>
                   ["Aashtha Shrivastava" , "Tushar More" ].includes(member.name)
+
                 )
                 .map((member, index) => (
                   <Teamcard

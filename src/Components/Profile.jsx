@@ -4,6 +4,9 @@ import { LogOut, User2, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { fieldset } from "framer-motion/client";
+import axios from "axios";
+import api from "../../api/api";
+import { toast } from "react-toastify";
 
 const ProfileSection = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,40 +14,47 @@ const ProfileSection = (props) => {
   const riskAvailable = localStorage.getItem("riskDisclosureAccepted");
 
   const toggleProfile = () => setIsOpen(!isOpen);
-  const savedUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const savedPic = localStorage.getItem("profilePic");
 
-  const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.removeItem("riskDisclosureAccepted");
-    navigate("/login");
-    window.location.reload();
+  const handleLogout = async () => {
+    try {
+      const response = await api.get("/user/logout", { withCredentials: true });
+
+      if(response.status === 200) {
+        navigate("/login");
+        localStorage.removeItem("currTimeUser");
+        toast.success("User logged out successfully");
+      }
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Server error");
+    }
   };
 
   const Details = [
-  {
-    name: "My Details",
-    route: "/profile-section"
-  },
-  {
-    name: "My Portfolio",
-    route: "/dashboard"
-  },
-  {
-    name: "My Funds",
-    route: "/myfunds"
-  }
-];
+    {
+      name: "My Details",
+      route: "/profile-section",
+    },
+    {
+      name: "My Portfolio",
+      route: "/dashboard",
+    },
+    {
+      name: "My Funds",
+      route: "/myfunds",
+    },
+  ];
 
-
-  const firstLetter = props.name.slice(0, 1);
-
+  const firstLetter = props.email.slice(0, 1);
 
   return (
     <div className="relative">
       {/* Profile Icon */}
-      <button onClick={toggleProfile} className="flex bg-white rounded-[50%] items-center flex-col">
+      <button
+        onClick={toggleProfile}
+        className="flex bg-white rounded-[50%] items-center flex-col"
+      >
         {savedPic ? (
           <img
             className="w-[35px] h-[35px] rounded-[50%] object-cover "

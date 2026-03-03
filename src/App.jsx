@@ -32,7 +32,8 @@ import AllUnlistedData from "./Components/AllUnlistedData";
 import OneTimeXAdminPanel from "./Tests/AdminPanel";
 import AdminPanel from "./Tests/AdminPanel";
 import DiwaliDisclaimer from "./Tests/DiwaliDis";
-
+  import { ToastContainer, toast } from 'react-toastify';
+import VerifyEmail from "./Components/VerifyEmail";
 function App() {
   const location = useLocation();
 
@@ -101,10 +102,15 @@ function App() {
           <Route path="/completed" element={<CompletedOrder />} />
           <Route path="/processing" element={<Processing />} />
           <Route path="/admin" element={<OneTimeXAdminPanel />} />
+          <Route path="/verify-email" element={<VerifyEmail />} />
           {/* Catch-all for 404 */}
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </ScrollToTop>
+
+      <ToastContainer />
+
+      
     </>
   );
 }

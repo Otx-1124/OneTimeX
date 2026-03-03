@@ -9,10 +9,12 @@ import {
 import ProfileSection from "../Profile";
 import { SearchContext } from "../../Context/SearchContext";
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchFocus, setSearchFocus] = useState(false); // 👈 NEW
-  const [user, setUser] = useState(null);
+  const user = JSON.parse(localStorage.getItem("currTimeUser")) || null
+
 
   const navigate = useNavigate();
   const { searchData, handleSearch } = useContext(SearchContext);
@@ -31,16 +33,9 @@ const Navbar = () => {
     navigate("/unlisted-data");
   };
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("user");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
-
   return (
     <div className="w-full bg-gradient-to-br  from-blue-200 via-blue-200 to-blue-200 fixed top-0 z-50 shadow-md">
-      <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-4 md:px-8 md:py-1 sm:py-3">
+      <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-4 md:px-8 md:py-1 ">
         {/* Logo Section */}
         <Link to="/" className="w-1/6 max-w-[150px]">
           <img
