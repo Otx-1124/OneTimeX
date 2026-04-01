@@ -263,8 +263,8 @@ const BlogPage = () => {
               <p className="mb-8">
                 Join OneTimeX for exclusive pre-IPO investment opportunities.
               </p>
-              <Link
-                to="/signup"
+              <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176"
+                
                 className="inline-flex items-center bg-white text-blue-700 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-50"
               >
                 Start Investing Now
@@ -281,7 +281,7 @@ const BlogPage = () => {
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   ></path>
                 </svg>
-              </Link>
+              </a>
             </motion.div>
           </div>
         </motion.div>

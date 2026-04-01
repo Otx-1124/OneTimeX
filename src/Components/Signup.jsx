@@ -79,6 +79,10 @@ const Signup = () => {
     }
   };
 
+  const handleGoogleAuth = async () => {
+    window.location.href = "http://localhost:5500/api/v1/user/auth/google";
+  };
+
   return (
     <motion.section
       className="fixed mt-10 min-h-screen w-full bg-green-50 flex items-center justify-center px-4 py-10"
@@ -121,15 +125,30 @@ const Signup = () => {
             onChange={handleChange}
             placeholder="••••••••"
           />
+          <div className="flex gap-3 mt-4">
+            {/* Email Login */}
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.02 }}
+              disabled={loading}
+              className="w-full rounded-lg bg-orange-600 py-2 text-sm font-medium text-white transition hover:bg-orange-700 disabled:opacity-70"
+            >
+              {loading ? "Sending verification email..." : "Sign Up"}
+            </motion.button>
 
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02 }}
-            disabled={loading}
-            className="w-full rounded-lg bg-orange-600 py-2 text-sm font-medium text-white transition hover:bg-orange-700 disabled:opacity-70"
-          >
-            {loading ? "Sending verification email..." : "Sign Up"}
-          </motion.button>
+            {/* Google Login */}
+            <button
+              onClick={handleGoogleAuth}
+              className="w-1/3 bg-white border border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:w-2/3"
+            >
+              {/* Google Icon */}
+              <img
+                src="https://developers.google.com/identity/images/g-logo.png"
+                alt="Google"
+                className="w-6 h-6 shrink-0"
+              />
+            </button>
+          </div>
         </form>
 
         <p className="mt-4 text-center text-xs text-gray-600">

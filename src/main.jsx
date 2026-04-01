@@ -11,23 +11,24 @@ import ScrollToTop from "./Components/ScrolltoTop.jsx";
 import { InvestmentProvider } from "./Context/InvestmentContext.jsx";
 import { UnlistedProvider } from "./Context/UnlistedContext.jsx";
 import { SearchProvider } from "./Context/SearchContext.jsx";
-
+import { AuthProvider } from "./ContextFile/authContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <SearchProvider>
-    
-      <Navbar />
+      <AuthProvider>
+        <Navbar />
+      </AuthProvider>
+
       <InvestmentProvider>
         <UnlistedProvider>
-         
-            <App />
-          
+          <AuthProvider>
+          <App />
+          </AuthProvider>
         </UnlistedProvider>
       </InvestmentProvider>
-    
     </SearchProvider>
     <SocialFooter />
     <Footer />
-  </BrowserRouter>
+  </BrowserRouter>,
 );

@@ -62,13 +62,7 @@ const AllUnlistedData = () => {
             >
               {/* Card Content */}
               <div className="flex items-start justify-between mb-3">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-50 rounded-lg flex items-center justify-center p-2">
-                  <img
-                    src={stock.logo}
-                    alt={stock.name}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+               
                 <span className="px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 rounded">
                   {stock.ipoStatus}
                 </span>

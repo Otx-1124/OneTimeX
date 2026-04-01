@@ -8,7 +8,8 @@ import axios from "axios";
 import api from "../../api/api";
 import { toast } from "react-toastify";
 
-const ProfileSection = (props) => {
+const ProfileSection = ({user , setUser}) => {
+
   const [isOpen, setIsOpen] = useState(false);
 
   const riskAvailable = localStorage.getItem("riskDisclosureAccepted");
@@ -22,6 +23,7 @@ const ProfileSection = (props) => {
       const response = await api.get("/user/logout", { withCredentials: true });
 
       if(response.status === 200) {
+        setUser(null);
         navigate("/login");
         localStorage.removeItem("currTimeUser");
         toast.success("User logged out successfully");
@@ -46,7 +48,6 @@ const ProfileSection = (props) => {
     },
   ];
 
-  const firstLetter = props.email.slice(0, 1);
 
   return (
     <div className="relative">
@@ -63,7 +64,7 @@ const ProfileSection = (props) => {
           />
         ) : (
           <div className="w-[35px] h-[35px] rounded-[50%] border border-blue-400 text-center flex justify-center items-center text-xl font-semibold ">
-            <p className="font-dmserif uppercase">{firstLetter}</p>
+            <p className="font-dmserif uppercase">{user.email.slice(0, 1)}</p>
           </div>
         )}
       </button>
@@ -87,8 +88,8 @@ const ProfileSection = (props) => {
             <h1 className="font-bold text-2xl text-[#009999]">
               Account Details
             </h1>
-            <h2 className="text-xl font-bold mt-4">{props.name}</h2>
-            <p className="text-gray-500">{props.email}</p>
+            <h2 className="text-xl font-bold mt-4">{user.name}</h2>
+            <p className="text-gray-500">{user.email}</p>
 
             <div className="mt-6 space-y-4 flex flex-col">
               {Details.map((items) => {

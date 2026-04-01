@@ -73,8 +73,8 @@ const Banner = () => {
           variants={fadeInUp}
         >
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-            <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
-            <div className="text-gray-700 font-medium">Investors Onboarded</div>
+            <div className="text-3xl font-bold text-blue-600 mb-2">Trusted</div>
+            <div className="text-gray-700 font-medium">Empowering Investors</div>
           </div>
           <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
             <div className="text-3xl font-bold text-green-600 mb-2">Cr+ Traded</div>
@@ -95,13 +95,12 @@ const Banner = () => {
           className="flex flex-wrap justify-center gap-6"
           variants={fadeInUp}
         >
-          <button
-            onClick={() => setShowModal(true)}
+          <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176"
             className="px-10 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm md:text-lg font-semibold rounded-2xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-3"
           >
             <TrendingUp className="w-6 md:h-6" />
             <span>Open Free Demat Account</span>
-          </button>
+          </a>
 
           <Link
             to="/onetimex-intro"

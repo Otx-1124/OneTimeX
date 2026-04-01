@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import api from "../../api/api";
+import { useAuth } from "../ContextFile/authContext";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,10 +16,11 @@ const fadeInUp = {
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [user, setUser] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const { setUser } = useAuth();
 
   const verifyUser = async () => {
     try {
@@ -28,7 +30,7 @@ export default function LoginPage() {
       }
       setLoading(true);
       const res = await api.post("/user/login", { email, password });
-      localStorage.setItem("currTimeUser", JSON.stringify(res.data.success));
+      setUser(res.data.success.email);
       toast.success("Login successful");
       navigate("/");
     } catch (error) {
@@ -42,9 +44,16 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await verifyUser();
+      setInterval(() => {
+        window.location.reload();
+      }, 1000);
     } catch (error) {
       toast.error("Login failed. Please check your credentials.");
     }
+  };
+
+  const handleGoogleAuth = async () => {
+    window.location.href = "http://localhost:5500/api/v1/user/auth/google";
   };
 
   return (
@@ -87,13 +96,35 @@ export default function LoginPage() {
             />
           </div>
 
-          <motion.button
-            type="submit"
-            whileHover={{ scale: 1.02 }}
-            className="w-full bg-orange-600 text-white font-semibold py-2 rounded-xl transition-all duration-300 hover:bg-orange-700"
-          >
-            {loading ? "Logging in..." : "Login"}
-          </motion.button>
+          <div className="flex gap-3 mt-4">
+            {/* Email Login */}
+            <motion.button
+              type="submit"
+              whileHover={{ scale: 1.02 }}
+              disabled={loading}
+              className="w-2/3 bg-orange-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:bg-orange-700 flex items-center justify-center"
+            >
+              {loading ? "Logging in..." : "Login"}
+            </motion.button>
+
+            {/* Google Login */}
+            <button
+              onClick={handleGoogleAuth}
+              className="w-2/3 bg-white border hover:bg-gray-50 border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:w-2/3"
+            >
+              {/* Google Icon */}
+              <img
+                src="https://developers.google.com/identity/images/g-logo.png"
+                alt="Google"
+                className="w-6 h-6 shrink-0 "
+              />
+
+              {/* Hidden Text (appears on hover) */}
+              <span className="text-sm font-medium text-gray-700  transition-all duration-300 whitespace-nowrap">
+                Login with Google
+              </span>
+            </button>
+          </div>
         </form>
 
         <p className="text-center text-sm text-gray-600 mt-6">

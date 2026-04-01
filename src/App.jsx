@@ -1,6 +1,6 @@
 // App.jsx
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
 import { motion } from "framer-motion";
@@ -32,8 +32,9 @@ import AllUnlistedData from "./Components/AllUnlistedData";
 import OneTimeXAdminPanel from "./Tests/AdminPanel";
 import AdminPanel from "./Tests/AdminPanel";
 import DiwaliDisclaimer from "./Tests/DiwaliDis";
-  import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import VerifyEmail from "./Components/VerifyEmail";
+import { AuthProvider, useAuth } from "./ContextFile/authContext";
 function App() {
   const location = useLocation();
 
@@ -72,45 +73,42 @@ function App() {
   }, [location.pathname]);
 
 
-
   return (
     <>
-     
-
       {/* Disclaimer Popup Always Available */}
       <RiskDisclosurePopup />
 
       {/* Routes */}
       <ScrollToTop>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/terms-con" element={<TermsAndPolicies />} />
-          <Route path="/unlisted-data" element={<AllUnlistedData />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/connect-us" element={<Connect />} />
-          <Route path="/investment-props" element={<InvestmentProps />} />
-          <Route path="/onetimex-intro" element={<OnetimexIntro />} />
-          <Route path="/graph" element={<NSEChart />} />
-          <Route path="/unlisted-detail" element={<UnlistedProp />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/myfunds" element={<MyFunds />} />
-          <Route path="/profile-section" element={<MainProfile />} />
-          <Route path="/completed" element={<CompletedOrder />} />
-          <Route path="/processing" element={<Processing />} />
-          <Route path="/admin" element={<OneTimeXAdminPanel />} />
-          <Route path="/verify-email" element={<VerifyEmail />} />
-          {/* Catch-all for 404 */}
-          <Route path="/*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/terms-con" element={<TermsAndPolicies />} />
+            <Route path="/unlisted-data" element={<AllUnlistedData />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/connect-us" element={<Connect />} />
+            <Route path="/investment-props" element={<InvestmentProps />} />
+            <Route path="/onetimex-intro" element={<OnetimexIntro />} />
+            <Route path="/graph" element={<NSEChart />} />
+            <Route path="/unlisted-detail" element={<UnlistedProp />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/myfunds" element={<MyFunds />} />
+            <Route path="/profile-section" element={<MainProfile />} />
+            <Route path="/completed" element={<CompletedOrder />} />
+            <Route path="/processing" element={<Processing />} />
+            <Route path="/admin" element={<OneTimeXAdminPanel />} />
+            <Route path="/verify-email" element={<VerifyEmail />} />
+            {/* Catch-all for 404 */}
+            <Route path="/*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </ScrollToTop>
 
       <ToastContainer />
-
-      
     </>
   );
 }

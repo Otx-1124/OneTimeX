@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import PersonalDetailsSection from "./PersonalDetails";
 import DematDetails from "./DematDetails";
 import KYCDetails from "./KycDetails";
-import ChargesFees from "./ChargesAndFees";
 import CloseAccount from "./CloseAccount";
 import Teamcard from "../Tests/Teamcard";
-import { h1 } from "framer-motion/client";
-import { Pen } from "lucide-react";
 import SubscriptionPlans from "./ChargesAndFees";
+import { useAuth } from "../ContextFile/authContext";
 
 const sections = [
   "Personal Details",
@@ -21,27 +18,16 @@ const sections = [
 ];
 
 const MainProfile = () => {
-  const [active, setActive] = useState(null);
-  const [currUser, setCurrUser] = useState({});
+  const [active, setActive] = useState(sections[0]);
   const [profilePic, setProfilePic] = useState(null);
+  const { user, setUser } = useAuth();
 
   useEffect(() => {
-    setActive(sections[0]);
-
-    const savedUser = localStorage.getItem("currTimeUser");
-    if (savedUser) {
-      setCurrUser(JSON.parse(savedUser));
-    }
-
     const savedPic = localStorage.getItem("profilePic");
     if (savedPic) {
       setProfilePic(savedPic);
     }
   }, []);
-
-  const handleSectionClick = (section) => {
-    setActive(section);
-  };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -59,27 +45,26 @@ const MainProfile = () => {
   const renderSectionContent = () => {
     switch (active) {
       case "Personal Details":
-        return (
-          <PersonalDetailsSection
-            currUser={currUser}
-            setCurrUser={setCurrUser}
-          />
-        );
+        return <PersonalDetailsSection user={user} setUser={setUser} />;
+
       case "Demat Details":
         return <DematDetails />;
+
       case "KYC Details":
         return <KYCDetails />;
+
       case "Charges & Fees":
         return <SubscriptionPlans />;
+
       case "Your Relationship Manager":
         return (
           <Teamcard
             name="Raj Duani"
             img="/logoOne2.png"
             role="Relationship Manager"
-            cursor="cursor-pointer"
           />
         );
+
       case "Change Your Pass/PIN":
         return (
           <div className="min-h-[80%] flex items-center justify-center bg-gray-100 px-4">
@@ -90,17 +75,20 @@ const MainProfile = () => {
               <p className="text-gray-700 text-lg">
                 The option you're looking for is currently not available.
               </p>
-              <p className="text-gray-500 mt-2">
-                Please check back later or explore other available features.
-              </p>
-              <button className="mt-6 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+
+              <button
+                onClick={() => setActive(sections[0])}
+                className="mt-6 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition"
+              >
                 Go Back
               </button>
             </div>
           </div>
         );
+
       case "Close OneTimeX Account":
         return <CloseAccount />;
+
       default:
         return <p>Select a section to view details.</p>;
     }
@@ -108,42 +96,37 @@ const MainProfile = () => {
 
   return (
     <div className="mt-10 py-10 px-4 md:px-10 flex flex-col lg:flex-row gap-5 bg-[#009999] bg-opacity-20">
+      
       {/* Sidebar */}
       <div className="px-5 py-6 flex flex-col border border-gray-300 w-full lg:w-2/6 rounded-xl items-center bg-white">
+        
         {/* Profile Picture */}
         <div className="relative mb-6">
           <label htmlFor="upload-photo">
             <div className="w-24 h-24 border border-gray-300 rounded-full overflow-hidden cursor-pointer bg-gray-100">
-              {profilePic ? (
-                <img
-                  src={profilePic}
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-                  Upload
-                </div>
-              )}
+              <img
+                src={profilePic || "/default-avatar.png"}
+                alt="Profile"
+                className="w-full h-full object-cover"
+              />
             </div>
           </label>
+
           <input
             type="file"
             id="upload-photo"
             accept="image/*"
             onChange={handleImageUpload}
-            className="hidden relative"
+            className="hidden"
           />
-          {/* <button  className="absolute bottom-1 right-0 flex justify-center items-center h-[30px] w-[30px] bg-gray-300 rounded-[50%]"><Pen  size={18}/></button> */}
         </div>
 
         {/* Sections */}
         <div className="flex flex-col w-full gap-2">
           {sections.map((section) => (
-            <Link
+            <button
               key={section}
-              onClick={() => handleSectionClick(section)}
-              to=""
+              onClick={() => setActive(section)}
               className={`px-4 py-2 rounded-lg text-left ${
                 active === section
                   ? "bg-blue-100 border-l-4 border-blue-600 font-semibold"
@@ -151,7 +134,7 @@ const MainProfile = () => {
               }`}
             >
               {section}
-            </Link>
+            </button>
           ))}
         </div>
       </div>

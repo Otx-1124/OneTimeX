@@ -88,9 +88,9 @@ const OnetimexIntro = () => {
           <p className="text-gray-700 mb-4">
             Join thousands of retail investors exploring the future of wealth with Onetimex.
           </p>
-          <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow transition">
+          <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow transition">
             Get Started
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

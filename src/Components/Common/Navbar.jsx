@@ -8,12 +8,17 @@ import {
 } from "lucide-react";
 import ProfileSection from "../Profile";
 import { SearchContext } from "../../Context/SearchContext";
+import { useAuth } from "../../ContextFile/authContext";
 
 
 const Navbar = () => {
+  const {user , loading , setUser} = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [searchFocus, setSearchFocus] = useState(false); // 👈 NEW
-  const user = JSON.parse(localStorage.getItem("currTimeUser")) || null
+
+  useEffect(()=>{
+      console.log(user)
+  },[])
 
 
   const navigate = useNavigate();
@@ -75,7 +80,7 @@ const Navbar = () => {
 
           {user ? (
             <div className="flex flex-col text-blue-600 justify-center items-center">
-              <ProfileSection name={user.name} email={user.email} />
+              <ProfileSection user={user} setUser={setUser} />
             </div>
           ) : (
             <Link
@@ -135,7 +140,7 @@ const Navbar = () => {
                   to="/"
                   className="flex flex-col text-blue-600 mt-5 items-center"
                 >
-                  <ProfileSection name={user.name} email={user.email} />
+                  <ProfileSection user={user} setUser={setUser} />
                 </Link>
               ) : (
                 <Link

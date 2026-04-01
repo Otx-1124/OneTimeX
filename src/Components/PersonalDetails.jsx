@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import api from "../../api/api";
+import { toast } from "react-toastify";
 
-const PersonalDetailsSection = ({ currUser, setCurrUser }) => {
+const PersonalDetailsSection = ({ user = {}, setUser }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,35 +17,60 @@ const PersonalDetailsSection = ({ currUser, setCurrUser }) => {
   });
 
   const [alertVisible, setAlertVisible] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setFormData({
-      name: currUser.name || "",
-      email: currUser.email || "",
-      phone: currUser.phone || "",
-      dob: currUser.dob || "",
-      gender: currUser.gender || "",
-      fatherName: currUser.fatherName || "",
-      income: currUser.income || "",
-      stocks: currUser.stocks || "",
-      investment: currUser.investment || "",
+      name: user?.name || "",
+      email: user?.email || "",
+      phone: user?.phone || "",
+      dob: user?.dob || "",
+      gender: user?.gender || "",
+      fatherName: user?.fatherName || "",
+      income: user?.income || "",
+      stocks: user?.stocks || "",
+      investment: user?.investment || "",
     });
-  }, [currUser]);
+  }, [user]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
 
-  const handleSave = () => {
-    localStorage.setItem("user", JSON.stringify(formData));
-    setCurrUser(formData);
+  const validateForm = () => {
+    if (!formData.name.trim()) return "Name is required";
+    if (!formData.email.includes("@")) return "Invalid email";
+    if (formData.phone.length < 10) return "Invalid phone number";
+    return "";
+  };
+
+  const handleSave = async() => {
+    const validationError = validateForm();
+
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+
+    try {
+      const res = await api.put("/user/updateAccountInfo", formData);
+      if (res.data.statusCode === 200) {
+        toast.success(res.data.message || "Details updated successfully");
+      }
+    } catch (error) {
+      toast.error("Failed to update details");
+    }
+    setUser(formData);
+
+    setError("");
     setAlertVisible(true);
-    setTimeout(() => setAlertVisible(false), 5000); // Auto hide after 3s
-    window.location.reload()
+
+    setTimeout(() => setAlertVisible(false), 3000);
   };
 
   return (
@@ -51,96 +78,55 @@ const PersonalDetailsSection = ({ currUser, setCurrUser }) => {
       initial={{ x: "100%" }}
       animate={{ x: 0 }}
       exit={{ x: "100%" }}
-      transition={{ type: "tween", duration:0.5, stiffness: 200, damping: 20}}
+      transition={{ duration: 0.5 }}
     >
-      {/* Alert Section */}
       <AnimatePresence>
         {alertVisible && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md mb-4 flex items-center justify-between"
+            className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md mb-4 flex justify-between"
           >
-            <span className="font-medium">Details saved successfully!</span>
-            <button
-              onClick={() => setAlertVisible(false)}
-              className="text-green-700 hover:text-green-900"
-            >
-              &times;
-            </button>
+            <span>Details saved successfully!</span>
+            <button onClick={() => setAlertVisible(false)}>&times;</button>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {error && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded mb-4">
+          {error}
+        </div>
+      )}
 
       <h3 className="text-xl font-semibold mb-6 text-center">
         Personal Information
       </h3>
 
-      {/* Responsive Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <InputField label="Name" name="name" value={formData.name} onChange={handleChange} />
         <InputField label="Email" name="email" value={formData.email} onChange={handleChange} />
         <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} />
         <InputField label="Date of Birth" name="dob" type="date" value={formData.dob} onChange={handleChange} />
 
-        <div className="flex flex-col">
-          <label className="text-sm text-gray-600">Gender</label>
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            className="border px-3 py-2 rounded-md"
-          >
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
+        <SelectField label="Gender" name="gender" value={formData.gender} onChange={handleChange} options={["male","female","other"]} />
 
-        <InputField
-          label="Father's Name"
-          name="fatherName"
-          value={formData.fatherName}
-          onChange={handleChange}
-        />
+        <InputField label="Father's Name" name="fatherName" value={formData.fatherName} onChange={handleChange} />
 
-        <div className="flex flex-col">
-          <label className="text-sm text-gray-600">Income Range</label>
-          <select
-            name="income"
-            value={formData.income}
-            onChange={handleChange}
-            className="border px-3 py-2 rounded-md"
-          >
-            <option value="">Select Income Range</option>
-            <option value="below1L">Below ₹1 Lakh</option>
-            <option value="1-5L">₹1 Lakh - ₹5 Lakhs</option>
-            <option value="5-10L">₹5 Lakhs - ₹10 Lakhs</option>
-            <option value="10L+">Above ₹10 Lakhs</option>
-          </select>
-        </div>
+        <SelectField label="Income Range" name="income" value={formData.income} onChange={handleChange} options={["below1L","1-5L","5-10L","10L+"]} />
 
         <InputField label="Stocks Invested In" name="stocks" value={formData.stocks} onChange={handleChange} />
 
-        <div className="flex flex-col md:col-span-2">
-          <label className="text-sm text-gray-600">Total Investment (₹)</label>
-          <input
-            type="number"
-            name="investment"
-            value={formData.investment}
-            onChange={handleChange}
-            className="border px-3 py-2 rounded-md"
-          />
+        <div className="md:col-span-2">
+          <InputField label="Total Investment (₹)" name="investment" type="number" value={formData.investment} onChange={handleChange} />
         </div>
       </div>
 
-      {/* Save Button */}
-      <div className="flex justify-center md:justify-end mt-6">
+      <div className="flex justify-end mt-6">
         <button
           onClick={handleSave}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md"
         >
           Save Details
         </button>
@@ -157,9 +143,27 @@ const InputField = ({ label, name, value, onChange, type = "text" }) => (
       name={name}
       value={value}
       onChange={onChange}
-      placeholder={`Enter ${label.toLowerCase()}`}
       className="border px-3 py-2 rounded-md"
     />
+  </div>
+);
+
+const SelectField = ({ label, name, value, onChange, options }) => (
+  <div className="flex flex-col">
+    <label className="text-sm text-gray-600">{label}</label>
+    <select
+      name={name}
+      value={value}
+      onChange={onChange}
+      className="border px-3 py-2 rounded-md"
+    >
+      <option value="">Select {label}</option>
+      {options.map((opt) => (
+        <option key={opt} value={opt}>
+          {opt}
+        </option>
+      ))}
+    </select>
   </div>
 );
 

@@ -27,39 +27,39 @@ const fadeInUp = {
   }),
 };
 
-const UnlistedListed = ({id}) => {
+const UnlistedListed = ({ id }) => {
   const data = [
     {
-  "name": "Groww",
-  "logo": "	https://resources.groww.in/web-assets/img/website-logo/groww-logo-270.webp",
-  "alt": "Groww Logo",
-  "price": "₹139 per share (unlisted market estimate, 2025)",
-  "foundedYear": 2016,
-  "sector": "Fintech / WealthTech",
-  "description": "Groww is a leading Indian online investment platform that allows users to invest in stocks, mutual funds, IPOs, ETFs, and fixed deposits through a simple and user-friendly interface. It has become one of India's fastest growing fintech startups, focusing on democratizing access to financial products.",
-  "ipoStatus": "Planned (Filed DRHP with SEBI in 2025 for ~₹7,000 Cr IPO)",
-  "website": "https://groww.in/",
-  "financialsFY25": {
-    "revenue": "₹4,056 Cr",
-    "netProfit": "₹1,819 Cr",
-    "growth": "Tripled net profit compared to FY24"
-  },
-  "ipoDetails": {
-    "ipoSize": "₹7,000 Cr (approx.)",
-    "expectedListing": "2025-26",
-    "valuation": "$7 Billion"
-  },
-  "priceHistory": [
-    { "year": 2021, "price": "₹120" },
-    { "year": 2022, "price": "₹300" },
-    { "year": 2023, "price": "₹550" },
-    { "year": 2024, "price": "₹720" },
-    { "year": 2025, "price": "₹820" }
-  ]
-}
-,
+      name: "Groww Unlisted Shares",
+      logo: "	https://resources.groww.in/web-assets/img/website-logo/groww-logo-270.webp",
+      alt: "Groww Logo",
+      price: "₹139 per share (unlisted market estimate, 2025)",
+      foundedYear: 2016,
+      sector: "Fintech / WealthTech",
+      description:
+        "Groww is a leading Indian online investment platform that allows users to invest in stocks, mutual funds, IPOs, ETFs, and fixed deposits through a simple and user-friendly interface. It has become one of India's fastest growing fintech startups, focusing on democratizing access to financial products.",
+      ipoStatus: "Planned (Filed DRHP with SEBI in 2025 for ~₹7,000 Cr IPO)",
+      website: "https://groww.in/",
+      financialsFY25: {
+        revenue: "₹4,056 Cr",
+        netProfit: "₹1,819 Cr",
+        growth: "Tripled net profit compared to FY24",
+      },
+      ipoDetails: {
+        ipoSize: "₹7,000 Cr (approx.)",
+        expectedListing: "2025-26",
+        valuation: "$7 Billion",
+      },
+      priceHistory: [
+        { year: 2021, price: "₹120" },
+        { year: 2022, price: "₹300" },
+        { year: 2023, price: "₹550" },
+        { year: 2024, price: "₹720" },
+        { year: 2025, price: "₹820" },
+      ],
+    },
     {
-      name: "NSE",
+      name: "NSE Unlisted Shares",
       logo: "/nse.jpg",
       alt: "NSE Logo",
       price: "₹2,220.39/-",
@@ -86,7 +86,7 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "Tata Capital",
+      name: "Tata Capital Unlisted Shares",
       logo: "/tataCap.jpg",
       alt: "Tata Capital Logo",
       price: "₹880.52/-",
@@ -113,7 +113,7 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "boAt",
+      name: "boAt Unlisted Shares",
       logo: "https://cdn.freelogovectors.net/wp-content/uploads/2023/11/boat-logo-freelogovectors.net_.png",
       alt: "boAt Logo",
       price: "₹1,800.00/-",
@@ -140,7 +140,7 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "Chennai Super Kings (CSK)",
+      name: "Chennai Super Kings (CSK) Unlisted Shares",
       logo: "/csk.svg.png",
       alt: "CSK Logo",
       price: "₹180.67/-",
@@ -166,9 +166,9 @@ const UnlistedListed = ({id}) => {
         { date: "2025-07-25", price: 180.67 },
       ],
     },
-    
+
     {
-      name: "PharmEasy",
+      name: "PharmEasy Unlisted Shares",
       logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/PharmEasy_logo.png/800px-PharmEasy_logo.png",
       alt: "PharmEasy Logo",
       price: "₹7.11/-",
@@ -196,7 +196,7 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "Zepto",
+      name: "Zepto Unlisted Shares",
       logo: "",
       alt: "Zepto Logo",
       price: "₹2,730.32/-",
@@ -224,7 +224,7 @@ const UnlistedListed = ({id}) => {
       ],
     },
     {
-      name: "Hexaware",
+      name: "Hexaware Unlisted Shares",
       logo: "/hexa.png",
       alt: "Hexaware Logo",
       price: "₹850.00/-",
@@ -252,75 +252,8 @@ const UnlistedListed = ({id}) => {
     },
   ];
 
-  let data2 = [
-    {
-      name: "Listed Co. A",
-      logo: "https://1000logos.net/wp-content/uploads/2021/09/Reliance-Industries-Limited-Logo.png",
-      alt: "Reliance-Industries-Limited-Logo",
-     
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Tata_Consultancy_Services_Logo.svg/2560px-Tata_Consultancy_Services_Logo.svg.png",
-      alt: "Tata_Consultancy_Services_Logo",
-     
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://seeklogo.com/images/H/hdfc-bank-logo-A0A2CDE793-seeklogo.com.png",
-      alt: "hdfc-bank-logo",
-  
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://logolook.net/wp-content/uploads/2024/01/Infosys-Logo.png",
-      alt: "Infosys-Logo",
-      
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/2560px-ICICI_Bank_Logo.svg.png",
-      alt: "ICICI_Bank_Logo",
-      
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://logos-world.net/wp-content/uploads/2020/11/Zomato-Logo.png",
-      alt: "Zomato-Logo",
-     
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Persistent_Systems_Logo.svg/2560px-Persistent_Systems_Logo.svg.png",
-      alt: "Persistent_Systems_Logo",
-   
-    },
-    {
-      name: "Listed Co. B",
-      logo: "Unlisted img//file-removebg-preview.png",
-      alt: "polycab-logo",
-      
-    },
-    {
-      name: "Listed Co. B",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Coforge-Logo.png",
-      alt: "Coforge-Logo",
-     
-    },
-  ];
-
   const [currData, setCurrData] = useState(data);
   const [activeTab, setActiveTab] = useState("unlisted");
-
-  const changeData = () => {
-    setCurrData(data);
-    setActiveTab("unlisted");
-  };
-
-  const overData = () => {
-    setCurrData(data2);
-    setActiveTab("listed");
-  };
 
   const { setSelectedDetail } = useUnlisted();
   const navigate = useNavigate();
@@ -376,20 +309,7 @@ const UnlistedListed = ({id}) => {
                   : "text-[#009999] hover:text-white bg-transparent hover:bg-[#009999]"
               }`}
             >
-              Unlisted Stock
-            </button>
-            <button
-              onClick={() => {
-                setCurrData(data2);
-                setActiveTab("listed");
-              }}
-              className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
-                activeTab === "listed"
-                  ? "text-white bg-[#009999] scale-105 shadow-md"
-                  : "text-[#009999] hover:text-white bg-transparent hover:bg-[#009999]"
-              }`}
-            >
-              Listed Stock
+              Unlisted Stocks
             </button>
           </div>
           <hr />

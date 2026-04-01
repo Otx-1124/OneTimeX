@@ -36,9 +36,6 @@ const Dashboard = () => {
               Your personal investment dashboard
             </p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-[#009999] text-white rounded-xl shadow hover:bg-[#007777] transition">
-            <Plus size={18} /> Add Investment
-          </button>
         </motion.div>
 
         {/* Cards */}
@@ -94,9 +91,9 @@ const Dashboard = () => {
           <div className="text-xl  text-[#0f172a] mb-4 flex items-center justify-between">
             <h1 className="font-bold flex items-center gap-3"><Eye size={20} /> Watchlist</h1>
             <div>
-              <button className="flex items-center gap-2 px-4 py-1 bg-[#009999] text-white rounded-xl shadow hover:bg-[#007777] transition">
+              <Link to={"/unlisted-data"} className="flex items-center gap-2 px-4 py-1 bg-[#009999] text-white rounded-xl shadow hover:bg-[#007777] transition">
                 <Plus size={18} /> Add Stocks
-              </button>
+              </Link>
             </div>
           </div>
           <div className="">
