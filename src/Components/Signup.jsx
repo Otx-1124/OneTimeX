@@ -80,7 +80,7 @@ const Signup = () => {
   };
 
   const handleGoogleAuth = async () => {
-    window.location.href = "http://localhost:5500/api/v1/user/auth/google";
+    window.location.href = "https://api.onetimex.in/api/v1/user/auth/google";
   };
 
   return (
@@ -137,20 +137,23 @@ const Signup = () => {
             </motion.button>
 
             {/* Google Login */}
-            <button
-              onClick={handleGoogleAuth}
-              className="w-1/3 bg-white border border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:w-2/3"
-            >
-              {/* Google Icon */}
-              <img
-                src="https://developers.google.com/identity/images/g-logo.png"
-                alt="Google"
-                className="w-6 h-6 shrink-0"
-              />
-            </button>
           </div>
         </form>
 
+        <button
+          onClick={handleGoogleAuth}
+          className="w-full bg-white border border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:scale-105 mt-4 py-2 hover:bg-gray-50"
+        >
+          {/* Google Icon */}
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google"
+            className="w-6 h-6 shrink-0"
+          />
+          <span className="text-sm font-medium text-gray-700  transition-all duration-300 whitespace-nowrap">
+            Sign up with Google
+          </span>
+        </button>
         <p className="mt-4 text-center text-xs text-gray-600">
           Already have an account?{" "}
           <Link to="/login" className="text-orange-600 hover:underline">

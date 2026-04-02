@@ -53,7 +53,7 @@ export default function LoginPage() {
   };
 
   const handleGoogleAuth = async () => {
-    window.location.href = "http://localhost:5500/api/v1/user/auth/google";
+    window.location.href = "https://api.onetimex.in/api/v1/user/auth/google";
   };
 
   return (
@@ -102,30 +102,29 @@ export default function LoginPage() {
               type="submit"
               whileHover={{ scale: 1.02 }}
               disabled={loading}
-              className="w-2/3 bg-orange-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:bg-orange-700 flex items-center justify-center"
+              className="w-full bg-orange-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:bg-orange-700 flex items-center justify-center"
             >
               {loading ? "Logging in..." : "Login"}
             </motion.button>
-
-            {/* Google Login */}
-            <button
-              onClick={handleGoogleAuth}
-              className="w-2/3 bg-white border hover:bg-gray-50 border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:w-2/3"
-            >
-              {/* Google Icon */}
-              <img
-                src="https://developers.google.com/identity/images/g-logo.png"
-                alt="Google"
-                className="w-6 h-6 shrink-0 "
-              />
-
-              {/* Hidden Text (appears on hover) */}
-              <span className="text-sm font-medium text-gray-700  transition-all duration-300 whitespace-nowrap">
-                Login with Google
-              </span>
-            </button>
           </div>
         </form>
+
+        <button
+          onClick={handleGoogleAuth}
+          className="w-full bg-white border hover:bg-gray-50 border-gray-300 rounded-xl flex items-center justify-center gap-2 overflow-hidden group transition-all duration-300 hover:scale-105 mt-4 py-2"
+        >
+          {/* Google Icon */}
+          <img
+            src="https://developers.google.com/identity/images/g-logo.png"
+            alt="Google"
+            className="w-6 h-6 shrink-0 "
+          />
+
+          {/* Hidden Text (appears on hover) */}
+          <span className="text-sm font-medium text-gray-700  transition-all duration-300 whitespace-nowrap">
+            Login with Google
+          </span>
+        </button>
 
         <p className="text-center text-sm text-gray-600 mt-6">
           Don’t have an account?{" "}
