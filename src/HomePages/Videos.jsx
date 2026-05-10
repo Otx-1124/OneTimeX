@@ -46,30 +46,11 @@ const cards = [
 
 const ImageGrid = () => {
   return (
-    <div className="min-h-screen bg-green-50 flex flex-col items-center justify-center px-20 py-10">
-      <h1 className="mb-5 text-4xl font-semibold ">Gain More Knowledge.</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
-        {cards.map((card) => (
-          <motion.div
-            key={card.id}
-            className="bg-white rounded-2xl shadow-md overflow-hidden"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-          >
-            <img
-              src={card.img}
-              alt={card.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4 text-center">
-              <h3 className="text-sm font-semibold text-gray-800">
-                {card.title}
-              </h3>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+    <div className=" bg-green-50 flex flex-col items-center justify-center px-20 py-10">
+      <h1 className="mb-5 text-4xl font-semibold text-red-500">Join Our You Tube Community</h1>
+      <a href="https://www.youtube.com/@onetimex.shorts" className=" w-full h-[356px] bg-gray-300 rounded-lg overflow-hidden shadow-lg ">
+        <img src="/image.png" alt="" className="w-full h-full object-cover" />
+      </a>
     </div>
   );
 };

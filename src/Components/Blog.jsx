@@ -1,292 +1,363 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import OnetimexBlog from "../Tests/blogtest";
+import { BsWhatsapp } from "react-icons/bs";
 
 const container = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { staggerChildren: 0.1, when: "beforeChildren" },
+    transition: {
+      staggerChildren: 0.08,
+    },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
 };
 
-const Section = ({ title, children, icon }) => (
+const Section = ({ title, children, badge }) => (
   <motion.section
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: "-100px" }}
-    transition={{ duration: 0.5 }}
-    className="relative"
+    variants={item}
+    className="relative overflow-hidden rounded-[32px]
+    border border-white/50 bg-white/70 backdrop-blur-2xl
+    shadow-xl p-6 sm:p-8 lg:p-10"
   >
-    <div className="flex items-start mb-6">
-      {icon && <div className="mr-4 mt-1">{icon}</div>}
-      <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{title}</h3>
+    {/* Glow */}
+    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/5 to-blue-400/5" />
+
+    <div className="relative z-10">
+      <div className="flex items-center gap-4 mb-8">
+        
+        {badge && (
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white flex items-center justify-center font-bold text-xl shadow-lg">
+            {badge}
+          </div>
+        )}
+
+        <h3 className="text-2xl sm:text-3xl font-bold text-slate-900">
+          {title}
+        </h3>
+      </div>
+
+      {children}
     </div>
-    <div className="ml-10 pl-2 border-l-2 border-blue-200">{children}</div>
   </motion.section>
 );
 
 const BlogPage = () => {
   const investReasons = [
     {
-      title: "Early Entry to High-Growth Companies",
+      title: "Early Entry",
       desc: "Invest before IPO at lower valuations",
       icon: "🚀",
-      color: "from-purple-500 to-blue-500",
     },
     {
       title: "Diversification",
-      desc: "Balance risk alongside listed investments",
-      icon: "🔄",
-      color: "from-green-500 to-teal-500",
+      desc: "Balance risk with unlisted opportunities",
+      icon: "📊",
     },
     {
-      title: "Potential for Higher Returns",
-      desc: "Pre-IPO stocks often offer multi-bagger opportunities",
+      title: "Higher Returns",
+      desc: "Potential multi-bagger opportunities",
       icon: "💰",
-      color: "from-yellow-500 to-orange-500",
     },
   ];
+
   const steps = [
-    "Visit our platform",
-    "Browse verified companies",
-    "Place your interest",
-    "Complete payment",
-    "Receive shares",
+    "Visit Platform",
+    "Browse Companies",
+    "Place Interest",
+    "Complete Payment",
+    "Receive Shares",
   ];
+
   const companies = [
-    "🛒 Reliance Retail",
-    "🏦 HDFC Securities",
-    "🚗 Tata Capital",
-    "💻 Hexaware Technologies",
+    "Reliance Retail",
+    "HDFC Securities",
+    "Tata Capital",
+    "Hexaware",
   ];
+
   const risks = [
-    "⏳ Liquidity Risk",
-    "📊 Valuation Uncertainty",
-    "⚖️ Regulatory Changes",
+    {
+      title: "Liquidity Risk",
+      desc: "Selling may take time",
+      icon: "⏳",
+    },
+    {
+      title: "Valuation Risk",
+      desc: "No daily market price",
+      icon: "📉",
+    },
+    {
+      title: "Regulatory Risk",
+      desc: "SEBI rules may change",
+      icon: "⚖️",
+    },
   ];
+
   const features = [
-    "Trusted by Indian investors",
-    "SEBI-compliant partners",
-    "Real-time price discovery",
-    "End-to-end support",
-    "Transparent pricing",
-    "Verified research",
+    "Trusted by Investors",
+    "SEBI-Compliant Partners",
+    "Transparent Pricing",
+    "Verified Research",
+    "Real-Time Discovery",
+    "Dedicated Support",
   ];
+
   const faqs = [
-    [
-      "Can retail investors buy unlisted shares?",
-      "Yes, any investor with a PAN and demat account can invest.",
-    ],
-    [
-      "Are unlisted shares profitable?",
-      "Many early investors have earned multi-fold returns post-IPO.",
-    ],
-    [
-      "Is KYC required?",
-      "Yes, standard KYC (PAN, Aadhaar, bank proof) is required.",
-    ],
-    [
-      "Can I invest using UPI?",
-      "Yes, OneTimeX supports UPI, Net Banking, and IMPS/NEFT.",
-    ],
+    {
+      q: "Can retail investors buy unlisted shares?",
+      a: "Yes, anyone with PAN and a demat account can invest.",
+    },
+    {
+      q: "Are unlisted shares profitable?",
+      a: "Many investors gained strong returns after IPO listings.",
+    },
+    {
+      q: "Is KYC required?",
+      a: "Yes, PAN, Aadhaar and bank verification are required.",
+    },
+    {
+      q: "Can I invest using UPI?",
+      a: "Yes, OneTimeX supports UPI, IMPS and NEFT.",
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-100 via-yellow-100 to-blue-50 py-20 px-4 sm:px-6 lg:px-8 font-sans mt-10">
+    <div className="relative overflow-hidden bg-blue-100 py-20 px-4 sm:px-6 lg:px-10 mt-10">
+
+      {/* Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        
+        <div className="absolute top-0 left-0 w-[350px] h-[350px] bg-cyan-300/30 blur-[120px] rounded-full" />
+
+        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-blue-400/20 blur-[120px] rounded-full" />
+
+        <div className="absolute inset-0 opacity-[0.04] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:40px_40px]" />
+      </div>
+
       <motion.div
-        className="max-w-5xl mx-auto bg-gradient-to-br from-green-50 to-yellow-50 relative"
+        variants={container}
         initial="hidden"
         animate="visible"
-        variants={container}
+        className="max-w-7xl mx-auto relative z-10"
       >
-        <motion.div className="text-center mb-16" variants={item}>
-          <div className="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-2 rounded-full mb-6 shadow-lg">
-            <span className="text-sm font-semibold">2025 EDITION</span>
+
+        {/* HERO */}
+        <motion.div
+          variants={item}
+          className="text-center mb-20"
+        >
+          <div className="inline-flex items-center gap-2 border border-cyan-300 bg-white/60 backdrop-blur-xl px-5 py-2 rounded-full shadow-md mb-6">
+            <span className="w-2 h-2 bg-cyan-500 rounded-full" />
+
+            <p className="text-sm font-medium text-cyan-700 tracking-wide">
+              2026 Investment Guide
+            </p>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight font-serif">
-            <span className="relative inline-block">
-              <span className="absolute -bottom-2 left-0 w-full h-3 bg-yellow-300 opacity-60 z-0"></span>
-              <span className="relative z-10">📘 Complete Guide</span>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 leading-tight">
+            Complete Guide To{" "}
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
+              Unlisted Shares
             </span>
-            <br />
-            to Unlisted Shares in India
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Your definitive resource for pre-IPO investing
+
+          <p className="text-slate-600 max-w-3xl mx-auto mt-8 text-lg leading-relaxed">
+            Everything you need to know about investing in pre-IPO and
+            unlisted companies in India.
           </p>
         </motion.div>
 
-        <motion.div
-          className="bg-white/90 backdrop-blur-sm rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/20"
-          variants={item}
-        >
-          <div className="p-10 space-y-16">
-            <Section title="🔍 What Are Unlisted Shares?">
-              <p className="text-gray-700 leading-relaxed">
-                Unlisted shares are equity shares not listed on NSE/BSE, traded
-                OTC or through platforms like OneTimeX.
-              </p>
-            </Section>
+        {/* CONTENT */}
+        <div className="space-y-10">
 
-            <Section title="📈 Why Invest?">
-              <div className="grid md:grid-cols-3 gap-6 mt-6">
-                {investReasons.map((i, idx) => (
-                  <div
-                    key={idx}
-                    className={`bg-gradient-to-br ${i.color} p-0.5 rounded-xl`}
-                  >
-                    <div className="bg-white rounded-lg p-5 h-full flex flex-col">
-                      <div className="text-3xl mb-3">{i.icon}</div>
-                      <h4 className="font-bold text-gray-900 mb-2">
-                        {i.title}
-                      </h4>
-                      <p className="text-gray-600 text-sm">{i.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
+          {/* WHAT */}
+          <Section title="What Are Unlisted Shares?" badge="01">
+            <p className="text-slate-600 text-lg leading-relaxed">
+              Unlisted shares are company shares not traded on NSE or BSE.
+              These shares are traded privately through trusted platforms
+              like OneTimeX and give investors early access before IPO.
+            </p>
+          </Section>
 
-            <Section title="🧾 How to Buy?">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-                {steps.map((text, i) => (
-                  <div key={i} className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full bg-white border-4 border-blue-100 flex items-center justify-center text-2xl mb-3">
-                      {"🌐🔎📝💳🎉"[i]}
-                    </div>
-                    <div className="text-center">
-                      <div className="text-xs font-semibold text-blue-600 mb-1">
-                        STEP {i + 1}
-                      </div>
-                      <p className="text-sm text-gray-700">{text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <Section title="💡 Popular Companies">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {companies.map((item, i) => (
-                  <div
-                    key={i}
-                    className="rounded-xl border p-5 flex flex-col items-center"
-                  >
-                    <div className="text-3xl mb-3">{item.split(" ")[0]}</div>
-                    <h4 className="text-center">
-                      {item.split(" ").slice(1).join(" ")}
-                    </h4>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <Section title="📉 Risks">
-              <div className="grid md:grid-cols-3 gap-6">
-                {risks.map((r, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="text-2xl mr-4 mt-1">{r.split(" ")[0]}</div>
-                    <div>
-                      <h4 className="font-semibold text-red-700 mb-1">
-                        {r.split(" ")[1]}
-                      </h4>
-                      <p className="text-gray-700 text-sm">
-                        {
-                          [
-                            "Selling may take time",
-                            "No daily market price",
-                            "SEBI regulations may change",
-                          ][i]
-                        }
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <Section title="🛡 Why OneTimeX?">
-              <div className="grid md:grid-cols-2 gap-6">
-                {features.map((f, i) => (
-                  <div key={i} className="flex items-start">
-                    <div className="w-6 h-6 bg-blue-100 text-blue-600 flex items-center justify-center rounded-full">
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M5 13l4 4L19 7"
-                        ></path>
-                      </svg>
-                    </div>
-                    <p className="ml-3 text-gray-700">{f}</p>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <Section title="🧠 FAQs">
-              <div className="space-y-6">
-                {faqs.map(([q, a], i) => (
-                  <div key={i} className="group">
-                    <div className="flex items-start">
-                      <div className="bg-blue-100 text-blue-600 rounded-lg p-2 mr-4 font-bold">
-                        Q{i + 1}
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-gray-900">{q}</h4>
-                        <p className="mt-1 text-gray-700">{a}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Section>
-
-            <motion.div className="text-center p-10 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-2xl">
-              <h3 className="text-3xl font-bold mb-4">
-                Ready to explore hidden gems?
-              </h3>
-              <p className="mb-8">
-                Join OneTimeX for exclusive pre-IPO investment opportunities.
-              </p>
-              <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176"
-                
-                className="inline-flex items-center bg-white text-blue-700 font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-50"
-              >
-                Start Investing Now
-                <svg
-                  className="w-5 h-5 ml-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          {/* WHY INVEST */}
+          <Section title="Why Invest In Unlisted Shares?" badge="02">
+            <div className="grid md:grid-cols-3 gap-6">
+              {investReasons.map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-white rounded-[28px] p-6 border border-slate-100 hover:-translate-y-2 transition-all duration-300 shadow-lg"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
+                  <div className="text-5xl mb-5">
+                    {item.icon}
+                  </div>
+
+                  <h4 className="text-xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-slate-600 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* STEPS */}
+          <Section title="How To Buy?" badge="03">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {steps.map((step, index) => (
+                <div
+                  key={index}
+                  className="relative bg-white rounded-[28px] p-6 text-center shadow-lg border border-slate-100"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white flex items-center justify-center mx-auto text-2xl font-bold shadow-lg">
+                    {index + 1}
+                  </div>
+
+                  <h4 className="font-bold text-slate-900 mt-5">
+                    {step}
+                  </h4>
+
+                  {index !== steps.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-6 w-12 h-[2px] bg-gradient-to-r from-cyan-500 to-blue-500" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* COMPANIES */}
+          <Section title="Popular Companies" badge="04">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {companies.map((company, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-[28px] p-8 border border-slate-100 text-center shadow-lg hover:-translate-y-2 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 mx-auto flex items-center justify-center text-white font-bold text-2xl shadow-lg">
+                    {index + 1}
+                  </div>
+
+                  <h4 className="text-xl font-bold text-slate-900 mt-6">
+                    {company}
+                  </h4>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* RISKS */}
+          <Section title="Risks To Consider" badge="05">
+            <div className="grid md:grid-cols-3 gap-6">
+              {risks.map((risk, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-[28px] p-6 border border-slate-100 shadow-lg"
+                >
+                  <div className="text-5xl mb-5">
+                    {risk.icon}
+                  </div>
+
+                  <h4 className="text-xl font-bold text-red-600 mb-3">
+                    {risk.title}
+                  </h4>
+
+                  <p className="text-slate-600">
+                    {risk.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* WHY ONETIMEX */}
+          <Section title="Why OneTimeX?" badge="06">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-md border border-slate-100"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white flex items-center justify-center font-bold">
+                    ✓
+                  </div>
+
+                  <p className="font-medium text-slate-700">
+                    {feature}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* FAQ */}
+          <Section title="Frequently Asked Questions" badge="07">
+            <div className="space-y-5">
+              {faqs.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-[24px] p-6 border border-slate-100 shadow-md"
+                >
+                  <h4 className="text-lg font-bold text-slate-900">
+                    Q{index + 1}. {faq.q}
+                  </h4>
+
+                  <p className="text-slate-600 mt-3 leading-relaxed">
+                    {faq.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          {/* CTA */}
+          <motion.div
+            variants={item}
+            className="relative overflow-hidden rounded-[40px]
+            bg-gradient-to-r from-cyan-500 to-blue-600
+            text-white p-10 sm:p-16 text-center shadow-2xl"
+          >
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.15),transparent_40%)]" />
+
+            <div className="relative z-10">
+              <h2 className="text-3xl sm:text-5xl font-bold leading-tight">
+                Ready To Explore Hidden Investment Gems?
+              </h2>
+
+              <p className="mt-6 text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+                Join OneTimeX and access premium pre-IPO investment
+                opportunities before they hit the market.
+              </p>
+
+              <a
+                href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 mt-10 bg-white text-cyan-700 font-bold px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition-all duration-300"
+              >
+                <BsWhatsapp size={22} />
+
+                Start Investing On WhatsApp
               </a>
-            </motion.div>
-          </div>
-        </motion.div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
-      <OnetimexBlog />
+
+      <div className="relative z-10">
+        <OnetimexBlog />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { BsWhatsapp } from "react-icons/bs";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -34,11 +35,10 @@ const OnetimexIntro = () => {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          Onetimex is a modern investment platform that empowers retail investors
-          to access high-growth opportunities in{" "}
-          <strong>unlisted startups</strong>,{" "}
-          <strong>pre-IPO shares</strong>, and{" "}
-          <strong>top-performing listed stocks</strong> — all in one place.
+          Onetimex is a modern investment platform that empowers retail
+          investors to access high-growth opportunities in{" "}
+          <strong>unlisted startups</strong>, <strong>pre-IPO shares</strong>,
+          and <strong>top-performing listed stocks</strong> — all in one place.
         </motion.p>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -49,11 +49,13 @@ const OnetimexIntro = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-2xl font-semibold text-green-700">Our Mission</h2>
+            <h2 className="text-2xl font-semibold text-green-700">
+              Our Mission
+            </h2>
             <p>
-              To democratize access to exclusive investment opportunities and help
-              retail investors build long-term wealth through curated, transparent,
-              and intelligent financial products.
+              To democratize access to exclusive investment opportunities and
+              help retail investors build long-term wealth through curated,
+              transparent, and intelligent financial products.
             </p>
           </motion.div>
 
@@ -64,7 +66,9 @@ const OnetimexIntro = () => {
             viewport={{ once: true }}
             variants={fadeInUp}
           >
-            <h2 className="text-2xl font-semibold text-blue-700">Key Offerings</h2>
+            <h2 className="text-2xl font-semibold text-blue-700">
+              Key Offerings
+            </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               <li>🚀 Unlisted Shares: Invest in high-potential startups</li>
               <li>📈 Listed Stocks: SIPs, Large/Mid/Small Cap insights</li>
@@ -86,11 +90,19 @@ const OnetimexIntro = () => {
             Start Investing Smarter
           </h3>
           <p className="text-gray-700 mb-4">
-            Join thousands of retail investors exploring the future of wealth with Onetimex.
+            Join thousands of retail investors exploring the future of wealth
+            with Onetimex. <br /> <span className="text-blue-600 font-semibold">Contact us 👇</span>
           </p>
-          <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176" className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow transition">
-            Get Started
+          <div className="flex justify-center">
+
+            <a
+            href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp className=" text-green-700 text-4xl  z-10 cursor-pointer transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:text-green-600" />
           </a>
+          </div>
         </motion.div>
       </div>
     </section>

@@ -73,6 +73,57 @@ const PersonalDetailsSection = ({ user = {}, setUser }) => {
     setTimeout(() => setAlertVisible(false), 3000);
   };
 
+  const [emailLoading, setEmailLoading] = useState(false);
+  const [phoneLoading, setPhoneLoading] = useState(false);
+
+
+  const handleEmailChange = async (e) => {
+    try {
+      setEmailLoading(true);
+      if(!formData.email.includes("@")) {
+        toast.error("Invalid email format");
+        return;
+      }
+      if(formData.email === user.email) {
+        toast.info("Email is the same as current");
+        return;
+      }
+
+      await api.put("/user/updateEmail", { email: formData.email });
+      toast.success("Email updated successfully");
+    } catch (error) {
+      toast.error("Failed to update email");
+    }finally {
+      setEmailLoading(false);
+    }
+  }
+
+  const handlePhoneChange = async (e) => {
+    try {
+      setPhoneLoading(true);
+      if(formData.phone.length < 10) {
+        toast.error("Invalid phone number");
+        return;
+      }
+      if(formData.phone === user.phone) {
+        toast.info("Phone number is the same as current");
+        return;
+      }
+      if(!formData.phone){
+        toast.error("Phone number cannot be empty");
+        return;
+      }
+      await api.put("/user/updatePhone", { phone: formData.phone });
+      toast.success("Phone number updated successfully");
+    } catch (error) {
+      toast.error("Failed to update phone number");
+    }finally {
+      setPhoneLoading(false);
+    } 
+  }
+
+
+
   return (
     <motion.div
       initial={{ x: "100%" }}
@@ -106,8 +157,20 @@ const PersonalDetailsSection = ({ user = {}, setUser }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <InputField label="Name" name="name" value={formData.name} onChange={handleChange} />
-        <InputField label="Email" name="email" value={formData.email} onChange={handleChange} />
+       <div className="relative">
+         <InputField label="Email" name="email" value={formData.email} onChange={handleChange} />
+         <button onClick={handleEmailChange} className="bg-blue-600 text-white text-sm p-1 opacity-50 hover:opacity-100 rounded-md absolute right-2 top-7">
+           {emailLoading ? "Updating..." : "Change Email"}
+         </button>
+       </div>
+
+       <div className="relative">
         <InputField label="Phone" name="phone" value={formData.phone} onChange={handleChange} />
+        <button onClick={handlePhoneChange} className="bg-blue-600 text-white text-sm p-1 opacity-50 hover:opacity-100 rounded-md absolute right-2 top-7">
+          {phoneLoading ? "Updating..." : "Change Phone"}
+        </button>
+       </div>
+
         <InputField label="Date of Birth" name="dob" type="date" value={formData.dob} onChange={handleChange} />
 
         <SelectField label="Gender" name="gender" value={formData.gender} onChange={handleChange} options={["male","female","other"]} />
@@ -143,7 +206,7 @@ const InputField = ({ label, name, value, onChange, type = "text" }) => (
       name={name}
       value={value}
       onChange={onChange}
-      className="border px-3 py-2 rounded-md"
+      className="border px-3 py-2 rounded-md relative"
     />
   </div>
 );

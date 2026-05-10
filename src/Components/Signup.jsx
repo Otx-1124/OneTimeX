@@ -80,7 +80,7 @@ const Signup = () => {
   };
 
   const handleGoogleAuth = async () => {
-    window.location.href = "https://api.onetimex.in/api/v1/user/auth/google";
+    window.location.href = import.meta.env.VITE_GOOGLE_REDIRECT_URL;
   };
 
   return (

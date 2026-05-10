@@ -16,9 +16,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchFocus, setSearchFocus] = useState(false); // 👈 NEW
 
-  useEffect(()=>{
-      console.log(user)
-  },[])
+
 
 
   const navigate = useNavigate();

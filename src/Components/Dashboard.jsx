@@ -1,176 +1,63 @@
 import React from "react";
-import { Bell, TrendingUp, Eye, Plus, Delete } from "lucide-react";
-import { motion } from "framer-motion";
-import Cart from "../Tests/Cart";
-import { Link } from "react-router-dom";
+import DashStocks from "../dashboard-components/DashStocks";
+import RecentViewStock from "../dashboard-components/RecentViewStock";
+import UserBtnControll from "../dashboard-components/UserBtnControll";
+import BlogSection from "../Tests/blogtest";
+import BuyProcess from "../HomePages/BuyProcess";
+import InvestIn from "../dashboard-components/InvestIn";
+import { BsWhatsapp } from "react-icons/bs";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i = 1) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.6,
-      ease: "easeOut",
-    },
-  }),
-};
-
+const blogData = [
+  {
+    id: 1,
+    title: "How I Started OneTimeX",
+    author: "Vishal Dubey, Founder & CEO – OneTimeX",
+    content:
+      "When I started OneTimeX in January 2024, I wasn’t just building a platform—I was solving a problem I personally experienced. I realized that unlisted shares and early-stage investments were practically inaccessible for retail investors like me.",
+    slug: "/blogs/how-i-started-onetimex",
+  },
+  {
+    id: 2,
+    title: "Why I Believe Retail Investors Deserve Private Equity Access",
+    author: "Vishal Dubey, Founder & CEO – OneTimeX",
+    content:
+      "India is witnessing a startup revolution, but the wealth generated often benefits only institutions. At OneTimeX, we believe retail investors deserve a fair share. Unlisted shares are powerful—but need transparency and accessibility.",
+    slug: "/blogs/retail-investors-private-equity",
+  },
+];
 const Dashboard = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-green-100 p-8 font-sans mt-10 py-10">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="flex justify-between items-center mb-8 flex-col md:flex-row gap-3"
+    <div className="flex  max-w-full flex-col md:flex-row gap-1 bg-blue-100">
+      <div className="p-5 pt-10  w-[70%] mt-10 space-y-5">
+        <UserBtnControll />
+        <DashStocks />
+        <RecentViewStock />
+        <InvestIn />
+        <a
+          href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <div>
-            <h1 className="text-3xl font-bold text-[#0f172a]">
-              👋 Welcome back
-            </h1>
-            <p className="text-[#475569] mt-1">
-              Your personal investment dashboard
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {[
-            {
-              title: "💼 Portfolio Value",
-              value: "₹0,00,000",
-              subtitle: "0% this month",
-              color: "text-[#009999]",
-            },
-            {
-              title: "📈 Profit & Lose",
-              value: "₹00,000",
-              subtitle: "Across all investments",
-              color: "text-green-600",
-            },
-            {
-              title: "🔔 Notifications",
-              value: "No Notification yet",
-              subtitle: "",
-              color: "text-gray-600",
-            },
-          ].map((item, index) => (
-            <motion.div
-              key={index}
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              custom={index + 1}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1"
-            >
-              <h2 className="text-xl font-semibold text-[#0f172a] mb-2">
-                {item.title}
-              </h2>
-              <p className={`text-2xl font-bold ${item.color}`}>{item.value}</p>
-
-              {item.subtitle && (
-                <p className="text-sm text-gray-500 mt-1">{item.subtitle}</p>
-              )}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Watchlist */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={4}
-          className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition mb-10"
-        >
-          <div className="text-xl  text-[#0f172a] mb-4 flex items-center justify-between">
-            <h1 className="font-bold flex items-center gap-3"><Eye size={20} /> Watchlist</h1>
+          <BsWhatsapp className="fixed bottom-5 right-5  text-green-700 text-4xl  z-10 cursor-pointer transition-all duration-300 transform hover:scale-110 hover:rotate-12 hover:text-green-600" />
+        </a>
+      </div>
+      <div className="p-10 font-['inter','sans-serif'] bg-blue-100 w-[30%] mt-10 h-screen sticky top-0 overflow-y-hidden space-y-5">
+        {blogData.map((blog) => (
+          <div
+            key={blog.id}
+            className="bg-white h-[280px] shadow-md rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg transition duration-300"
+          >
             <div>
-              <Link to={"/unlisted-data"} className="flex items-center gap-2 px-4 py-1 bg-[#009999] text-white rounded-xl shadow hover:bg-[#007777] transition">
-                <Plus size={18} /> Add Stocks
-              </Link>
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                {blog.title}
+              </h3>
+              <p className="text-sm text-gray-500 mb-4">{blog.author}</p>
+              <p className="text-gray-600 text-sm leading-relaxed line-clamp-5">
+                {blog.content}
+              </p>
             </div>
           </div>
-          <div className="">
-            <Cart />
-          </div>
-        </motion.div>
-
-        {/* My Orders Section */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={4.5}
-          className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition mb-10"
-        >
-          <h2 className="text-xl font-bold text-[#0f172a] mb-4 flex items-center gap-2">
-            🛒 My Orders
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                name: "Completed",
-                status: "Completed",
-                route:"/completed"
-                
-              },
-              {
-                name: "Processing",
-                status: "Processing",
-                route:"/processing"
-              },
-              
-              {
-                name: "Pending",
-                status: "Pending",
-                route:"/pending"
-              },
-              {
-                name: "Rejected",
-                status: "Rejected",
-                route:"/rejected"
-              },
-            ].map((order, i) => (
-              <Link to={order.route}  key={i} className="border rounded-xl p-4 hover:shadow-md cursor-pointer">
-                <h3 className="font-semibold text-[#0f172a]">{order.name}</h3>
-                <div 
-                  className={`text-sm font-medium mt-1 ${
-                    order.status === "Completed"
-                      ? "text-green-600"
-                      : order.status === "Pending"
-                      ? "text-yellow-600"
-                      : order.status === "Rejected" ?"text-red-400"
-                      : "text-blue-600"
-                  }`}
-                >
-                  {order.status}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Recent Activity */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={5}
-          className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
-        >
-          <h2 className="text-xl font-bold text-[#0f172a] mb-4 flex items-center gap-2">
-            <TrendingUp size={20} /> Recent Activity
-          </h2>
-          <ul className="list-disc pl-6 text-[#334155] space-y-2">
-            <li>No Recent Activity</li>
-          </ul>
-        </motion.div>
+        ))}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const AllUnlistedData = () => {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const selectedData = filteredData.slice(
     startIndex,
-    startIndex + ITEMS_PER_PAGE
+    startIndex + ITEMS_PER_PAGE,
   );
   const totalPages = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
 
@@ -62,7 +62,6 @@ const AllUnlistedData = () => {
             >
               {/* Card Content */}
               <div className="flex items-start justify-between mb-3">
-               
                 <span className="px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 rounded">
                   {stock.ipoStatus}
                 </span>
@@ -217,10 +216,11 @@ const AllUnlistedData = () => {
                   <div>
                     {" "}
                     <span className="font-medium text-gray-900">IPO:</span>{" "}
-                    <p className="text-gray-600">{viewDetails.ipoStatus}</p>{" "}
+                    <p className="text-gray-600">
+                      {viewDetails.ipoStatus}
+                    </p>{" "}
                   </div>{" "}
                 </div>{" "}
-               
               </div>{" "}
             </motion.div>{" "}
           </div>

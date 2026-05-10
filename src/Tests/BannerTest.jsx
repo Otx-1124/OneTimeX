@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { X, TrendingUp, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import LiveScrollData from "../Components/LiveScroll";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -16,11 +17,14 @@ const Banner = () => {
   const [showModal, setShowModal] = useState(false);
   const lights = Array.from({ length: 28 });
 
-  return (
-    <div className="relative w-full min-h-screen bg-gradient-to-br from-blue-300 via-blue-200 to-blue-300 flex items-center justify-center px-6 py-10 overflow-hidden">
-      
 
-      {/* 🪔 Main Content */}
+  return (
+  <div className="mainBody pt-8">
+      <div className="bg-slate-500">
+        <LiveScrollData />
+        </div>  
+    <div className="relative w-full min-h-screen bg-gradient-to-br from-blue-300 via-blue-200 to-blue-300 flex items-center justify-center px-6  overflow-hidden">
+
       <motion.div
         className="max-w-6xl w-full text-center space-y-8"
         initial="hidden"
@@ -62,7 +66,7 @@ const Banner = () => {
             className="text-lg text-gray-600 max-w-2xl mx-auto"
             variants={fadeInUp}
           >
-            <span className="font-semibold">OnetimeX</span> makes investing
+            <span className="font-semibold">OneTimeX</span> makes investing
             simple. Access high-growth stocks with just one click.
           </motion.p>
         </motion.div>
@@ -95,7 +99,7 @@ const Banner = () => {
           className="flex flex-wrap justify-center gap-6"
           variants={fadeInUp}
         >
-          <a href="https://ekyc.aliceblueonline.com/?source=EKOL1176"
+          <a href="#" onClick={() => setShowModal(true)}
             className="px-10 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white text-sm md:text-lg font-semibold rounded-2xl hover:from-blue-700 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-xl flex items-center space-x-3"
           >
             <TrendingUp className="w-6 md:h-6" />
@@ -110,6 +114,7 @@ const Banner = () => {
           </Link>
         </motion.div>
       </motion.div>
+    
 
       {/* Modal */}
       {showModal && (
@@ -162,6 +167,7 @@ const Banner = () => {
         </div>
       )}
     </div>
+      </div>
   );
 };
 

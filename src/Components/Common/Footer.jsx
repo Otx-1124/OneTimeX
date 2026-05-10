@@ -43,7 +43,7 @@ export default function Footer() {
               <div className="flex items-start text-sm text-gray-700">
                 <MapPin className="w-4 h-4 text-gray-500 mr-3 flex-shrink-0 mt-0.5" />
                 <span className="leading-relaxed">
-                  Shop no.1 - 1st Floor, Savarkar Nagar, Opp. Gyanoday Vidya Mandir School, Beside Panchamrut Society, Thane 400606
+                  Address: OneTimeX - 1st Floor, above Jai Bhavani Medical, opp. Veer Hospital, Savarkar Nagar, Thane West, Mumbai, Thane, Maharashtra 400606
                 </span>
               </div>
             </div>
@@ -106,26 +106,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Partners Section */}
-        <div className="mt-5  ml-5 mr-2">
-          <button 
-            onClick={() => toggleSection('partners')}
-            className="flex items-center justify-between w-full text-left md:cursor-default"
-          >
-            <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4 md:mb-4">
-              Partners
-            </h3>
-            <ChevronDown className={`w-4 h-4 text-gray-600 md:hidden transition-transform ${openSections.partners ? 'rotate-180' : ''}`} />
-          </button>
-          <div className={`md:block ${openSections.partners ? 'block' : 'hidden'}`}>
-            <div className="flex items-center">
-              <span className="text-sm text-gray-600 bg-white border border-gray-200 px-4 py-2 rounded-md">
-                Alice Blue
-              </span>
-            </div>
-          </div>
-        </div>
+       
       </div>
 
       {/* Bottom Bar */}

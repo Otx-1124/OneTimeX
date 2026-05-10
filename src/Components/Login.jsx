@@ -53,8 +53,11 @@ export default function LoginPage() {
   };
 
   const handleGoogleAuth = async () => {
-    window.location.href = "https://api.onetimex.in/api/v1/user/auth/google";
+    window.location.href = import.meta.env.ENV === "production"
+      ? import.meta.env.VITE_PROD_GOOGLE_REDIRECT_URI
+      : import.meta.env.VITE_GOOGLE_REDIRECT_URL;
   };
+
 
   return (
     <motion.section

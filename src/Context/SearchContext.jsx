@@ -14,6 +14,7 @@ export const SearchProvider = ({ children }) => {
     );
     setFilteredData(filtered);
   };
+  
   useEffect(()=>{
     setFilteredData(unlistedData)
   },[])

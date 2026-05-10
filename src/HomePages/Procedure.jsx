@@ -71,58 +71,7 @@ const Procedure = () => {
 
       <div className="relative px-4 sm:px-6 lg:px-10 py-5 container mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200/50 mb-4">
-            <Award className="w-4 h-4 text-yellow-500" />
-            <span className="text-xs font-medium text-gray-600">
-              Trusted Investment Partner
-            </span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 ">
-            We Are Associated By...
-          </h1>
-          <p className="text-gray-600 text-sm max-w-xl mx-auto">
-            Join thousands of investors who trust our platform for their
-            financial growth
-          </p>
-          <p className="text-yellow-700 text-sm mx-auto mt-2">
-            Click Below to Open Free Demat Account
-          </p>
-        </div>
-
-        {/* Partner Logo Section */}
-        <div className="flex justify-center gap-10">
-          <a
-            href="https://ekyc.aliceblueonline.com/?source=EKOL1176"
-            className="flex justify-center mb-10"
-          >
-            <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
-                <img
-                  className="w-40 h-12 object-cover filter hover:brightness-110 transition-all duration-300"
-                  src="/logoalice.png"
-                  alt="Alice Blue - Our Trusted Partner"
-                />
-              </div>
-            </div>
-          </a>
-          <a
-            href="https://ekyc.motilaloswal.com/Partner/?diyid=23472008-2abf-4e4b-b498-f6c382305bb8"
-            className="flex justify-center mb-10"
-          >
-            <div className="group relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-              <div className="relative bg-white rounded-xl p-2 border border-gray-200/50 backdrop-blur-sm">
-                <img
-                  className="w-40 h-12 object-contain filter hover:brightness-110 transition-all duration-300"
-                  src="https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Motilal_Oswal_Financial_Services.svg/1200px-Motilal_Oswal_Financial_Services.svg.png"
-                  alt="Alice Blue - Our Trusted Partner"
-                />
-              </div>
-            </div>
-          </a>
-        </div>
+        
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">

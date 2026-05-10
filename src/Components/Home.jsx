@@ -15,6 +15,7 @@ import Footer from "./Common/Footer";
 import Banner2 from "../Tests/BannerTest";
 import ScrolltoTop from "../Components/ScrolltoTop"
 import RiskDisclosurePopup from "./Disclaimer";
+import BuyProcess from "../HomePages/BuyProcess";
 
 
 
@@ -32,6 +33,7 @@ const Home = () => {
       <ScrolltoTop/>
       
       <Banner2/>
+      <BuyProcess />
       <UnlistedListed id="unlisted-share"/>
       <Procedure />
       <WhyChooseOnetimex />
