@@ -53,11 +53,10 @@ export default function LoginPage() {
   };
 
   const handleGoogleAuth = async () => {
-    window.location.href = import.meta.env.ENV === "production"
+    window.location.href = import.meta.env.PROD
       ? import.meta.env.VITE_PROD_GOOGLE_REDIRECT_URI
       : import.meta.env.VITE_GOOGLE_REDIRECT_URL;
   };
-
 
   return (
     <motion.section
