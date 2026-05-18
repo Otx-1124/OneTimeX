@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from "react";
-import { unlistedData } from "../Data/unlistedDatas";
 import BuySharePopup from "../PropComponent/buyCard";
 import { motion, AnimatePresence } from "framer-motion";
 import { SearchContext } from "../Context/SearchContext";
@@ -46,52 +45,81 @@ const AllUnlistedData = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-3 sm:p-4 lg:p-6 mt-10">
+    <div className="min-h-screen bg-white p-3 sm:p-4 lg:p-6 mt-10">
+      
       {/* Stock Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 py-10 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 max-w-screen-2xl mx-auto mb-8">
+        
         {selectedData.length > 0 ? (
           selectedData.map((stock, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: index * 0.02 }}
-              whileHover={{ y: -2 }}
+              transition={{ duration: 0.25, delay: index * 0.02 }}
+              whileHover={{ y: -3 }}
               onClick={() => handleViewDetails(stock)}
-              className="bg-white rounded-lg shadow-sm hover:shadow-md border border-gray-200 p-3 sm:p-4 cursor-pointer transition-all duration-200"
+              className="group bg-white border border-gray-200 rounded-2xl p-5 cursor-pointer 
+               hover:shadow-md transition-all duration-200"
             >
-              {/* Card Content */}
-              <div className="flex items-start justify-between mb-3">
-                <span className="px-2 py-0.5 text-xs bg-yellow-100 text-yellow-800 rounded">
+              {/* Top Row */}
+              <div className="flex items-center justify-between mb-4">
+                <span
+                  className="text-[11px] px-2.5 py-1 rounded-full 
+                       bg-gray-100 text-gray-600 font-medium"
+                >
                   {stock.ipoStatus}
                 </span>
+
+                <div className="w-2 h-2 rounded-full bg-green-500" />
               </div>
 
-              <div className="mb-3">
-                <h3 className="font-medium text-gray-900 text-sm mb-1 line-clamp-2">
-                  {stock.name}
-                </h3>
-                <p className="text-base font-semibold text-green-600">
+              {/* Company Info */}
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src={stock.logo}
+                  alt={stock.name}
+                  className="w-10 h-10 object-contain rounded-md border"
+                />
+
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-900 leading-tight">
+                    {stock.name}
+                  </h3>
+                  <p className="text-xs text-gray-500">{stock.sector}</p>
+                </div>
+              </div>
+
+              {/* Price */}
+              <div className="mb-4">
+                <p className="text-xl font-semibold text-gray-900">
                   {stock.price}
                 </p>
               </div>
 
+              {/* Divider */}
+              <div className="h-[1px] bg-gray-100 mb-4" />
+
+              {/* Actions */}
               <div className="flex gap-2">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleAction(stock, "Buy");
                   }}
-                  className="flex-1 bg-green-500 hover:bg-green-600 text-white text-xs py-1.5 px-2 rounded transition-colors"
+                  className="flex-1 py-2 rounded-lg bg-green-500 text-white text-sm font-medium 
+                   hover:bg-green-600 transition"
                 >
                   Buy
                 </button>
+
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleAction(stock, "Sell");
                   }}
-                  className="flex-1 bg-red-500 hover:bg-red-600 text-white text-xs py-1.5 px-2 rounded transition-colors"
+                  className="flex-1 py-2 rounded-lg border border-gray-300 
+                   text-sm font-medium bg-red-500 hover:bg-red-600 text-white transition"
                 >
                   Sell
                 </button>
@@ -149,80 +177,82 @@ const AllUnlistedData = () => {
       <AnimatePresence>
         {" "}
         {isDetailsVisible && viewDetails && (
-          <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-            {" "}
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
             <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.92, opacity: 0, y: 40 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 40 }}
+              transition={{ duration: 0.25 }}
+              className="w-full max-w-lg max-h-[90vh] overflow-y-auto 
+               rounded-2xl bg-white/80 backdrop-blur-xl 
+               shadow-2xl border border-white/30"
             >
-              {" "}
-              {/* Header */}{" "}
-              <div className="p-4 border-b border-gray-200">
-                {" "}
-                <div className="flex items-center justify-between">
-                  {" "}
-                  <div className="flex items-center gap-3">
-                    {" "}
+              {/* 🔷 Header */}
+              <div className="flex items-center justify-between p-5 border-b border-gray-200">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center shadow-md">
                     <img
                       src={viewDetails.logo}
                       alt={viewDetails.name}
-                      className="w-12 h-12 object-contain"
-                    />{" "}
-                    <div>
-                      {" "}
-                      <h2 className="font-semibold text-lg text-gray-900">
-                        {" "}
-                        {viewDetails.name}{" "}
-                      </h2>{" "}
-                      <p className="text-sm text-gray-600">
-                        {viewDetails.price}
-                      </p>{" "}
-                    </div>{" "}
-                  </div>{" "}
-                  <button
-                    onClick={() => setIsDetailVisible(false)}
-                    className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600"
-                  >
-                    {" "}
-                    ✕{" "}
-                  </button>{" "}
-                </div>{" "}
-              </div>{" "}
-              {/* Content */}{" "}
-              <div className="p-4">
-                {" "}
-                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                  {" "}
-                  {viewDetails.description}{" "}
-                </p>{" "}
-                <div className="grid grid-cols-2 gap-3 text-sm mb-4">
-                  {" "}
+                      className="w-10 h-10 object-contain"
+                    />
+                  </div>
+
                   <div>
-                    {" "}
-                    <span className="font-medium text-gray-900">
-                      Founded:
-                    </span>{" "}
-                    <p className="text-gray-600">{viewDetails.founded}</p>{" "}
-                  </div>{" "}
-                  <div>
-                    {" "}
-                    <span className="font-medium text-gray-900">
-                      Sector:
-                    </span>{" "}
-                    <p className="text-gray-600">{viewDetails.sector}</p>{" "}
-                  </div>{" "}
-                  <div>
-                    {" "}
-                    <span className="font-medium text-gray-900">IPO:</span>{" "}
-                    <p className="text-gray-600">
+                    <h2 className="text-xl font-semibold text-gray-900 tracking-tight">
+                      {viewDetails.name}
+                    </h2>
+                    <p className="text-sm text-gray-500">{viewDetails.price}</p>
+                  </div>
+                </div>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsDetailVisible(false)}
+                  className="w-9 h-9 flex items-center justify-center 
+                   rounded-full bg-gray-100 hover:bg-gray-200 
+                   transition-all duration-200"
+                >
+                  ✕
+                </button>
+              </div>
+
+              {/* 🔷 Content */}
+              <div className="p-5 space-y-5">
+                {/* Description */}
+                <div className="bg-gray-50 rounded-xl p-4">
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {viewDetails.description}
+                  </p>
+                </div>
+
+                {/* Info Grid */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white rounded-xl p-4 border shadow-sm">
+                    <p className="text-xs text-gray-400">Founded</p>
+                    <p className="text-sm font-semibold text-gray-900">
+                      {viewDetails.founded}
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-4 border shadow-sm">
+                    <p className="text-xs text-gray-400">Sector</p>
+                    <p className="text-sm font-semibold text-gray-900">
+                      {viewDetails.sector}
+                    </p>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-4 border shadow-sm col-span-2">
+                    <p className="text-xs text-gray-400">IPO Status</p>
+                    <p className="text-sm font-semibold text-gray-900">
                       {viewDetails.ipoStatus}
-                    </p>{" "}
-                  </div>{" "}
-                </div>{" "}
-              </div>{" "}
-            </motion.div>{" "}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+              </div>
+            </motion.div>
           </div>
         )}{" "}
       </AnimatePresence>

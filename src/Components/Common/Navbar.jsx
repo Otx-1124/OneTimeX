@@ -37,13 +37,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full bg-gradient-to-br  from-blue-200 via-blue-200 to-blue-200 fixed top-0 z-50 shadow-md">
+    <div className="w-full bg-white font-['Inter','sans-serif'] fixed top-0 z-50 shadow-md">
       <nav className="max-w-screen-xl mx-auto flex items-center justify-between px-4 md:px-8 md:py-1 ">
         {/* Logo Section */}
-        <Link to="/" className="w-1/6 max-w-[150px]">
+        <Link to="/" className=" max-w-[210px]">
           <img
-            className="w-full h-16 object-cover rounded-xl"
-            src="/logoOne2.png"
+            className="w-auto h-16 object-contain rounded-xl"
+            src="/otxlogow.png"
             alt="logoOneTimeX"
           />
         </Link>
@@ -83,7 +83,19 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="rounded-3xl px-5 py-2 border border-blue-600 hover:bg-gradient-to-br from-blue-400 to-green-700 mr-2 hover:text-white"
+              className="
+relative overflow-hidden rounded-3xl
+px-5 py-2 border border-blue-600 mr-2
+text-blue-600 font-medium
+transition-all duration-300
+before:absolute before:left-0 before:top-0
+before:h-full before:w-0
+before:bg-blue-500
+before:transition-all before:duration-500
+hover:before:w-full
+hover:text-white
+z-10 before:-z-10
+"
             >
               Login
             </Link>
@@ -146,7 +158,7 @@ const Navbar = () => {
                     setIsOpen(false);
                   }}
                   to="/login"
-                  className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-green-300 mr-2 hover:border-none"
+                  className="rounded-3xl px-5 py-2 flex justify-center hover:bg-gradient-to-br from-blue-400 to-green-700 border border-blue-600 hover:bg-blue-300 mr-2 hover:border-none"
                 >
                   Login
                 </Link>

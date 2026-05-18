@@ -14,7 +14,7 @@ const LiveScrollData = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden border-y border-white/10 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 backdrop-blur-xl py-3 sm:py-4 relative">
+    <div className="w-full overflow-hidden border-y border-white/10 bg-slate-500 backdrop-blur-xl py-3 sm:py-4 relative">
       {/* Glow Effect */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,197,94,0.08),transparent_70%)] pointer-events-none" />
 
@@ -40,7 +40,7 @@ const LiveScrollData = () => {
             <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.8)]" />
 
             {/* Text */}
-            <h1 className='text-xs sm:text-sm md:text-base font-["Exo_2","sans-serif"] text-white/90 font-medium tracking-wide uppercase'>
+            <h1 className='text-xs sm:text-sm md:text-base font-["Exo_2","sans-serif"] text-gray-100 font-medium tracking-wide uppercase'>
               {item}
             </h1>
           </div>
@@ -56,7 +56,7 @@ const LiveScrollData = () => {
             <div className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_10px_rgba(74,222,128,0.8)]" />
 
             {/* Text */}
-            <h1 className='text-xs sm:text-sm md:text-base font-["Exo_2","sans-serif"] text-white/90 font-medium tracking-wide uppercase'>
+            <h1 className='text-xs sm:text-sm md:text-base font-["Exo_2","sans-serif"] text-gray-100 font-medium tracking-wide uppercase'>
               {item}
             </h1>
           </div>

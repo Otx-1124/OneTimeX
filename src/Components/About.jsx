@@ -89,7 +89,7 @@ export default function AboutPage() {
 
   return (
     // Main Wrapper
-<div className="bg-blue-100 text-slate-900 overflow-hidden">
+<div className="bg-white text-slate-900 overflow-hidden">
 
   {/* HERO SECTION */}
   <motion.section
@@ -140,13 +140,13 @@ export default function AboutPage() {
         </p>
 
         <div className="flex flex-wrap gap-4 mt-10">
-          <button className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-7 py-3 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl">
+          <a href="/" className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-7 py-3 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl">
             Explore Platform
-          </button>
+          </a>
 
-          <button className="border border-slate-200 bg-white/70 backdrop-blur-xl px-7 py-3 rounded-2xl flex items-center gap-2 hover:bg-white transition-all duration-300 shadow-md">
+          <a href="/onetimex-intro" className="border border-slate-200 bg-white/70 backdrop-blur-xl px-7 py-3 rounded-2xl flex items-center gap-2 hover:bg-white transition-all duration-300 shadow-md">
             Learn More <ArrowRight size={18} />
-          </button>
+          </a>
         </div>
       </div>
 
@@ -315,7 +315,7 @@ export default function AboutPage() {
 
         <div className="relative z-10">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-            1
+            2
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mt-8">
@@ -329,7 +329,7 @@ export default function AboutPage() {
 
           <div className="mt-8 flex items-center justify-between">
             <span className="text-cyan-700 font-semibold">
-              1 Member
+              2 Member
             </span>
 
             <div className="w-10 h-10 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold">
@@ -346,7 +346,7 @@ export default function AboutPage() {
 
         <div className="relative z-10">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-            3
+            4
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mt-8">
@@ -360,7 +360,7 @@ export default function AboutPage() {
 
           <div className="mt-8 flex items-center justify-between">
             <span className="text-blue-700 font-semibold">
-              3 Members
+              4 Members
             </span>
 
             <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">
@@ -408,7 +408,7 @@ export default function AboutPage() {
 
         <div className="relative z-10">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg">
-            2
+            3
           </div>
 
           <h3 className="text-2xl font-bold text-slate-900 mt-8">
@@ -422,7 +422,7 @@ export default function AboutPage() {
 
           <div className="mt-8 flex items-center justify-between">
             <span className="text-blue-700 font-semibold">
-              2 Members
+              3 Members
             </span>
 
             <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold">

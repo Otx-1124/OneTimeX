@@ -74,7 +74,7 @@ function App() {
 
 
   return (
-    <>
+    <div className="font-['Inter','sans-serif']">
       {/* Disclaimer Popup Always Available */}
       <RiskDisclosurePopup />
 
@@ -109,7 +109,7 @@ function App() {
       </ScrollToTop>
 
       <ToastContainer />
-    </>
+    </div>
   );
 }
 

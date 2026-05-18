@@ -129,7 +129,7 @@ const Connect = () => {
       whileInView="show"
       viewport={{ once: true }}
       variants={fadeInUp}
-      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-10 bg-blue-100"
+      className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-10 bg-white"
     >
       {/* Soft Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
