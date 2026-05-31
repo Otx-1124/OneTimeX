@@ -14,6 +14,8 @@ const fadeInUp = {
 };
 
 export default function LoginPage() {
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -44,9 +46,6 @@ export default function LoginPage() {
     e.preventDefault();
     try {
       await verifyUser();
-      setInterval(() => {
-        window.location.reload();
-      }, 1000);
     } catch (error) {
       toast.error("Login failed. Please check your credentials.");
     }
@@ -58,9 +57,24 @@ export default function LoginPage() {
       : import.meta.env.VITE_GOOGLE_REDIRECT_URL;
   };
 
+
+  const handleForgotPassword = async() => {
+    try {
+      if (!email) {
+        toast.error("Please enter your email to reset password");
+        return;
+      }
+      const res = await api.post("/user/forgetPassword", { email });
+      toast.success("Password reset link sent to your email");
+    } catch (error) {
+      toast.error("Failed to send password reset link");
+    }
+
+  };
+
   return (
     <motion.section
-      className="min-h-screen bg-green-50 flex items-center justify-center px-6 py-20 mt-10 w-full fixed"
+      className="min-h-screen bg-green-50 flex items-center justify-center px-6 py-20 w-full fixed"
       initial="hidden"
       animate="show"
       variants={fadeInUp}
@@ -110,6 +124,9 @@ export default function LoginPage() {
             </motion.button>
           </div>
         </form>
+        <button onClick={handleForgotPassword} className="text-[12px] font-semibold text-gray-800 mt-4 hover:underline">
+          Forgot Password?
+        </button>
 
         <button
           onClick={handleGoogleAuth}

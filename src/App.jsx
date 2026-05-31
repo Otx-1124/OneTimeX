@@ -35,6 +35,7 @@ import DiwaliDisclaimer from "./Tests/DiwaliDis";
 import { ToastContainer, toast } from "react-toastify";
 import VerifyEmail from "./Components/VerifyEmail";
 import { AuthProvider, useAuth } from "./ContextFile/authContext";
+import ResetPassword from "./Security/ResetPassword";
 function App() {
   const location = useLocation();
 
@@ -102,6 +103,7 @@ function App() {
             <Route path="/processing" element={<Processing />} />
             <Route path="/admin" element={<OneTimeXAdminPanel />} />
             <Route path="/verify-email" element={<VerifyEmail />} />
+            <Route path="/resetPassword" element={<ResetPassword />} />
             {/* Catch-all for 404 */}
             <Route path="/*" element={<NotFound />} />
           </Routes>

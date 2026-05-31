@@ -57,7 +57,6 @@ const Navbar = () => {
             onChange={handleInputChange}
             className="w-11/12 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Search className="absolute top-2 right-14 text-gray-500" />
         </div>
 
         {/* Navigation Links (Desktop) */}
