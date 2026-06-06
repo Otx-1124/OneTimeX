@@ -59,9 +59,9 @@ const Banner = () => {
               Start Investing
             </button>
 
-            <button className="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-100 transition">
+            <a href="https://wa.me/7045035773?text=Hi%2C%20I'm%20interested%20in%20your%20services" className="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-100 transition">
               WhatsApp Us
-            </button>
+            </a>
           </div>
 
           {/* Stats */}
@@ -99,24 +99,24 @@ const Banner = () => {
             </ul>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-lg font-semibold text-orange-500 mb-1">
-              Motilal Oswal
+          <a href="https://sahi.onelink.me/lsr5/fa1c920w" className="bg-gradient-to-br from-purple-300 to-orange-300 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-lg font-semibold text-purple-900 mb-1">
+              Sahi
             </h3>
-            <p className="text-sm text-gray-500 mb-4">Via our franchise</p>
+            <p className="text-sm text-gray-900 mb-4">Via our OneTimeX</p>
 
             <ul className="space-y-2 text-sm text-gray-900">
-              <li>✔ Listed Stocks & Equity</li>
-              <li>✔ Mutual Funds & SIP</li>
-              <li>✔ IPO Applications</li>
-              <li>✔ F&O Trading</li>
-              <li>✔ Demat Account Opening</li>
+              <li>✔ Zero Account Opening Fee</li>
+              <li>✔ First 30 Days Free Brokerage</li>
+              <li>✔ 1-Tap Trading</li>
+              <li>✔ Best For Traders</li>
+              <li>✔ Zero AMC - No Annual Maintenance Charge</li>
             </ul>
 
-            <div className="mt-4 text-xs text-orange-500 border border-orange-200 px-3 py-1 rounded inline-block">
-              38 Yr+ Legacy
+            <div className="mt-4 text-xs text-slate-900 border border-orange-200 px-3 py-1 rounded inline-block">
+              Refreral Code: <span className="font-mono font-bold">SNHRUC</span>
             </div>
-          </div>
+          </a>
         </div>
       </motion.div>
 

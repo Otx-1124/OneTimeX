@@ -80,7 +80,7 @@ export default function BuyProcess({ currentStep = 5 }) {
             return (
               <div
                 key={step.id}
-                className="relative z-10 flex flex-col items-center text-center flex-1"
+                className="relative flex flex-col items-center text-center flex-1"
               >
                 {/* Circle */}
                 <div
@@ -145,7 +145,7 @@ export default function BuyProcess({ currentStep = 5 }) {
             return (
               <div
                 key={step.id}
-                className="relative z-10 flex items-start gap-4"
+                className="relative  flex items-start gap-4"
               >
                 {/* Icon */}
                 <div
