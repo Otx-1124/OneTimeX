@@ -15,3 +15,10 @@
     #337ab7; /* Base Color */
   border-radius: 5px;
 }
+
+.favicon {
+  width: 20px;
+  height: 32px;
+  border-radius: 15px;
+  object-fit: contain;
+}
