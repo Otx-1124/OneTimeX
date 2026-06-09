@@ -84,13 +84,13 @@ const Banner = () => {
         {/* RIGHT CARDS */}
         <div className="grid sm:grid-cols-2 gap-6">
 
-          <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-lg font-semibold text-blue-600 mb-1">
+          <div className="bg-gradient-to-br from-blue-800 to-indigo-300 border border-gray-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-lg font-semibold text-gray-100 mb-1">
               OneTimeX
             </h3>
-            <p className="text-sm text-gray-500 mb-4">Our own platform</p>
+            <p className="text-sm text-gray-100 mb-4">Our own platform</p>
 
-            <ul className="space-y-2 text-sm text-gray-900">
+            <ul className="space-y-2 text-sm text-gray-300">
               <li>✔ Unlisted Shares</li>
               <li>✔ Pre-IPO Investments</li>
               <li>✔ SME & Startup Equity</li>
