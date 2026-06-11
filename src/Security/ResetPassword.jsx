@@ -19,7 +19,7 @@ const ResetPassword = () => {
     // Add your password reset logic here
     try {      // Example: Call an API to reset the password
         console.log(token)
-        const res = await api.post(`/user/resetPassword?token=${token}`, { password, confirmPassword });
+        const res = await api.post(`/user/resetPassword`, { password, confirmPassword , token });
         console.log("Password reset response:", res.data);
         
     } catch (error) {
