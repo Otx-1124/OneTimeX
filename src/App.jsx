@@ -103,7 +103,7 @@ function App() {
             <Route path="/processing" element={<Processing />} />
             <Route path="/admin" element={<OneTimeXAdminPanel />} />
             <Route path="/verify-email" element={<VerifyEmail />} />
-            <Route path="/resetPassword" element={<ResetPassword />} />
+            <Route path="/user/resetPassword" element={<ResetPassword />} />
             {/* Catch-all for 404 */}
             <Route path="/*" element={<NotFound />} />
           </Routes>
