@@ -30,19 +30,19 @@ const contacts = [
 const media = [
   {
     icon: <Facebook size={18} />,
-    url: "#",
+    url: "https://www.facebook.com/share/15g8s2Kec3/",
   },
   {
     icon: <Instagram size={18} />,
-    url: "#",
+    url: "https://www.instagram.com/onetimex.in",
   },
   {
     icon: <Linkedin size={18} />,
-    url: "#",
+    url: "https://www.linkedin.com/in/vishal-dubey-53a923219",
   },
   {
     icon: <FaXTwitter size={18} />,
-    url: "#",
+    url: "https://x.com/ONETIMEX_IN?t=-OqRd2S9HeRpbMUCbdwCKw&s=08",
   },
 ];
 
@@ -77,9 +77,12 @@ const Connect = () => {
     }));
   };
 
+  const [loading , setLoading] = useState(false);
+
   // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       if (
@@ -120,6 +123,8 @@ const Connect = () => {
       });
     } catch (error) {
       toast.error("Error submitting form");
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -360,7 +365,7 @@ const Connect = () => {
                 type="submit"
                 className="w-full sm:w-auto bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-8 py-4 rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl"
               >
-                Submit Inquiry
+                {loading?"submitting..." : "Submit Inquiry"}
               </button>
             </form>
           </div>

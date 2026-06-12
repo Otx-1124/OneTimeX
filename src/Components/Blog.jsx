@@ -118,7 +118,7 @@ const BlogPage = () => {
     "Dedicated Support",
   ];
 
-  const faqs = [
+   const faqs = [
     {
       question: "What investment opportunities does Onetimex provide?",
       answer:

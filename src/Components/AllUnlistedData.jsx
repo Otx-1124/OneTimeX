@@ -76,12 +76,19 @@ const AllUnlistedData = () => {
 
               {/* Company Info */}
               <div className="flex items-center gap-3 mb-4">
-                <img
-                  src={stock.logo}
-                  alt={stock.name}
-                  className="w-10 h-10 object-contain rounded-md border"
-                />
-
+                <div className="w-10 h-10 rounded-xl bg-gray-200 flex items-center justify-center shadow-md">
+                   {stock.logo ? (
+                      <img
+                        src={stock.logo}
+                        alt={stock.alt}
+                        className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                    ) : (
+                      <span className="text-xl font-bold text-slate-700">
+                        {stock.name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
                 <div>
                   <h3 className="text-sm font-semibold text-gray-900 leading-tight">
                     {stock.name}

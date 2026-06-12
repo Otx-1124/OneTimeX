@@ -66,12 +66,17 @@ const Procedure = () => {
   ];
 
   return (
-    <div className=" bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <div className=" bg-white relative overflow-hidden">
       {/* Background Elements */}
 
-      <div className="relative px-4 sm:px-6 lg:px-10 py-5 container mx-auto">
+      <div className="relative px-4 sm:px-6 lg:px-10 py-10 container mx-auto">
         {/* Header Section */}
-        
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-10">
+          How to Get Started with{" "}
+          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            OneTimeX
+          </span>
+        </h1>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 md:mx-10 mx-2">

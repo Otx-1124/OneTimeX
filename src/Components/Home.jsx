@@ -16,6 +16,7 @@ import Banner2 from "../Tests/BannerTest";
 import ScrolltoTop from "../Components/ScrolltoTop"
 import RiskDisclosurePopup from "./Disclaimer";
 import BuyProcess from "../HomePages/BuyProcess";
+import Faqs from "../HomePages/Faqs";
 
 
 

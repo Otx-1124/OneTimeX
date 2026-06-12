@@ -22,7 +22,7 @@ const WhyChooseOnetimex = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 to-white px-6 md:px-20 py-10 ">
+    <div className="w-full bg-white px-6 md:px-20 py-10 ">
       <div className="container mx-auto">
         <motion.section
         className="w-full bg-gradient-to-br from-green-200 to-blue-50 py-12 px-6 md:px-16 rounded-xl shadow-xl flex flex-col-reverse md:flex-row items-center gap-10"

@@ -20,9 +20,11 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const[sendingResetLink, setSendingResetLink] = useState(false);
+
   const navigate = useNavigate();
 
-  const { setUser } = useAuth();
+  const {user , setUser } = useAuth();
 
   const verifyUser = async () => {
     try {
@@ -57,6 +59,12 @@ export default function LoginPage() {
       : import.meta.env.VITE_GOOGLE_REDIRECT_URL;
   };
 
+  useEffect(() => {
+    if (user) {
+      toast.info("You are already logged in");
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const handleForgotPassword = async() => {
     try {
@@ -64,10 +72,13 @@ export default function LoginPage() {
         toast.error("Please enter your email to reset password");
         return;
       }
+      setSendingResetLink(true);
       const res = await api.post("/user/forgetPassword", { email });
       toast.success("Password reset link sent to your email");
     } catch (error) {
       toast.error("Failed to send password reset link");
+    } finally {
+      setSendingResetLink(false);
     }
 
   };
@@ -125,7 +136,7 @@ export default function LoginPage() {
           </div>
         </form>
         <button onClick={handleForgotPassword} className="text-[12px] font-semibold text-gray-800 mt-4 hover:underline">
-          Forgot Password?
+          {sendingResetLink ? "Sending reset link..." : "Forgot Password?"}
         </button>
 
         <button

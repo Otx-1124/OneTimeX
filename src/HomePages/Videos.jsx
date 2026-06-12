@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 
 const ImageGrid = () => {
   return (
-    <div className="bg-green-50 flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-20 py-10">
+    <div className="bg-white flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-20 py-10">
 
       {/* Heading */}
       <h1 className="mb-6 text-2xl sm:text-3xl md:text-4xl font-semibold text-red-500 text-center">

@@ -1,7 +1,7 @@
 export const unlistedData = [
   {
     name: "National Stock Exchange (NSE)",
-    logo: "https://upload.wikimedia.org/wikipedia/en/0/0f/NSE_Logo.png",
+    logo: "",
     alt: "NSE Logo",
     founded: 1992,
     sector: "Stock Exchange",
@@ -12,7 +12,7 @@ export const unlistedData = [
   },
   {
     name: "Tata Capital",
-    logo: "https://companieslogo.com/img/orig/TATACAPITAL.NS-8b1ef82d.png",
+    logo: "",
     alt: "Tata Capital Logo",
     founded: 2007,
     sector: "Financial Services",
@@ -23,7 +23,7 @@ export const unlistedData = [
   },
   {
     name: "boAt (Imagine Marketing)",
-    logo: "https://companieslogo.com/img/orig/boAt-9b87d0b4.png",
+    logo: "",
     alt: "boAt Logo",
     founded: 2016,
     sector: "Consumer Electronics",
@@ -34,7 +34,7 @@ export const unlistedData = [
   },
   {
     name: "PharmEasy (API Holdings)",
-    logo: "https://companieslogo.com/img/orig/PHARMEASY-8b87e4d2.png",
+    logo: "",
     alt: "PharmEasy Logo",
     founded: 2015,
     sector: "Healthcare & E-Pharmacy",
@@ -45,7 +45,7 @@ export const unlistedData = [
   },
   {
     name: "Hero FinCorp",
-    logo: "https://companieslogo.com/img/orig/HEROFINCORP-01.png",
+    logo: "",
     alt: "Hero FinCorp Logo",
     founded: 1991,
     sector: "NBFC - Financial Services",
@@ -56,7 +56,7 @@ export const unlistedData = [
   },
   {
     name: "Chennai Super Kings (CSK) Cricket Ltd",
-    logo: "https://companieslogo.com/img/orig/CSK-01.png",
+    logo: "",
     alt: "CSK Logo",
     founded: 2008,
     sector: "Sports & Entertainment",
@@ -67,7 +67,7 @@ export const unlistedData = [
   },
   {
     name: "Hexaware Technologies",
-    logo: "https://companieslogo.com/img/orig/HEXAWARE-01.png",
+    logo: "",
     alt: "Hexaware Logo",
     founded: 1990,
     sector: "IT Services & Consulting",
@@ -78,7 +78,7 @@ export const unlistedData = [
   },
   {
     name: "Studds Accessories",
-    logo: "https://companieslogo.com/img/orig/STUDDS-01.png",
+    logo: "",
     alt: "Studds Logo",
     founded: 1972,
     sector: "Automobile Accessories",
@@ -101,7 +101,7 @@ export const unlistedData = [
 
   {
     name: "Reliance Retail",
-    logo: "https://companieslogo.com/img/orig/RELIANCE-01.png",
+    logo: "",
     alt: "Reliance Retail Logo",
     founded: 2006,
     sector: "Retail",
@@ -112,7 +112,7 @@ export const unlistedData = [
   },
   {
     name: "OYO Rooms",
-    logo: "https://companieslogo.com/img/orig/OYO-01.png",
+    logo: "",
     alt: "OYO Logo",
     founded: 2013,
     sector: "Hospitality",
@@ -123,7 +123,7 @@ export const unlistedData = [
   },
   {
     name: "Byju’s (Think & Learn Pvt Ltd)",
-    logo: "https://companieslogo.com/img/orig/BYJUS-01.png",
+    logo: "",
     alt: "Byju's Logo",
     founded: 2011,
     sector: "EdTech",
@@ -134,7 +134,7 @@ export const unlistedData = [
   },
   {
     name: "Swiggy",
-    logo: "https://companieslogo.com/img/orig/SWIGGY-01.png",
+    logo: "",
     alt: "Swiggy Logo",
     founded: 2014,
     sector: "Food Delivery",
@@ -145,7 +145,7 @@ export const unlistedData = [
   },
   {
     name: "Flipkart",
-    logo: "https://companieslogo.com/img/orig/FLIPKART-01.png",
+    logo: "",
     alt: "Flipkart Logo",
     founded: 2007,
     sector: "E-commerce",
@@ -156,7 +156,7 @@ export const unlistedData = [
   },
   {
     name: "Lava International",
-    logo: "https://companieslogo.com/img/orig/LAVA-01.png",
+    logo: "",
     alt: "Lava Logo",
     founded: 2009,
     sector: "Consumer Electronics",
@@ -167,7 +167,7 @@ export const unlistedData = [
   },
   {
     name: "MobiKwik",
-    logo: "https://companieslogo.com/img/orig/MOBIKWIK-01.png",
+    logo: "",
     alt: "MobiKwik Logo",
     founded: 2009,
     sector: "FinTech",
@@ -178,7 +178,7 @@ export const unlistedData = [
   },
   {
     name: "FirstCry",
-    logo: "https://companieslogo.com/img/orig/FIRSTCRY-01.png",
+    logo: "",
     alt: "FirstCry Logo",
     founded: 2010,
     sector: "E-commerce (Baby & Kids)",
@@ -189,7 +189,7 @@ export const unlistedData = [
   },
   {
     name: "Kurlon Enterprises",
-    logo: "https://companieslogo.com/img/orig/KURLON-01.png",
+    logo: "",
     alt: "Kurlon Logo",
     founded: 1962,
     sector: "Consumer Goods (Mattresses)",
@@ -200,7 +200,7 @@ export const unlistedData = [
   },
   {
     name: "Tata Technologies",
-    logo: "https://companieslogo.com/img/orig/TATATECH-01.png",
+    logo: "",
     alt: "Tata Technologies Logo",
     founded: 1989,
     sector: "Engineering & IT Services",
@@ -211,7 +211,7 @@ export const unlistedData = [
   },
   {
     name: "Cleartrip",
-    logo: "https://companieslogo.com/img/orig/CLEARTRIP-01.png",
+    logo: "",
     alt: "Cleartrip Logo",
     founded: 2006,
     sector: "Travel & Tourism",
@@ -222,7 +222,7 @@ export const unlistedData = [
   },
   {
     name: "Ixigo",
-    logo: "https://companieslogo.com/img/orig/IXIGO-01.png",
+    logo: "",
     alt: "Ixigo Logo",
     founded: 2007,
     sector: "Travel Tech",
@@ -233,7 +233,7 @@ export const unlistedData = [
   },
   {
     name: "Patanjali Foods",
-    logo: "https://companieslogo.com/img/orig/PATANJALI-01.png",
+    logo: "",
     alt: "Patanjali Logo",
     founded: 2006,
     sector: "FMCG",
@@ -244,7 +244,7 @@ export const unlistedData = [
   },
   {
     name: "Tata Play (formerly Tata Sky)",
-    logo: "https://companieslogo.com/img/orig/TATAPLAY-01.png",
+    logo: "",
     alt: "Tata Play Logo",
     founded: 2001,
     sector: "Media & Entertainment",
@@ -255,7 +255,7 @@ export const unlistedData = [
   },
   {
     name: "Snapdeal",
-    logo: "https://companieslogo.com/img/orig/SNAPDEAL-01.png",
+    logo: "",
     alt: "Snapdeal Logo",
     founded: 2010,
     sector: "E-commerce",
@@ -266,7 +266,7 @@ export const unlistedData = [
   },
   {
     name: "OLA Electric",
-    logo: "https://companieslogo.com/img/orig/OLAELECTRIC-01.png",
+    logo: "",
     alt: "Ola Electric Logo",
     founded: 2017,
     sector: "Electric Vehicles",
@@ -277,7 +277,7 @@ export const unlistedData = [
   },
   {
     name: "Hike Messenger",
-    logo: "https://companieslogo.com/img/orig/HIKE-01.png",
+    logo: "",
     alt: "Hike Logo",
     founded: 2012,
     sector: "Social Media & Gaming",
@@ -288,7 +288,7 @@ export const unlistedData = [
   },
   {
     name: "Paytm Payments Bank",
-    logo: "https://companieslogo.com/img/orig/PAYTMPAYBANK-01.png",
+    logo: "",
     alt: "Paytm Payments Bank Logo",
     founded: 2015,
     sector: "Banking & FinTech",
@@ -299,7 +299,7 @@ export const unlistedData = [
   },
   {
     name: "Delhivery Logistics",
-    logo: "https://companieslogo.com/img/orig/DELHIVERY-01.png",
+    logo: "",
     alt: "Delhivery Logo",
     founded: 2011,
     sector: "Logistics & Supply Chain",
@@ -310,7 +310,7 @@ export const unlistedData = [
   },
   {
     name: "Bira 91",
-    logo: "https://companieslogo.com/img/orig/BIRA91-01.png",
+    logo: "",
     alt: "Bira Logo",
     founded: 2015,
     sector: "Beverages",
@@ -321,7 +321,7 @@ export const unlistedData = [
   },
   {
     name: "Zerodha",
-    logo: "https://companieslogo.com/img/orig/ZERODHA-01.png",
+    logo: "",
     alt: "Zerodha Logo",
     founded: 2010,
     sector: "Stock Broking & FinTech",
@@ -332,7 +332,7 @@ export const unlistedData = [
   },
   {
     name: "PhonePe",
-    logo: "https://companieslogo.com/img/orig/PHONEPE-01.png",
+    logo: "",
     alt: "PhonePe Logo",
     founded: 2015,
     sector: "FinTech (UPI Payments)",
@@ -343,7 +343,7 @@ export const unlistedData = [
   },
   {
     name: "BigBasket",
-    logo: "https://companieslogo.com/img/orig/BIGBASKET-01.png",
+    logo: "",
     alt: "BigBasket Logo",
     founded: 2011,
     sector: "E-commerce (Grocery)",
@@ -354,7 +354,7 @@ export const unlistedData = [
   },
   {
     name: "Urban Company",
-    logo: "https://companieslogo.com/img/orig/URBANCOMPANY-01.png",
+    logo: "",
     alt: "Urban Company Logo",
     founded: 2014,
     sector: "Services Marketplace",
@@ -365,7 +365,7 @@ export const unlistedData = [
   },
   {
     name: "Policybazaar (PB Fintech)",
-    logo: "https://companieslogo.com/img/orig/POLICYBAZAAR-01.png",
+    logo: "",
     alt: "Policybazaar Logo",
     founded: 2008,
     sector: "InsurTech",
@@ -376,7 +376,7 @@ export const unlistedData = [
   },
   {
     name: "Rebel Foods (Faasos)",
-    logo: "https://companieslogo.com/img/orig/REBELFOODS-01.png",
+    logo: "",
     alt: "Rebel Foods Logo",
     founded: 2011,
     sector: "FoodTech (Cloud Kitchen)",
@@ -387,7 +387,7 @@ export const unlistedData = [
   },
   {
     name: "Muthoot Microfin",
-    logo: "https://companieslogo.com/img/orig/MUTHOOTMICRO-01.png",
+    logo: "",
     alt: "Muthoot Microfin Logo",
     founded: 2010,
     sector: "NBFC (Microfinance)",
@@ -398,7 +398,7 @@ export const unlistedData = [
   },
   {
     name: "Kochi Metro Rail Ltd (KMRL)",
-    logo: "https://companieslogo.com/img/orig/KMRL-01.png",
+    logo: "",
     alt: "Kochi Metro Logo",
     founded: 2011,
     sector: "Transport Infrastructure",
@@ -409,7 +409,7 @@ export const unlistedData = [
   },
   {
     name: "BharatPe",
-    logo: "https://companieslogo.com/img/orig/BHARATPE-01.png",
+    logo: "",
     alt: "BharatPe Logo",
     founded: 2018,
     sector: "FinTech",

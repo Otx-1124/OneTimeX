@@ -33,7 +33,7 @@ const UnlistedListed = ({ id }) => {
       name: "Groww Unlisted Shares",
       logo: "	https://resources.groww.in/web-assets/img/website-logo/groww-logo-270.webp",
       alt: "Groww Logo",
-      price: "₹139 per share (unlisted market estimate, 2025)",
+      price: "₹139/-",
       foundedYear: 2016,
       sector: "Fintech / WealthTech",
       description:
@@ -169,7 +169,7 @@ const UnlistedListed = ({ id }) => {
 
     {
       name: "PharmEasy Unlisted Shares",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/PharmEasy_logo.png/800px-PharmEasy_logo.png",
+      logo: "https://yt3.googleusercontent.com/zVbonr8k0_0_CwI0w59kQtiRB6EupuzNhXKxWEyhDOnpdNwMj7I0odwDn9i0ZkJgExE36MQX9g=s900-c-k-c0x00ffffff-no-rj",
       alt: "PharmEasy Logo",
       price: "₹7.11/-",
       founded: 2015,
@@ -197,7 +197,7 @@ const UnlistedListed = ({ id }) => {
     },
     {
       name: "Zepto Unlisted Shares",
-      logo: "",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbuKnU2ojy19ZfMcKRTzvx2aFYaY4Rv19x--HEoiK8SA&s=10",
       alt: "Zepto Logo",
       price: "₹2,730.32/-",
       founded: 2021,
@@ -266,7 +266,7 @@ const UnlistedListed = ({ id }) => {
   return (
     <motion.div
       id={id}
-      className=" bg-gradient-to-br from-blue-50 to-green-50 w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
+      className=" bg-white w-full px-4 sm:px-6 lg:px-10 py-5 flex flex-col"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
@@ -286,7 +286,7 @@ const UnlistedListed = ({ id }) => {
             Get early access to India’s top companies—before they go public and
             access <strong>Unlisted Stocks</strong> of top Indian companies.
           </p>
-          <h3 className="text-[#009999] text-lg sm:text-xl font-bold">
+          <h3 className="text-[#1399ff] text-lg sm:text-xl font-bold">
             Start investing today !
           </h3>
         </motion.div>
@@ -305,8 +305,8 @@ const UnlistedListed = ({ id }) => {
               }}
               className={`font-bold text-base sm:text-xl px-4 py-2 rounded transition duration-300 transform ${
                 activeTab === "unlisted"
-                  ? "text-white bg-[#009999] scale-105 shadow-md"
-                  : "text-[#009999] hover:text-white bg-transparent hover:bg-[#009999]"
+                  ? "text-white bg-[#1055ec] scale-105 shadow-md"
+                  : "text-[#323be8] hover:text-white bg-transparent hover:bg-[#0c309a]"
               }`}
             >
               Unlisted Stocks
@@ -325,30 +325,56 @@ const UnlistedListed = ({ id }) => {
         >
           {currData.map((company, index) => (
             <motion.div
-              onClick={() => {
-                handleSetData(company);
-              }}
               key={company.name + index}
-              className="flex flex-col sm:flex-row border shadow-md items-center justify-between px-4 py-3 rounded-lg hover:shadow-xl  cursor-pointer"
               custom={index}
               variants={fadeInUp}
+              whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => handleSetData(company)}
+              className="group cursor-pointer rounded-3xl border border-slate-200 bg-white p-4 transition-all duration-300 hover:border-blue-400 hover:shadow-xl"
             >
-              <div className="w-28 h-20 sm:w-32 sm:h-24 mb-3 sm:mb-0 rounded-lg overflow-hidden flex items-center justify-center shadow-inner">
-                <img
-                  src={company.logo}
-                  alt={company.alt}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                {/* Left */}
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
+                  {/* Logo */}
+                  <div className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center rounded-full border border-slate-100 bg-slate-50 shadow-sm overflow-hidden">
+                    {company.logo ? (
+                      <img
+                        src={company.logo}
+                        alt={company.alt}
+                        className="h-8 w-8 sm:h-10 sm:w-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                    ) : (
+                      <span className="text-lg sm:text-xl font-bold text-slate-700">
+                        {company.name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
 
-              <div className="flex flex-col sm:flex-row justify-between items-center sm:w-2/3 sm:pl-4 gap-2 sm:gap-0">
-                <div className="flex flex-col text-center sm:text-left">
-                  <h1 className="font-bold  text-base sm:text-lg">
-                    {company.name}
-                  </h1>
-                  <p className="text-sm sm:text-base">{company.price}</p>
+                  {/* Company Info */}
+                  <div className="min-w-0 flex-1">
+                    <h2 className="truncate text-sm sm:text-base lg:text-lg font-semibold text-slate-900">
+                      {company.name}
+                    </h2>
+
+                    <p className="mt-1 text-xs sm:text-sm text-slate-500">
+                      Price
+                    </p>
+
+                    <p className="mt-1 text-base sm:text-lg font-bold text-slate-900">
+                      {company.price}
+                    </p>
+                  </div>
                 </div>
-                <ArrowBigRightIcon className="text-xl hover:text-yellow-700" />
+
+                {/* Right */}
+                <div className="flex items-center justify-between sm:justify-end gap-3">
+                  {/* Mobile View Button */}
+
+                  <div className="flex h-8 w-6 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-slate-100 transition-all duration-300 group-hover:bg-blue-500 group-hover:text-white">
+                    <ArrowBigRightIcon className="h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}

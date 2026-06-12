@@ -272,7 +272,7 @@ export default function InvestmentSection() {
 
   return (
     <motion.section
-      className="bg-green-50 rounded-3xl px-6 py-5 md:px-20 "
+      className="bg-white rounded-3xl px-6 py-5 md:px-20 "
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.2 }}

@@ -77,7 +77,7 @@ const SimpleTradingCalculator = () => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-br from-blue-50 to-green-50 pt-24 pb-12 px-6 min-h-screen">
+    <div className="w-full bg-white pt-24 pb-12 px-6 min-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div

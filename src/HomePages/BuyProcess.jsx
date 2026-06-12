@@ -41,7 +41,7 @@ const stepsData = [
 
 export default function BuyProcess({ currentStep = 5 }) {
   return (
-    <section className="w-full bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 py-14 sm:py-16 px-4 overflow-hidden">
+    <section className="w-full bg-white py-4 sm:py-16 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-12">
@@ -49,18 +49,18 @@ export default function BuyProcess({ currentStep = 5 }) {
             Simple Investment Process
           </p>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white ">
             How To Buy Shares
           </h2>
 
-          <p className="text-slate-400 text-sm sm:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-sm sm:text-base  max-w-2xl mx-auto leading-relaxed">
             Invest in verified unlisted and pre-IPO companies in just a few
             simple steps.
           </p>
         </div>
 
         {/* Desktop / Tablet Layout */}
-        <div className="hidden md:flex relative items-start justify-between gap-4">
+        <div className="hidden md:flex relative items-start justify-between gap-2">
           {/* Animated Line */}
           <div className="absolute top-7 left-0 w-full h-[2px] bg-slate-700 rounded-full overflow-hidden">
             <div
